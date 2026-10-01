@@ -45,6 +45,7 @@ from scripts.run_golden_trajectories import (
     _matches_gold,
     _runtime_context,
 )
+from scripts.single_agent_dense import SINGLE_AGENT_PROMPT_VERSION, run_single_agent_dense
 
 
 def _jsonl(path: Path, split: str) -> list[dict]:
@@ -106,6 +107,9 @@ def _baseline_run(
     database: PostgresStore,
 ) -> ApprovalState:
     """One bounded retrieval pass, then the same deterministic rules as the graph."""
+
+    if variant == "single_agent_dense":
+        return run_single_agent_dense(state, model, registry, context, database)
 
     application = state["application"]
     if variant == "single_retrieval_agent":
@@ -271,7 +275,8 @@ def main() -> int:
     parser.add_argument("--attachment-evidence", type=Path)
     parser.add_argument("--sample-id", action="append", help="只运行指定的审批样本，可重复")
     parser.add_argument(
-        "--active-catalog", action="store_true",
+        "--active-catalog",
+        action="store_true",
         help="按网页新申请的单公司目录评测，保留样本原始来源快照不变",
     )
     parser.add_argument("--output", type=Path, required=True)
@@ -281,14 +286,23 @@ def main() -> int:
             "fixed_rag",
             "fixed_rewrite",
             "single_retrieval_agent",
+            "single_agent_dense",
             "no_supervisor",
             "multi_agent",
         ),
         default="multi_agent",
     )
     args = parser.parse_args()
+    if args.output.exists():
+        parser.error("choose a new output path; prior runs are never overwritten")
+    if (
+        args.variant == "single_agent_dense"
+        and os.getenv("POLICY_RETRIEVAL_MODE", "dense") != "dense"
+    ):
+        parser.error("single_agent_dense requires POLICY_RETRIEVAL_MODE=dense")
     approvals = [
-        row for row in _jsonl(args.dataset_dir / "approvals.jsonl", args.split)
+        row
+        for row in _jsonl(args.dataset_dir / "approvals.jsonl", args.split)
         if not args.sample_id or row["sample_id"] in args.sample_id
     ]
     selected_cases = {row["case_id"] for row in approvals}
@@ -343,14 +357,13 @@ def main() -> int:
             catalog = active_catalog() if args.active_catalog else None
             policy_snapshot = (
                 catalog["policy_catalog_snapshot_id"]
-                if catalog else sample["policy_catalog_snapshot_id"]
+                if catalog
+                else sample["policy_catalog_snapshot_id"]
             )
             structured_snapshot = sample.get(
                 "structured_data_snapshot_id", "STRUCTURED-DATA-REF-1.2.0"
             )
-            attachment_evidence = _input_attachment_evidence(
-                chunks, approval, policy_snapshot
-            )
+            attachment_evidence = _input_attachment_evidence(chunks, approval, policy_snapshot)
             state = ApprovalService._initial_state(
                 approval,
                 fields,
@@ -367,7 +380,8 @@ def main() -> int:
                     structured_data_snapshot_id=structured_snapshot,
                     allowed_tools=[ToolName(item) for item in trajectory["allowed_tools"]],
                 )
-                if args.active_catalog else _runtime_context(
+                if args.active_catalog
+                else _runtime_context(
                     {
                         "allowed_tools": trajectory["allowed_tools"],
                         "fixture_context": {
@@ -406,7 +420,10 @@ def main() -> int:
                     final = validate_state(output)
                 else:
                     final = _baseline_run(args.variant, state, model, registry, context, database)
-                    interrupted = final["status"] == ApprovalStatus.HUMAN_PENDING
+                    interrupted = final["status"] in {
+                        ApprovalStatus.HUMAN_PENDING,
+                        ApprovalStatus.INSUFFICIENT_EVIDENCE,
+                    }
             except Exception as exc:  # noqa: BLE001 - invalid attempts remain in the denominator
                 error = f"{type(exc).__name__}: {exc}"
                 interrupted = False
@@ -455,7 +472,8 @@ def main() -> int:
             predicted = (
                 None
                 if raw_recommendation == "HUMAN_REVIEW"
-                and final["status"] not in {
+                and final["status"]
+                not in {
                     ApprovalStatus.HUMAN_PENDING,
                     ApprovalStatus.INSUFFICIENT_EVIDENCE,
                 }
@@ -501,9 +519,19 @@ def main() -> int:
                 and all(name in allowed for name in tool_names)
             )
             success = success_without_stop and stop_match
+            business_success = bool(
+                final
+                and final["status"] != ApprovalStatus.SYSTEM_ERROR
+                and predicted == sample["expected_recommendation"]
+                and evidence_match
+                and rules_match
+                and set(sample["expected_risk_flags"]) == business_risks
+                and all(name in allowed for name in tool_names)
+            )
             row = {
                 "sample_id": sample["sample_id"],
                 "case_id": sample["case_id"],
+                "expense_type": approval.application.expense_type.value,
                 "source_policy_catalog_snapshot_id": sample["policy_catalog_snapshot_id"],
                 "evaluated_policy_catalog_snapshot_id": policy_snapshot,
                 "expected_recommendation": sample["expected_recommendation"],
@@ -534,6 +562,7 @@ def main() -> int:
                 "latency_ms": latency_ms,
                 "task_success": success,
                 "task_success_without_stop": success_without_stop,
+                "business_success": business_success,
                 "error": error,
                 "raw_prediction": (
                     {
@@ -598,6 +627,12 @@ def main() -> int:
         }
     )
     metrics = [
+        _metric(
+            "comparison.business_success_rate",
+            sum(row["business_success"] for row in rows),
+            len(rows),
+            args.split,
+        ),
         _metric(
             "agent.task_success_rate",
             sum(row["task_success"] for row in rows),
@@ -692,6 +727,11 @@ def main() -> int:
             "retrieval": RETRIEVAL_PROMPT_VERSION,
             "reviewer": EVIDENCE_REVIEW_PROMPT_VERSION,
             "supervisor": SUPERVISOR_PROMPT_VERSION,
+            **(
+                {"single_agent": SINGLE_AGENT_PROMPT_VERSION}
+                if args.variant == "single_agent_dense"
+                else {}
+            ),
         },
         "retrieval_mode": os.getenv("POLICY_RETRIEVAL_MODE", "dense"),
         "variant": args.variant,

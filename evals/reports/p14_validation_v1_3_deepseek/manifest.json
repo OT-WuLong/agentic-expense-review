@@ -1,0 +1,68 @@
+{
+  "schema": "p14-run-manifest/v1",
+  "run_id": "P14-20260925T120735Z-ee169be9",
+  "started_at": "2026-09-25T12:07:35.086454+00:00",
+  "suite": "all",
+  "split": "validation",
+  "final_test": false,
+  "git": {
+    "commit": "7efef7340f3bb9e5def17cb8affdf730f5edf80b",
+    "dirty": true
+  },
+  "datasets": {
+    "evals/datasets/retrieval.jsonl": "0f272a8c485a62337c2c7e560cc24a53fbcc504378ff7b7ce3153d23d260c64b",
+    "evals/datasets/agent_trajectories.jsonl": "dea1d1cb00630b2f299d99d77fb8a0725767ca6534f5279c0219d93d848fba02",
+    "evals/datasets/approvals.jsonl": "2e304f7db33e5c90ee029511c62ba0cabaf8d51bd11f0ad508729fe558242f29",
+    "evals/datasets/security.jsonl": "46ec1baae532e58f85a5e376e6855da5f9b4da231cf1f65cd857e07edf17ea47",
+    "evals/datasets/test.freeze.json": "36798fa3484dfe7c52dae0fdce8fd5d56a03df25950d443a2cbf9720aa2f7802",
+    "evals/datasets/reference_evidence.json": "cf8031dfb3143298d49571d19dee682247054c2bec2a21716e64c0b07727bdeb",
+    "data/fixtures/p04_chunks.jsonl": "1e602a187fdc815492896870b49283a0471a800c70fdd7615843e19f35f8a578",
+    "data/fixtures/golden_cases.json": "98dd038b54e7d4b8ea2d4a5d1501aa38149e2dfb31c97428578d3beb4cc966a4",
+    "evals/datasets/thresholds.freeze.json": "11781bac20d91080442519f16cd62961677c5402578f866e659a37083eb38a52"
+  },
+  "dataset_version": "1.3.0",
+  "models": {
+    "agent": "deepseek-flash",
+    "embedding": "qwen3.7-text-embedding-flash",
+    "reranker": "qwen3.7-text-rerank"
+  },
+  "prompts": {
+    "retrieval": "p14-retrieval-v4",
+    "supervisor": "p08-supervisor-v3",
+    "reviewer": "p07-evidence-review-v3"
+  },
+  "parameters": {
+    "policy_retrieval_mode": "dense",
+    "top_k": 5,
+    "temperature": 0,
+    "agent_budget_source": "agent_trajectories.jsonl hard_limits",
+    "concurrency": 1,
+    "cache": "existing local vector cache; no run-local clearing",
+    "warmup": "none"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 16
+  },
+  "finished_at": "2026-09-25T12:09:04.430823+00:00",
+  "runs": [
+    {
+      "suite": "retrieval",
+      "exit_code": 0,
+      "report_path": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\p14_validation_v1_3_deepseek\\retrieval.json"
+    },
+    {
+      "suite": "workflow",
+      "exit_code": 0,
+      "report_path": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\p14_validation_v1_3_deepseek\\workflow.json"
+    },
+    {
+      "suite": "security",
+      "exit_code": 0,
+      "report_path": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\p14_validation_v1_3_deepseek\\security.json"
+    }
+  ],
+  "status": "MEASURED"
+}

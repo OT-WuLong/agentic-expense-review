@@ -1,0 +1,85 @@
+{
+  "schema": "p14-frontend-e2e/v1",
+  "generated_at": "2026-09-25T10:59:14.315022+00:00",
+  "status": "MEASURED",
+  "playwright_raw_sha256": "fe26a4c4eeb4a0bec4737ee5fa8512ef0a50af7dc717f2ab1f44e8e20a043c40",
+  "git_commit": "1767cee0a5223799ccc77f95d055e6647cc8e263",
+  "git_dirty": true,
+  "model": "qwen3.8-flash",
+  "environment": {
+    "platform": "Windows-10-10.0.22631-SP0",
+    "browser_channel": "msedge",
+    "concurrency": 1,
+    "cache": "existing model/vector caches",
+    "warmup": "none"
+  },
+  "test_count": 4,
+  "passed_count": 4,
+  "duplicate_side_effects": 0,
+  "tests": [
+    {
+      "title": "incorrect token stays on login and shows an error",
+      "status": "passed",
+      "browser_duration_ms": 365,
+      "request_id": null
+    },
+    {
+      "title": "A rejects commute and keeps cited evidence after refresh",
+      "status": "passed",
+      "browser_duration_ms": 49103,
+      "request_id": "REQ-UI-1790333517122-7c1cf871",
+      "business_status": "BUSINESS_REJECTED",
+      "machine_terminal_event": "APPROVAL_FINALIZED",
+      "golden_smoke_machine_latency_ms": 46859,
+      "event_counts": {
+        "APPROVAL_FINALIZED": 1,
+        "HUMAN_REVIEWED": 0,
+        "NOTIFICATION_REQUESTED": 1,
+        "CASE_WRITE_REQUESTED": 1
+      },
+      "human_interrupt_count": 0,
+      "duplicate_side_effects": 0
+    },
+    {
+      "title": "B passes lodging with policy and city-tier evidence",
+      "status": "passed",
+      "browser_duration_ms": 48398,
+      "request_id": "REQ-UI-1790333566221-319e8898",
+      "business_status": "COMPLETED",
+      "machine_terminal_event": "APPROVAL_FINALIZED",
+      "golden_smoke_machine_latency_ms": 46606,
+      "event_counts": {
+        "APPROVAL_FINALIZED": 1,
+        "HUMAN_REVIEWED": 0,
+        "NOTIFICATION_REQUESTED": 1,
+        "CASE_WRITE_REQUESTED": 1
+      },
+      "human_interrupt_count": 0,
+      "duplicate_side_effects": 0
+    },
+    {
+      "title": "C interrupts for human review and resumes to a persisted decision",
+      "status": "passed",
+      "browser_duration_ms": 126538,
+      "request_id": "REQ-UI-1790333614668-a300ef39",
+      "business_status": "COMPLETED",
+      "machine_terminal_event": "HUMAN_REVIEW_REQUESTED",
+      "golden_smoke_machine_latency_ms": 123617,
+      "event_counts": {
+        "APPROVAL_FINALIZED": 1,
+        "HUMAN_REVIEWED": 1,
+        "NOTIFICATION_REQUESTED": 1,
+        "CASE_WRITE_REQUESTED": 1
+      },
+      "human_interrupt_count": 1,
+      "duplicate_side_effects": 0
+    }
+  ],
+  "limitations": [
+    "Three public golden cases are a functional gate, not a statistical quality or P95 sample.",
+    "Latency ends at the first persisted machine result or human interrupt; human waiting is excluded.",
+    "Browser durations include navigation, polling, and human form interaction and are not machine P95.",
+    "Model/network latency and cache state may vary between runs."
+  ],
+  "performance_metrics_status": "NOT_MEASURED_ON_NON_GOLDEN_VALIDATION"
+}

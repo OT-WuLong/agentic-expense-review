@@ -1,0 +1,3 @@
+{"sample_id": "APP-TEST-MEAL-PASS", "status": "INSUFFICIENT_EVIDENCE", "task_success": false}
+{"sample_id": "APP-TEST-MEAL-MISMATCH", "status": "INSUFFICIENT_EVIDENCE", "task_success": false}
+{"sample_id": "APP-TEST-LODGING-HUMAN", "status": "INSUFFICIENT_EVIDENCE", "task_success": false}

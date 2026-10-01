@@ -1,0 +1,213 @@
+{
+  "dataset_version": "1.5.2",
+  "items": [
+    {
+      "evidence_id": "EVID-V14-MEAL-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：1 人\n票面金额：150.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：300.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：240.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：客户服务中心至合作园区\n业务目的：现场服务巡检\n员工实际支付：128.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：研发园区至客户服务中心\n业务目的：客户现场设备检查\n员工实际支付：288.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：会展中心至合作园区\n业务目的：客户活动现场协调\n员工实际支付：295.00 元"
+    },
+    {
+      "evidence_id": "EVID-V15-M01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M01\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n供应商交付计划工作餐\n核验字段\n票据号：SYN-V15-M01\n开票日期：2026-06-01\n用餐事项：供应商交付计划工作餐\n实际参加人数：1 人\n票面金额：118.00 元\n附件编号：DOC-V15-M01\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M02\n业务餐饮电子票据\n经办单位：市场业务中心\n电子票据信息\n票据号：SYN-V15-M02\n开票日期：2026-06-02\n用餐事项：渠道合作季度复盘餐叙\n实际参加人数：2 人\n票面金额：320.00 元\n附件编号：DOC-V15-M02\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M03\n运营服务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M03\n开票日期：2026-06-03\n用餐事项：客户现场验收后的简餐\n实际参加人数：2 人\n票面金额：216.00 元\n附件编号：DOC-V15-M03\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M04",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M04\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n产品演示后客户工作餐\n核验字段\n票据号：SYN-V15-M04\n开票日期：2026-06-04\n用餐事项：产品演示后客户工作餐\n实际参加人数：1 人\n票面金额：185.00 元\n附件编号：DOC-V15-M04\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M05",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M05\n业务餐饮电子票据\n经办单位：市场业务中心\n电子票据信息\n票据号：SYN-V15-M05\n开票日期：2026-06-05\n用餐事项：区域合作方沟通工作餐\n实际参加人数：2 人\n票面金额：348.00 元\n附件编号：DOC-V15-M05\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M06",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M06\n市场业务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M06\n开票日期：2026-06-06\n用餐事项：合作协议讨论工作餐\n实际参加人数：1 人\n票面金额：145.00 元\n附件编号：DOC-V15-M06\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M07",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M07\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n项目启动会后工作餐\n核验字段\n票据号：SYN-V15-M07\n开票日期：2026-06-07\n用餐事项：项目启动会后工作餐\n实际参加人数：1 人\n票面金额：138.00 元\n附件编号：DOC-V15-M07\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M08",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M08\n业务餐饮电子票据\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-M08\n开票日期：2026-06-08\n用餐事项：服务点位巡检工作餐\n实际参加人数：2 人\n票面金额：242.00 元\n附件编号：DOC-V15-M08\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M09",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M09\n市场业务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M09\n开票日期：2026-06-09\n用餐事项：联合营销活动工作餐\n实际参加人数：2 人\n票面金额：285.00 元\n附件编号：DOC-V15-M09\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M10",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M10\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n客户方案确认工作餐\n核验字段\n票据号：SYN-V15-M10\n开票日期：2026-06-10\n用餐事项：客户方案确认工作餐\n实际参加人数：1 人\n票面金额：160.00 元\n附件编号：DOC-V15-M10\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T01\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T01\n开票日期：2026-06-11\n路线：研发园区至客户培训中心\n业务目的：培训设备搬运协调\n员工实际支付：86.00 元\n附件编号：DOC-V15-T01\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T02\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T02\n开票日期：2026-06-12\n路线：会展北门至合作园区\n业务目的：展会布展现场支持\n员工实际支付：300.00 元\n附件编号：DOC-V15-T02\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T03\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n运营服务中心\n费用场景\n客户设备复核\n核验字段\n票据号：SYN-V15-T03\n开票日期：2026-06-13\n路线：服务中心至工业园东门\n业务目的：客户设备复核\n员工实际支付：228.00 元\n附件编号：DOC-V15-T03\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T04",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T04\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T04\n开票日期：2026-06-14\n路线：酒店会议中心至客户园区\n业务目的：技术交流交通\n员工实际支付：326.00 元\n附件编号：DOC-V15-T04\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T05",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T05\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T05\n开票日期：2026-06-15\n路线：合作方仓库至售后站点\n业务目的：物料交接交通\n员工实际支付：307.00 元\n附件编号：DOC-V15-T05\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T06",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T06\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n运营服务中心\n费用场景\n现场故障排查\n核验字段\n票据号：SYN-V15-T06\n开票日期：2026-06-16\n路线：测试基地至客户大楼\n业务目的：现场故障排查\n员工实际支付：126.00 元\n附件编号：DOC-V15-T06\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T07",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T07\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T07\n开票日期：2026-06-17\n路线：会展中心至联络办公室\n业务目的：活动收尾协调\n员工实际支付：174.00 元\n附件编号：DOC-V15-T07\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T08",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T08\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T08\n开票日期：2026-06-18\n路线：服务网点至客户数据中心\n业务目的：设备巡检交通\n员工实际支付：98.00 元\n附件编号：DOC-V15-T08\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T09",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T09\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n联合测试现场支持\n核验字段\n票据号：SYN-V15-T09\n开票日期：2026-06-19\n路线：客户研发楼至项目指挥部\n业务目的：联合测试现场支持\n员工实际支付：265.00 元\n附件编号：DOC-V15-T09\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T10",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T10\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T10\n开票日期：2026-06-20\n业务目的：外勤交通，票据未列明起讫地点\n员工实际支付：72.00 元\n附件编号：DOC-V15-T10\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    }
+  ]
+}

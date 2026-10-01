@@ -1,0 +1,118 @@
+{
+  "schema": "p12-case-memory-ablation/v2",
+  "status": "COMPLETE",
+  "run_at": "2026-09-23T10:26:27.924129+00:00",
+  "model": "deepseek-flash",
+  "split": "validation only; frozen test untouched",
+  "memory_seed": "one synthetic dev-split case with a simulated human rejection; removed after run",
+  "seed_eligible_validation_samples": [],
+  "memory_effect_status": "NOT_MEASURED_NO_CASE_HITS",
+  "limitations": "Three samples, one dev-seeded case, one live run per mode. Tool enablement is not a measure of case-memory benefit unless a relevant case is returned.",
+  "summary": {
+    "without_memory": {
+      "task_success": "3/3",
+      "human_intervention": "1/3",
+      "system_errors": 0,
+      "case_search_calls": 0,
+      "case_search_hits": 0
+    },
+    "with_memory": {
+      "task_success": "3/3",
+      "human_intervention": "1/3",
+      "system_errors": 0,
+      "case_search_calls": 0,
+      "case_search_hits": 0
+    }
+  },
+  "observed_effect": {
+    "task_success_delta_cases": 0,
+    "human_intervention_delta_cases": 0,
+    "case_results_consumed": 0
+  },
+  "runs": [
+    {
+      "sample_id": "APP-VAL-DEADLINE-EXCEPTION",
+      "mode": "without_memory",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "recommendation": "HUMAN_REVIEW",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "task_success": true,
+      "human_intervention": true,
+      "human_interrupted": true,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "latency_ms": 35483
+    },
+    {
+      "sample_id": "APP-VAL-DEADLINE-EXCEPTION",
+      "mode": "with_memory",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "recommendation": "HUMAN_REVIEW",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "task_success": true,
+      "human_intervention": true,
+      "human_interrupted": true,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "REQUEST_DOCUMENTS",
+      "latency_ms": 31654
+    },
+    {
+      "sample_id": "APP-VAL-SALES-TAXI-PASS",
+      "mode": "without_memory",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "recommendation": "PASS_RECOMMENDED",
+      "status": "COMPLETED",
+      "task_success": true,
+      "human_intervention": false,
+      "human_interrupted": false,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "latency_ms": 32844
+    },
+    {
+      "sample_id": "APP-VAL-SALES-TAXI-PASS",
+      "mode": "with_memory",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "recommendation": "PASS_RECOMMENDED",
+      "status": "COMPLETED",
+      "task_success": true,
+      "human_intervention": false,
+      "human_interrupted": false,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "latency_ms": 22655
+    },
+    {
+      "sample_id": "APP-VAL-SALES-COMMUTE-REJECT",
+      "mode": "without_memory",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "recommendation": "REJECT_RECOMMENDED",
+      "status": "BUSINESS_REJECTED",
+      "task_success": true,
+      "human_intervention": false,
+      "human_interrupted": false,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "latency_ms": 28219
+    },
+    {
+      "sample_id": "APP-VAL-SALES-COMMUTE-REJECT",
+      "mode": "with_memory",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "recommendation": "REJECT_RECOMMENDED",
+      "status": "BUSINESS_REJECTED",
+      "task_success": true,
+      "human_intervention": false,
+      "human_interrupted": false,
+      "case_search_calls": 0,
+      "case_search_hits": 0,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "latency_ms": 60064
+    }
+  ]
+}

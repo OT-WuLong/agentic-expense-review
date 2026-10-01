@@ -1,0 +1,36 @@
+{
+  "schema_version": "p06-structured-lookup/v1",
+  "snapshot_id": "STRUCTURED-DATA-P06-1.0.0",
+  "created_on": "2026-09-16",
+  "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+  "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+  "records": [
+    {
+      "fixture_id": "EMPLOYEE-DEPARTMENT-SYN-001",
+      "query_type": "employee_department",
+      "record_key": "EMP-SYN-001",
+      "snapshot_version": "2026.01",
+      "effective_at": "2026-01-01",
+      "value": "DEPT-SYN-RD",
+      "consumer": "structured_lookup"
+    },
+    {
+      "fixture_id": "EMPLOYEE-DEPARTMENT-SYN-002",
+      "query_type": "employee_department",
+      "record_key": "EMP-SYN-002",
+      "snapshot_version": "2026.01",
+      "effective_at": "2026-01-01",
+      "value": "DEPT-SYN-EAST-SALES",
+      "consumer": "structured_lookup"
+    },
+    {
+      "fixture_id": "EMPLOYEE-DEPARTMENT-SYN-003",
+      "query_type": "employee_department",
+      "record_key": "EMP-SYN-003",
+      "snapshot_version": "2026.01",
+      "effective_at": "2026-01-01",
+      "value": "DEPT-SYN-MARKETING",
+      "consumer": "structured_lookup"
+    }
+  ]
+}

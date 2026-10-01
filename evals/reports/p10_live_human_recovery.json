@@ -1,0 +1,46 @@
+{
+  "schema": "p10-live-human-recovery/v1",
+  "run_at": "2026-09-22T00:47:44+08:00",
+  "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+  "request_id": "REQ-P10-C-20260922004744",
+  "runtime": {
+    "agent_model": "qwen3.8-flash",
+    "embedding_model": "qwen3.7-text-embedding-flash",
+    "retrieval": "Milvus Lite",
+    "checkpoint": "PostgreSQL PostgresSaver",
+    "stubbed": false
+  },
+  "interrupt": {
+    "status": "HUMAN_PENDING",
+    "recommendation": "HUMAN_REVIEW",
+    "risk_level": "HIGH",
+    "agent_steps": 5,
+    "retrieval_rounds": 2,
+    "query_rewrites": 1,
+    "stop_reason": "UNRESOLVED_POLICY_VERSION_CONFLICT",
+    "event_id": 826
+  },
+  "resume": {
+    "service_reopened_before_review": true,
+    "action": "EDIT",
+    "operator_id": "FIN-DEMO-001",
+    "final_status": "COMPLETED",
+    "final_recommendation": "REJECT_RECOMMENDED",
+    "final_event_id": 830
+  },
+  "sse": {
+    "last_event_id_replay_verified": true,
+    "strictly_increasing_event_ids": true
+  },
+  "event_counts": {
+    "APPROVAL_CREATED": 1,
+    "HUMAN_REVIEW_REQUESTED": 1,
+    "HUMAN_REVIEWED": 1,
+    "APPROVAL_FINALIZED": 1,
+    "NOTIFICATION_REQUESTED": 1,
+    "CASE_WRITE_REQUESTED": 1,
+    "WORKFLOW_NODE_COMPLETED": 17
+  },
+  "duplicate_side_effects": 0,
+  "passed": true
+}

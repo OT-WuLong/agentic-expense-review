@@ -1,0 +1,53 @@
+{
+  "dataset_version": "1.4.0",
+  "items": [
+    {
+      "evidence_id": "EVID-V14-MEAL-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：1 人\n票面金额：150.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：300.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：240.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：客户服务中心至合作园区\n业务目的：现场服务巡检\n员工实际支付：128.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：研发园区至客户服务中心\n业务目的：客户现场设备检查\n员工实际支付：288.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：会展中心至合作园区\n业务目的：客户活动现场协调\n员工实际支付：295.00 元"
+    }
+  ]
+}

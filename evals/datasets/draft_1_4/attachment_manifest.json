@@ -1,0 +1,89 @@
+{
+  "dataset_version": "1.4.0",
+  "attachments": [
+    {
+      "document_id": "DOC-V14-MEAL-01",
+      "fixture_key": "SYNTHETIC_V14_MEAL_01",
+      "document_type": "MEAL_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-01.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-01.pdf",
+      "pdf_sha256": "acdd7e1858dc5e7cbad35d967329921b1e17fde32af98a1ec1cf4acec01db6fc",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    },
+    {
+      "document_id": "DOC-V14-MEAL-02",
+      "fixture_key": "SYNTHETIC_V14_MEAL_02",
+      "document_type": "MEAL_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-02.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-02.pdf",
+      "pdf_sha256": "4c73e83d3e09971806c942757ca1304575610f0522a20ce77967ea340fab5913",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    },
+    {
+      "document_id": "DOC-V14-MEAL-03",
+      "fixture_key": "SYNTHETIC_V14_MEAL_03",
+      "document_type": "MEAL_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-03.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-MEAL-03.pdf",
+      "pdf_sha256": "8fca36be60440a302e28e835b5982cd918a4e4609b4387a4e6b5a5c23d35e277",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    },
+    {
+      "document_id": "DOC-V14-TAXI-01",
+      "fixture_key": "SYNTHETIC_V14_TAXI_01",
+      "document_type": "TAXI_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-01.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-01.pdf",
+      "pdf_sha256": "e8a6e64282aa3a3519096b09ae84a73579638a4339341992e46b459ff6ee5355",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    },
+    {
+      "document_id": "DOC-V14-TAXI-02",
+      "fixture_key": "SYNTHETIC_V14_TAXI_02",
+      "document_type": "TAXI_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-02.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-02.pdf",
+      "pdf_sha256": "0ad79d8b56a6b061dc4d2630164a300a2921c7b126c0193983ae39ceeeec0f55",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    },
+    {
+      "document_id": "DOC-V14-TAXI-03",
+      "fixture_key": "SYNTHETIC_V14_TAXI_03",
+      "document_type": "TAXI_INVOICE",
+      "version": "1",
+      "page_count": 1,
+      "authoring_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-03.md",
+      "pdf_path": "evals/datasets/draft_1_4/attachments/DOC-V14-TAXI-03.pdf",
+      "pdf_sha256": "45069f09fef6102855fa47b91d32b911ad692ccc41f9c232eb3a4f3764cb0e60",
+      "media_type": "application/pdf",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "synthetic": true
+    }
+  ]
+}

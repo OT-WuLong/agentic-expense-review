@@ -1,0 +1,13 @@
+{
+  "catalog_version": "single-company/1.0.0",
+  "policy_catalog_snapshot_id": "POLICY-CATALOG-COMPANY-1.0.0",
+  "policy_source_snapshot_ids": [
+    "POLICY-CATALOG-SYN-1.1.0",
+    "POLICY-CATALOG-REF-1.2.0"
+  ],
+  "structured_data_snapshot_id": "STRUCTURED-DATA-COMPANY-1.0.0",
+  "structured_source_snapshot_ids": [
+    "STRUCTURED-DATA-DEMO-1.0.0",
+    "STRUCTURED-DATA-REF-1.2.0"
+  ]
+}

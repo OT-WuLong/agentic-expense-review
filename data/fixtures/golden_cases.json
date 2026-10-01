@@ -1,0 +1,1600 @@
+{
+  "schema_version": "golden-cases/v2",
+  "dataset_id": "agentic-rag-approval-golden-cases",
+  "dataset_version": "1.3.4",
+  "status": "FROZEN",
+  "created_on": "2026-09-14",
+  "language": "zh-CN",
+  "data_classification": "SYNTHETIC",
+  "scope_reference": "docs/scope.md",
+  "provenance": {
+    "origin": "P00-T02 synthetic specification",
+    "contains_real_personal_data": false,
+    "contains_real_enterprise_policy": false,
+    "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+    "license_scope": "仅限本项目内部开发、测试和演示；内容无第三方来源，禁止脱离本项目外部分发，且不授予任何真实企业制度权利。",
+    "license_applies_to": "all cases and embedded synthetic excerpts",
+    "intended_uses": [
+      "functional acceptance",
+      "integration testing",
+      "demonstration"
+    ],
+    "prohibited_uses": [
+      "statistical quality claims",
+      "performance claims",
+      "production policy decisions"
+    ]
+  },
+  "gold_visibility": {
+    "request_input_path": "cases[].input",
+    "test_harness_setup_paths": [
+      "cases[].critical_evidence",
+      "cases[].fixture_context"
+    ],
+    "withhold_from_system": [
+      "expected_extracted_fields",
+      "required_sub_questions",
+      "required_tool_capabilities",
+      "critical_evidence",
+      "acceptable_evidence_groups",
+      "expected_rule_results",
+      "applicable_rule_ids",
+      "not_applicable_rules",
+      "expected_risk_flags",
+      "expected_recommendation",
+      "acceptable_stop_reasons",
+      "conclusion_atoms",
+      "trajectory_contract"
+    ]
+  },
+  "trajectory_policy": {
+    "match_mode": "CONSTRAINT_SATISFACTION",
+    "order_sensitive": false,
+    "exact_query_text_required": false,
+    "exact_step_sequence_required": false,
+    "private_chain_of_thought_required": false,
+    "required_tool_set_key_fields": [
+      "selected_tool_name",
+      "purpose",
+      "query_type"
+    ],
+    "supervisor_routing_authority": true,
+    "max_supervisor_challenges": 1,
+    "supervisor_retrieval_goal_must_change_after_review": true,
+    "challenge_requires_all_target_questions_and_calls": true,
+    "guardrail_veto_must_reference_supervisor_decision": true,
+    "deterministic_supervisor_decisions_count_as_agent_step": false,
+    "agent_step_definition": "一个 Agent 返回并写入轨迹的一次合法结构化决策；工具执行与技术重试不计为 Agent Step。",
+    "description": "评测必要问题覆盖、成功工具能力、关键证据、规则结果、建议、停止理由和硬约束；不比较唯一调用顺序或逐字查询。"
+  },
+  "constraint_vocabulary": {
+    "relations": [
+      "REQUIRES_ALL",
+      "MUST_EQUAL",
+      "MUST_BE_ABSENT",
+      "MUST_BE_PRESENT",
+      "PRECEDES",
+      "MUST_NOT_USE",
+      "ROUTES_TO"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "GC-A-TRANSPORT-COMMUTE-REJECT",
+      "split": "golden_acceptance",
+      "source_type": "SYNTHETIC",
+      "leakage_group_id": "LG-A-TRANSPORT-COMMUTE",
+      "scenario": "SIMPLE_TRANSPORT_EXPLICIT_PROHIBITION",
+      "title": "简单交通：日常通勤属于明确禁止费用",
+      "expense_type": "交通",
+      "input": {
+        "request_id": "REQ-GC-A-001",
+        "applicant": {
+          "employee_id": "EMP-SYN-001",
+          "department_id": "DEPT-SYN-RD",
+          "display_name": "合成员工甲"
+        },
+        "application": {
+          "expense_type": "交通",
+          "currency": "CNY",
+          "amount": "68.00",
+          "occurred_on": "2026-03-12",
+          "submitted_on": "2026-03-13",
+          "transport_purpose": "DAILY_COMMUTE",
+          "origin_type": "RESIDENCE",
+          "destination_type": "FIXED_OFFICE",
+          "description": "工作日从居住地前往固定办公地点的出租车费"
+        },
+        "documents": [
+          {
+            "document_id": "DOC-GC-A-TAXI-001",
+            "fixture_key": "SYNTHETIC_TAXI_INVOICE_A",
+            "document_type": "TAXI_INVOICE",
+            "media_type": "application/pdf",
+            "synthetic": true
+          }
+        ]
+      },
+      "fixture_context": {
+        "policy_catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+        "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0"
+      },
+      "expected_extracted_fields": [
+        {
+          "field": "invoice_number",
+          "status": "PRESENT",
+          "value": "SYN-TR-20260312-0001",
+          "document_id": "DOC-GC-A-TAXI-001",
+          "page": 1
+        },
+        {
+          "field": "amount",
+          "status": "PRESENT",
+          "value": "68.00",
+          "document_id": "DOC-GC-A-TAXI-001",
+          "page": 1
+        },
+        {
+          "field": "occurred_on",
+          "status": "PRESENT",
+          "value": "2026-03-12",
+          "document_id": "DOC-GC-A-TAXI-001",
+          "page": 1
+        }
+      ],
+      "required_sub_questions": [
+        {
+          "id": "A-SQ1",
+          "intent": "APPLICABLE_POLICY_VERSION",
+          "text": "发生日期适用哪个已发布的交通制度版本？",
+          "completion_criteria": "找到覆盖 2026-03-12、适用于交通费用的已发布制度及版本信息。",
+          "required_capability_ids": [
+            "A-TC1"
+          ],
+          "required_evidence_group_ids": [
+            "A-EG1"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "id": "A-SQ2",
+          "intent": "TRANSPORT_PURPOSE_ELIGIBILITY",
+          "text": "住所到固定办公地点的日常通勤是否允许报销，是否存在例外？",
+          "completion_criteria": "找到明确说明日常通勤不可报销且无例外的可定位制度证据。",
+          "required_capability_ids": [
+            "A-TC1"
+          ],
+          "required_evidence_group_ids": [
+            "A-EG1"
+          ],
+          "required_rule_ids": []
+        }
+      ],
+      "allowed_tools": [
+        "policy_search"
+      ],
+      "forbidden_tools": [
+        "case_search",
+        "rule_search",
+        "structured_lookup",
+        "fetch_document_context"
+      ],
+      "required_tool_capabilities": [
+        {
+          "capability_id": "A-TC1",
+          "one_of": [
+            "policy_search"
+          ],
+          "purpose": "FIND_APPLICABLE_TRANSPORT_PROHIBITION",
+          "required_evidence_group_ids": [
+            "A-EG1"
+          ],
+          "success_required": true
+        }
+      ],
+      "critical_evidence": [
+        {
+          "evidence_id": "EVID-A-POLICY-COMMUTE-EXCLUSION",
+          "source_type": "POLICY_DOCUMENT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-TRANSPORT-2026-V1",
+          "version": "1.0",
+          "published_status": "PUBLISHED",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "page": 4,
+          "section": "5.1 日常通勤",
+          "excerpt": "员工住所与固定办公地点之间的往返属于日常通勤，不予报销；交通方式、出行时段、加班安排或天气变化均不构成例外。",
+          "expected_fact": "DAILY_COMMUTE_NOT_REIMBURSABLE"
+        },
+        {
+          "evidence_id": "EVID-A-TAXI-INVOICE",
+          "source_type": "ATTACHMENT",
+          "document_id": "DOC-GC-A-TAXI-001",
+          "version": "1",
+          "page": 1,
+          "section": "合成出租车票据",
+          "excerpt": "合成票据：2026-03-12，出租车费 68.00 元。",
+          "expected_fact": "DOCUMENT_AMOUNT_AND_DATE_MATCH_APPLICATION",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+        }
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "A-EG1",
+          "any_of": [
+            "EVID-A-POLICY-COMMUTE-EXCLUSION"
+          ]
+        },
+        {
+          "group_id": "A-EG2",
+          "any_of": [
+            "EVID-A-TAXI-INVOICE"
+          ]
+        }
+      ],
+      "expected_rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "rule_id": "RULE-AMOUNT-DATE-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on",
+            "extracted_fields.amount",
+            "extracted_fields.occurred_on"
+          ],
+          "evidence_ids": [
+            "EVID-A-TAXI-INVOICE"
+          ]
+        },
+        {
+          "rule_id": "RULE-TRANSPORT-PURPOSE-ELIGIBILITY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "reason_code": "DAILY_COMMUTE_EXPLICITLY_PROHIBITED",
+          "input_refs": [
+            "input.application.transport_purpose",
+            "input.application.origin_type",
+            "input.application.destination_type"
+          ],
+          "evidence_ids": [
+            "EVID-A-POLICY-COMMUTE-EXCLUSION"
+          ]
+        }
+      ],
+      "applicable_rule_ids": [
+        "RULE-EXPENSE-TYPE-IN-SCOPE",
+        "RULE-AMOUNT-DATE-CONSISTENCY",
+        "RULE-TRANSPORT-PURPOSE-ELIGIBILITY"
+      ],
+      "not_applicable_rules": [
+        {
+          "rule_id": "RULE-TRANSPORT-AMOUNT-LIMIT",
+          "reason_code": "SHORT_CIRCUITED_AFTER_EXPLICIT_PROHIBITION"
+        },
+        {
+          "rule_id": "RULE-SUBMISSION-TIMELINESS",
+          "reason_code": "SHORT_CIRCUITED_AFTER_EXPLICIT_PROHIBITION"
+        },
+        {
+          "rule_id": "RULE-DUPLICATE-INVOICE",
+          "reason_code": "SHORT_CIRCUITED_AFTER_EXPLICIT_PROHIBITION"
+        },
+        {
+          "rule_id": "RULE-BUDGET-AVAILABLE",
+          "reason_code": "SHORT_CIRCUITED_AFTER_EXPLICIT_PROHIBITION"
+        },
+        {
+          "rule_id": "RULE-APPLICANT-PERMISSION",
+          "reason_code": "SHORT_CIRCUITED_AFTER_EXPLICIT_PROHIBITION"
+        }
+      ],
+      "expected_risk_flags": [],
+      "conclusion_atoms": [
+        {
+          "atom_id": "A-CA1",
+          "claim": "申请的结构化出行目的为日常通勤。",
+          "required_input_refs": [
+            "input.application.transport_purpose",
+            "input.application.origin_type",
+            "input.application.destination_type"
+          ],
+          "required_evidence_group_ids": [],
+          "required_rule_ids": []
+        },
+        {
+          "atom_id": "A-CA2",
+          "claim": "适用制度明确禁止日常通勤报销且无例外。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "A-EG1"
+          ],
+          "required_rule_ids": [
+            "RULE-TRANSPORT-PURPOSE-ELIGIBILITY"
+          ]
+        },
+        {
+          "atom_id": "A-CA3",
+          "claim": "申请金额和发生日期与票据一致。",
+          "required_input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on"
+          ],
+          "required_evidence_group_ids": [
+            "A-EG2"
+          ],
+          "required_rule_ids": [
+            "RULE-AMOUNT-DATE-CONSISTENCY"
+          ]
+        },
+        {
+          "atom_id": "A-CA4",
+          "claim": "在没有强制人工条件时，明确禁止规则支持驳回建议。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "A-EG1"
+          ],
+          "required_rule_ids": [
+            "RULE-TRANSPORT-PURPOSE-ELIGIBILITY"
+          ]
+        }
+      ],
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "acceptable_stop_reasons": [
+        "POLICY_PROHIBITION_EVIDENCE_SUFFICIENT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ],
+      "hard_limits": {
+        "max_agent_steps": 5,
+        "max_retrieval_rounds": 1,
+        "max_query_rewrites": 0
+      },
+      "precedence_constraints": [
+        {
+          "constraint_id": "A-PC1",
+          "subject": "SYSTEM_ERROR",
+          "relation": "MUST_BE_ABSENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "A-PC2",
+          "subject": "MANDATORY_HUMAN_CONDITION",
+          "relation": "MUST_BE_ABSENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "A-PC3",
+          "subject": "RULE-TRANSPORT-PURPOSE-ELIGIBILITY.outcome",
+          "relation": "MUST_EQUAL",
+          "objects": [
+            "FAIL"
+          ]
+        },
+        {
+          "constraint_id": "A-PC4",
+          "subject": "recommendation",
+          "relation": "MUST_EQUAL",
+          "objects": [
+            "REJECT_RECOMMENDED"
+          ]
+        }
+      ],
+      "trajectory_contract": {
+        "order_independent": true,
+        "required_sub_question_ids": [
+          "A-SQ1",
+          "A-SQ2"
+        ],
+        "required_evidence_group_ids": [
+          "A-EG1",
+          "A-EG2"
+        ],
+        "causal_constraints": [],
+        "alternative_paths": [
+          "将适用版本与通勤资格合并为一次制度查询",
+          "在同一检索轮内拆成两个语义查询"
+        ],
+        "forbidden_actions": [
+          "MODIFY_APPLICATION_FACTS",
+          "CALL_NON_WHITELIST_TOOL",
+          "WRITE_DATABASE",
+          "ISSUE_FINAL_ENTERPRISE_APPROVAL",
+          "CONTINUE_AFTER_SUFFICIENT_EVIDENCE"
+        ]
+      }
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "split": "golden_acceptance",
+      "source_type": "SYNTHETIC",
+      "leakage_group_id": "LG-B-LODGING-HANGZHOU",
+      "scenario": "MULTIHOP_LODGING_CITY_TIER",
+      "title": "多跳住宿：制度额度与城市等级联合判断",
+      "expense_type": "住宿",
+      "input": {
+        "request_id": "REQ-GC-B-001",
+        "applicant": {
+          "employee_id": "EMP-SYN-002",
+          "department_id": "DEPT-SYN-EAST-SALES",
+          "display_name": "合成员工乙"
+        },
+        "application": {
+          "expense_type": "住宿",
+          "currency": "CNY",
+          "amount": "1100.00",
+          "city": "杭州市",
+          "occurred_on": "2026-04-08",
+          "check_in": "2026-04-08",
+          "check_out": "2026-04-10",
+          "room_count": 1,
+          "submitted_on": "2026-04-15",
+          "description": "客户拜访期间住宿两晚"
+        },
+        "documents": [
+          {
+            "document_id": "DOC-GC-B-HOTEL-001",
+            "fixture_key": "SYNTHETIC_HOTEL_INVOICE_B",
+            "document_type": "HOTEL_INVOICE",
+            "media_type": "application/pdf",
+            "synthetic": true
+          },
+          {
+            "document_id": "DOC-GC-B-ITINERARY-001",
+            "fixture_key": "SYNTHETIC_LODGING_ITINERARY_B",
+            "document_type": "ITINERARY",
+            "media_type": "application/pdf",
+            "synthetic": true
+          }
+        ]
+      },
+      "fixture_context": {
+        "policy_catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+        "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0"
+      },
+      "expected_extracted_fields": [
+        {
+          "field": "invoice_number",
+          "status": "PRESENT",
+          "value": "SYN-HT-20260410-0001",
+          "document_id": "DOC-GC-B-HOTEL-001",
+          "page": 1
+        },
+        {
+          "field": "amount",
+          "status": "PRESENT",
+          "value": "1100.00",
+          "document_id": "DOC-GC-B-HOTEL-001",
+          "page": 1
+        },
+        {
+          "field": "city",
+          "status": "PRESENT",
+          "value": "杭州市",
+          "document_id": "DOC-GC-B-HOTEL-001",
+          "page": 1
+        },
+        {
+          "field": "check_in",
+          "status": "PRESENT",
+          "value": "2026-04-08",
+          "document_id": "DOC-GC-B-ITINERARY-001",
+          "page": 1
+        },
+        {
+          "field": "check_out",
+          "status": "PRESENT",
+          "value": "2026-04-10",
+          "document_id": "DOC-GC-B-ITINERARY-001",
+          "page": 1
+        },
+        {
+          "field": "room_count",
+          "status": "PRESENT",
+          "value": 1,
+          "document_id": "DOC-GC-B-HOTEL-001",
+          "page": 1
+        }
+      ],
+      "required_sub_questions": [
+        {
+          "id": "B-SQ1",
+          "intent": "APPLICABLE_POLICY_VERSION",
+          "text": "入住日期适用哪个已发布的住宿制度版本？",
+          "completion_criteria": "找到覆盖 2026-04-08 至 2026-04-10 的已发布住宿制度。",
+          "required_capability_ids": [
+            "B-TC1"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG1"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "id": "B-SQ2",
+          "intent": "CITY_TIER_AT_EVENT_TIME",
+          "text": "杭州市在入住日期对应的城市等级是什么？",
+          "completion_criteria": "通过受限结构化查询获得带版本和生效时间的城市等级记录。",
+          "required_capability_ids": [
+            "B-TC2"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG2"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "id": "B-SQ3",
+          "intent": "LODGING_LIMIT_FOR_TIER",
+          "text": "该城市等级对应的每间夜住宿上限是多少？",
+          "completion_criteria": "制度证据明确给出对应等级的每间夜额度。",
+          "required_capability_ids": [
+            "B-TC1",
+            "B-TC2"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG1",
+            "B-EG2"
+          ],
+          "required_rule_ids": []
+        }
+      ],
+      "allowed_tools": [
+        "policy_search",
+        "structured_lookup"
+      ],
+      "forbidden_tools": [
+        "case_search",
+        "rule_search",
+        "fetch_document_context"
+      ],
+      "required_tool_capabilities": [
+        {
+          "capability_id": "B-TC1",
+          "one_of": [
+            "policy_search"
+          ],
+          "purpose": "FIND_APPLICABLE_LODGING_LIMITS",
+          "required_evidence_group_ids": [
+            "B-EG1"
+          ],
+          "success_required": true
+        },
+        {
+          "capability_id": "B-TC2",
+          "one_of": [
+            "structured_lookup"
+          ],
+          "purpose": "LOOKUP_CITY_TIER",
+          "query_type": "city_tier",
+          "required_evidence_group_ids": [
+            "B-EG2"
+          ],
+          "success_required": true
+        }
+      ],
+      "critical_evidence": [
+        {
+          "evidence_id": "EVID-B-POLICY-LODGING-LIMIT",
+          "source_type": "POLICY_DOCUMENT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-LODGING-2026-V3",
+          "version": "3.0",
+          "published_status": "PUBLISHED",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "page": 5,
+          "section": "第七章 城市等级住宿标准",
+          "excerpt": "住宿标准按城市等级执行：A 类城市每间夜最高 600.00 元，B 类城市每间夜最高 450.00 元。",
+          "expected_fact": "CITY_TIER_A_LIMIT_600_PER_ROOM_NIGHT"
+        },
+        {
+          "evidence_id": "EVID-B-CITY-TIER-HANGZHOU",
+          "source_type": "STRUCTURED_RECORD",
+          "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0",
+          "fixture_id": "CITY-TIER-2026-01",
+          "query_type": "city_tier",
+          "record_key": "杭州市",
+          "snapshot_version": "2026.01",
+          "effective_at": "2026-04-08",
+          "value": "A",
+          "expected_fact": "HANGZHOU_IS_CITY_TIER_A"
+        },
+        {
+          "evidence_id": "EVID-B-HOTEL-INVOICE",
+          "source_type": "ATTACHMENT",
+          "document_id": "DOC-GC-B-HOTEL-001",
+          "version": "1",
+          "page": 1,
+          "section": "合成住宿票据",
+          "excerpt": "合成票据：杭州市，1 间客房，2026-04-08 入住、2026-04-10 退房，住宿费 1100.00 元。",
+          "expected_fact": "HOTEL_AMOUNT_CITY_ROOM_COUNT_AND_DATES_MATCH_APPLICATION",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+        },
+        {
+          "evidence_id": "EVID-B-ITINERARY",
+          "source_type": "ATTACHMENT",
+          "document_id": "DOC-GC-B-ITINERARY-001",
+          "version": "1",
+          "page": 1,
+          "section": "合成住宿行程单",
+          "excerpt": "合成行程：2026-04-08 入住，2026-04-10 退房。",
+          "expected_fact": "TWO_ROOM_NIGHTS",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+        },
+        {
+          "evidence_id": "EVID-B-POLICY-SUBMISSION-LIMIT",
+          "source_type": "POLICY_DOCUMENT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-LODGING-2026-V3",
+          "version": "3.0",
+          "published_status": "PUBLISHED",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "page": 6,
+          "section": "第九章 提交、预算与档案",
+          "excerpt": "住宿费用须在退房之日起 30 个日历日内提交。",
+          "expected_fact": "LODGING_SUBMISSION_LIMIT_30_DAYS"
+        },
+        {
+          "evidence_id": "EVID-B-DUPLICATE-LOOKUP",
+          "source_type": "STRUCTURED_RECORD",
+          "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0",
+          "fixture_id": "DUPLICATE-INVOICE-SNAPSHOT-B",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-HT-20260410-0001",
+          "snapshot_version": "2026-04-15T09:00:00+08:00",
+          "effective_at": "2026-04-15",
+          "value": false,
+          "consumer": "RULE_VALIDATOR",
+          "expected_fact": "INVOICE_NOT_PREVIOUSLY_REIMBURSED"
+        },
+        {
+          "evidence_id": "EVID-B-BUDGET-LOOKUP",
+          "source_type": "STRUCTURED_RECORD",
+          "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0",
+          "fixture_id": "BUDGET-SNAPSHOT-B",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-EAST-SALES:2026-04",
+          "snapshot_version": "2026-04-15T09:00:00+08:00",
+          "effective_at": "2026-04-15",
+          "value": "AVAILABLE",
+          "available_amount": "5000.00",
+          "consumer": "RULE_VALIDATOR",
+          "expected_fact": "BUDGET_AVAILABLE_FOR_1100"
+        },
+        {
+          "evidence_id": "EVID-B-PERMISSION-LOOKUP",
+          "source_type": "STRUCTURED_RECORD",
+          "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0",
+          "fixture_id": "APPROVAL-PERMISSION-SNAPSHOT-B",
+          "query_type": "approval_permission",
+          "record_key": "EMP-SYN-002:住宿",
+          "snapshot_version": "2026-04-15T09:00:00+08:00",
+          "effective_at": "2026-04-15",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR",
+          "expected_fact": "APPLICANT_AUTHORIZED_FOR_LODGING_CLAIM"
+        }
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "B-EG1",
+          "any_of": [
+            "EVID-B-POLICY-LODGING-LIMIT"
+          ]
+        },
+        {
+          "group_id": "B-EG2",
+          "any_of": [
+            "EVID-B-CITY-TIER-HANGZHOU"
+          ]
+        },
+        {
+          "group_id": "B-EG3",
+          "any_of": [
+            "EVID-B-HOTEL-INVOICE"
+          ]
+        },
+        {
+          "group_id": "B-EG4",
+          "any_of": [
+            "EVID-B-ITINERARY"
+          ]
+        },
+        {
+          "group_id": "B-EG5",
+          "any_of": [
+            "EVID-B-POLICY-SUBMISSION-LIMIT"
+          ]
+        },
+        {
+          "group_id": "B-EG6",
+          "any_of": [
+            "EVID-B-DUPLICATE-LOOKUP"
+          ]
+        },
+        {
+          "group_id": "B-EG7",
+          "any_of": [
+            "EVID-B-BUDGET-LOOKUP"
+          ]
+        },
+        {
+          "group_id": "B-EG8",
+          "any_of": [
+            "EVID-B-PERMISSION-LOOKUP"
+          ]
+        }
+      ],
+      "expected_rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "rule_id": "RULE-LODGING-NIGHT-COUNT",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "computed_value": "2",
+          "input_refs": [
+            "input.application.check_in",
+            "input.application.check_out",
+            "input.application.room_count"
+          ],
+          "evidence_ids": [
+            "EVID-B-ITINERARY"
+          ]
+        },
+        {
+          "rule_id": "RULE-LODGING-AMOUNT-LIMIT",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "computed_limit": "1200.00",
+          "actual_amount": "1100.00",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.room_count",
+            "input.application.check_in",
+            "input.application.check_out"
+          ],
+          "evidence_ids": [
+            "EVID-B-POLICY-LODGING-LIMIT",
+            "EVID-B-CITY-TIER-HANGZHOU",
+            "EVID-B-ITINERARY"
+          ]
+        },
+        {
+          "rule_id": "RULE-LODGING-DOCUMENT-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.city",
+            "input.application.check_in",
+            "input.application.check_out",
+            "input.application.room_count"
+          ],
+          "evidence_ids": [
+            "EVID-B-HOTEL-INVOICE",
+            "EVID-B-ITINERARY"
+          ]
+        },
+        {
+          "rule_id": "RULE-SUBMISSION-TIMELINESS",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "computed_value": "5",
+          "computed_limit": "30",
+          "unit": "days",
+          "input_refs": [
+            "input.application.check_out",
+            "input.application.submitted_on"
+          ],
+          "evidence_ids": [
+            "EVID-B-POLICY-SUBMISSION-LIMIT"
+          ]
+        },
+        {
+          "rule_id": "RULE-DUPLICATE-INVOICE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "extracted_fields.invoice_number"
+          ],
+          "evidence_ids": [
+            "EVID-B-DUPLICATE-LOOKUP"
+          ]
+        },
+        {
+          "rule_id": "RULE-BUDGET-AVAILABLE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.applicant.department_id",
+            "input.application.amount"
+          ],
+          "evidence_ids": [
+            "EVID-B-BUDGET-LOOKUP"
+          ]
+        },
+        {
+          "rule_id": "RULE-APPLICANT-PERMISSION",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.applicant.employee_id",
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [
+            "EVID-B-PERMISSION-LOOKUP"
+          ]
+        }
+      ],
+      "applicable_rule_ids": [
+        "RULE-EXPENSE-TYPE-IN-SCOPE",
+        "RULE-LODGING-NIGHT-COUNT",
+        "RULE-LODGING-AMOUNT-LIMIT",
+        "RULE-LODGING-DOCUMENT-CONSISTENCY",
+        "RULE-SUBMISSION-TIMELINESS",
+        "RULE-DUPLICATE-INVOICE",
+        "RULE-BUDGET-AVAILABLE",
+        "RULE-APPLICANT-PERMISSION"
+      ],
+      "not_applicable_rules": [],
+      "expected_risk_flags": [],
+      "conclusion_atoms": [
+        {
+          "atom_id": "B-CA1",
+          "claim": "杭州市在发生日期属于 A 类城市。",
+          "required_input_refs": [
+            "input.application.city",
+            "input.application.occurred_on"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG2"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "atom_id": "B-CA2",
+          "claim": "A 类城市住宿上限为 600.00 元每间夜。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "B-EG1"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "atom_id": "B-CA3",
+          "claim": "一间客房从 2026-04-08 至 2026-04-10 共形成两个间夜。",
+          "required_input_refs": [
+            "input.application.room_count",
+            "input.application.check_in",
+            "input.application.check_out"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG3",
+            "B-EG4"
+          ],
+          "required_rule_ids": [
+            "RULE-LODGING-NIGHT-COUNT"
+          ]
+        },
+        {
+          "atom_id": "B-CA4",
+          "claim": "两个间夜的住宿总上限为 1200.00 元，申请金额 1100.00 元未超限。",
+          "required_input_refs": [
+            "input.application.amount"
+          ],
+          "required_evidence_group_ids": [
+            "B-EG1",
+            "B-EG2",
+            "B-EG4"
+          ],
+          "required_rule_ids": [
+            "RULE-LODGING-AMOUNT-LIMIT"
+          ]
+        },
+        {
+          "atom_id": "B-CA5",
+          "claim": "提交时限、重复发票、预算和申请权限检查均通过。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "B-EG5",
+            "B-EG6",
+            "B-EG7",
+            "B-EG8"
+          ],
+          "required_rule_ids": [
+            "RULE-SUBMISSION-TIMELINESS",
+            "RULE-DUPLICATE-INVOICE",
+            "RULE-BUDGET-AVAILABLE",
+            "RULE-APPLICANT-PERMISSION"
+          ]
+        },
+        {
+          "atom_id": "B-CA6",
+          "claim": "证据充分且全部适用规则通过，支持通过建议。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "B-EG1",
+            "B-EG2",
+            "B-EG3",
+            "B-EG4",
+            "B-EG5",
+            "B-EG6",
+            "B-EG7",
+            "B-EG8"
+          ],
+          "required_rule_ids": [
+            "RULE-EXPENSE-TYPE-IN-SCOPE",
+            "RULE-LODGING-NIGHT-COUNT",
+            "RULE-LODGING-AMOUNT-LIMIT",
+            "RULE-LODGING-DOCUMENT-CONSISTENCY",
+            "RULE-SUBMISSION-TIMELINESS",
+            "RULE-DUPLICATE-INVOICE",
+            "RULE-BUDGET-AVAILABLE",
+            "RULE-APPLICANT-PERMISSION"
+          ]
+        }
+      ],
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "acceptable_stop_reasons": [
+        "MULTIHOP_EVIDENCE_COMPLETE",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ],
+      "hard_limits": {
+        "max_agent_steps": 8,
+        "max_retrieval_rounds": 3,
+        "max_query_rewrites": 1
+      },
+      "precedence_constraints": [
+        {
+          "constraint_id": "B-PC1",
+          "subject": "SYSTEM_ERROR",
+          "relation": "MUST_BE_ABSENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "B-PC2",
+          "subject": "MANDATORY_HUMAN_CONDITION",
+          "relation": "MUST_BE_ABSENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "B-PC3",
+          "subject": "applicable_rule_outcomes",
+          "relation": "MUST_EQUAL",
+          "objects": [
+            "ALL_PASS"
+          ]
+        },
+        {
+          "constraint_id": "B-PC4",
+          "subject": "recommendation",
+          "relation": "MUST_EQUAL",
+          "objects": [
+            "PASS_RECOMMENDED"
+          ]
+        }
+      ],
+      "trajectory_contract": {
+        "order_independent": true,
+        "required_sub_question_ids": [
+          "B-SQ1",
+          "B-SQ2",
+          "B-SQ3"
+        ],
+        "required_evidence_group_ids": [
+          "B-EG1",
+          "B-EG2",
+          "B-EG3",
+          "B-EG4"
+        ],
+        "causal_constraints": [
+          {
+            "constraint_id": "B-CC1",
+            "subject": "RULE-LODGING-AMOUNT-LIMIT",
+            "relation": "REQUIRES_ALL",
+            "objects": [
+              "CITY_TIER_A_LIMIT_600_PER_ROOM_NIGHT",
+              "HANGZHOU_IS_CITY_TIER_A",
+              "TWO_ROOM_NIGHTS"
+            ]
+          },
+          {
+            "constraint_id": "B-CC2",
+            "subject": "PASS_RECOMMENDED",
+            "relation": "REQUIRES_ALL",
+            "objects": [
+              "ALL_APPLICABLE_RULES_PASS",
+              "ALL_REQUIRED_EVIDENCE_GROUPS_SATISFIED",
+              "NO_MANDATORY_HUMAN_CONDITION"
+            ]
+          }
+        ],
+        "alternative_paths": [
+          "并行查询住宿制度与城市等级后合并证据",
+          "先查询制度再查询城市等级",
+          "先查询城市等级再查询对应制度额度"
+        ],
+        "forbidden_actions": [
+          "MODIFY_APPLICATION_FACTS",
+          "CALL_NON_WHITELIST_TOOL",
+          "WRITE_DATABASE",
+          "ISSUE_FINAL_ENTERPRISE_APPROVAL",
+          "STOP_BEFORE_POLICY_AND_CITY_TIER_ARE_BOTH_KNOWN"
+        ]
+      }
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "split": "golden_acceptance",
+      "source_type": "SYNTHETIC",
+      "leakage_group_id": "LG-C-DINING-VERSION-CONFLICT",
+      "scenario": "OVERLAPPING_POLICY_VERSION_CONFLICT",
+      "title": "新旧制度冲突：重叠有效期导致餐饮额度无法唯一确定",
+      "expense_type": "餐饮",
+      "input": {
+        "request_id": "REQ-GC-C-001",
+        "applicant": {
+          "employee_id": "EMP-SYN-003",
+          "department_id": "DEPT-SYN-MARKETING",
+          "display_name": "合成员工丙"
+        },
+        "application": {
+          "expense_type": "餐饮",
+          "currency": "CNY",
+          "amount": "135.00",
+          "occurred_on": "2026-06-15",
+          "submitted_on": "2026-06-18",
+          "attendee_count": 1,
+          "description": "客户项目 CUST-PROJ-2026-061 在合作园区发生的业务接待餐饮，实际参加人数 1 人"
+        },
+        "documents": [
+          {
+            "document_id": "DOC-GC-C-MEAL-001",
+            "fixture_key": "SYNTHETIC_MEAL_INVOICE_C",
+            "document_type": "MEAL_INVOICE",
+            "media_type": "application/pdf",
+            "synthetic": true
+          }
+        ]
+      },
+      "fixture_context": {
+        "policy_catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+        "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0"
+      },
+      "expected_extracted_fields": [
+        {
+          "field": "invoice_number",
+          "status": "PRESENT",
+          "value": "SYN-MEAL-20260615-0001",
+          "document_id": "DOC-GC-C-MEAL-001",
+          "page": 1
+        },
+        {
+          "field": "amount",
+          "status": "PRESENT",
+          "value": "135.00",
+          "document_id": "DOC-GC-C-MEAL-001",
+          "page": 1
+        },
+        {
+          "field": "occurred_on",
+          "status": "PRESENT",
+          "value": "2026-06-15",
+          "document_id": "DOC-GC-C-MEAL-001",
+          "page": 1
+        }
+      ],
+      "required_sub_questions": [
+        {
+          "id": "C-SQ1",
+          "intent": "ALL_APPLICABLE_POLICY_VERSIONS",
+          "text": "发生日期有哪些已发布且适用范围相同的餐饮制度版本？",
+          "completion_criteria": "同时识别在 2026-06-15 有效的旧版和新版制度。",
+          "required_capability_ids": [
+            "C-TC1"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "id": "C-SQ2",
+          "intent": "MATERIAL_RULE_CONFLICT",
+          "text": "两个适用版本的餐饮额度是否产生影响建议结果的冲突？",
+          "completion_criteria": "识别旧版 120.00 元与新版 150.00 元上限会对 135.00 元申请产生不同规则结果。",
+          "required_capability_ids": [
+            "C-TC1"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2"
+          ],
+          "required_rule_ids": []
+        },
+        {
+          "id": "C-SQ3",
+          "intent": "AUTHORITATIVE_PRECEDENCE_OR_SUPERSESSION",
+          "text": "相邻原文或发布元数据是否给出明确的替代关系、优先级或过渡条款？",
+          "completion_criteria": "在 POLICY-CATALOG-SYN-1.1.0 冻结语料快照及允许来源中检查两个版本的相关上下文，仍未找到可用于确定性消歧的正式依据。",
+          "required_capability_ids": [
+            "C-TC2"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG3",
+            "C-EG4"
+          ],
+          "required_rule_ids": []
+        }
+      ],
+      "allowed_tools": [
+        "policy_search"
+      ],
+      "forbidden_tools": [
+        "case_search",
+        "rule_search",
+        "structured_lookup",
+        "fetch_document_context"
+      ],
+      "required_tool_capabilities": [
+        {
+          "capability_id": "C-TC1",
+          "one_of": [
+            "policy_search"
+          ],
+          "purpose": "FIND_ALL_OVERLAPPING_POLICY_VERSIONS",
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2"
+          ],
+          "success_required": true
+        },
+        {
+          "capability_id": "C-TC2",
+          "one_of": [
+            "policy_search"
+          ],
+          "purpose": "CHECK_PRECEDENCE_SUPERSESSION_AND_TRANSITION_CONTEXT",
+          "required_evidence_group_ids": [
+            "C-EG3",
+            "C-EG4"
+          ],
+          "success_required": true
+        }
+      ],
+      "critical_evidence": [
+        {
+          "evidence_id": "EVID-C-OLD-POLICY-LIMIT",
+          "source_type": "POLICY_DOCUMENT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-DINING-2025-V1",
+          "version": "1.0",
+          "published_status": "PUBLISHED",
+          "authority_level": "FORMAL_POLICY",
+          "priority": 100,
+          "effective_from": "2025-01-01",
+          "effective_to": "2026-06-30",
+          "supersedes_document_id": null,
+          "page": 4,
+          "section": "第六章 业务餐饮标准与档案",
+          "excerpt": "业务餐饮按实际参加人数核算，每人每日报销上限为 120.00 元。",
+          "expected_fact": "OLD_POLICY_LIMIT_120"
+        },
+        {
+          "evidence_id": "EVID-C-NEW-POLICY-LIMIT",
+          "source_type": "POLICY_DOCUMENT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-DINING-2026-V2",
+          "version": "2.0",
+          "published_status": "PUBLISHED",
+          "authority_level": "FORMAL_POLICY",
+          "priority": 100,
+          "effective_from": "2026-06-01",
+          "effective_to": null,
+          "supersedes_document_id": null,
+          "page": 4,
+          "section": "第六章 业务餐饮标准与附则",
+          "excerpt": "业务餐饮按实际参加人数核算，每人每日报销上限为 150.00 元。",
+          "expected_fact": "NEW_POLICY_LIMIT_150"
+        },
+        {
+          "evidence_id": "EVID-C-OLD-POLICY-CONTEXT",
+          "source_type": "DOCUMENT_CONTEXT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-DINING-2025-V1",
+          "version": "1.0",
+          "effective_from": "2025-01-01",
+          "effective_to": "2026-06-30",
+          "page": 2,
+          "section": "第一章 施行期间与文件管理",
+          "excerpt": "本办法自 2025 年 1 月 1 日起施行，有效期至 2026 年 6 月 30 日。修订、提前终止或者续行，须履行原审批程序并另行发布书面通知。",
+          "expected_fact": "OLD_POLICY_ACTIVE_WITHOUT_SUPERSESSION"
+        },
+        {
+          "evidence_id": "EVID-C-NEW-POLICY-CONTEXT",
+          "source_type": "DOCUMENT_CONTEXT",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+          "document_id": "POL-DINING-2026-V2",
+          "version": "2.0",
+          "effective_from": "2026-06-01",
+          "effective_to": null,
+          "page": 2,
+          "section": "第一章 施行与文件管理",
+          "excerpt": "本办法自 2026 年 6 月 1 日起施行。修订、废止以及与其他费用制度的衔接事项，须经原审批程序另行发布书面通知。",
+          "expected_fact": "NEW_POLICY_ACTIVE_WITHOUT_PRECEDENCE"
+        },
+        {
+          "evidence_id": "EVID-C-MEAL-INVOICE",
+          "source_type": "ATTACHMENT",
+          "document_id": "DOC-GC-C-MEAL-001",
+          "version": "1",
+          "page": 1,
+          "section": "合成餐饮票据",
+          "excerpt": "合成票据：2026-06-15，餐饮费 135.00 元。",
+          "expected_fact": "MEAL_AMOUNT_AND_DATE_MATCH_APPLICATION",
+          "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+        }
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "C-EG1",
+          "any_of": [
+            "EVID-C-OLD-POLICY-LIMIT"
+          ]
+        },
+        {
+          "group_id": "C-EG2",
+          "any_of": [
+            "EVID-C-NEW-POLICY-LIMIT"
+          ]
+        },
+        {
+          "group_id": "C-EG3",
+          "any_of": [
+            "EVID-C-OLD-POLICY-CONTEXT"
+          ]
+        },
+        {
+          "group_id": "C-EG4",
+          "any_of": [
+            "EVID-C-NEW-POLICY-CONTEXT"
+          ]
+        },
+        {
+          "group_id": "C-EG5",
+          "any_of": [
+            "EVID-C-MEAL-INVOICE"
+          ]
+        }
+      ],
+      "expected_rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": []
+        },
+        {
+          "rule_id": "RULE-MEAL-DOCUMENT-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on",
+            "extracted_fields.amount",
+            "extracted_fields.occurred_on"
+          ],
+          "evidence_ids": [
+            "EVID-C-MEAL-INVOICE"
+          ]
+        },
+        {
+          "rule_id": "RULE-POLICY-VERSION-UNIQUENESS",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "reason_code": "MULTIPLE_PUBLISHED_VERSIONS_APPLY",
+          "input_refs": [
+            "input.application.occurred_on",
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [
+            "EVID-C-OLD-POLICY-CONTEXT",
+            "EVID-C-NEW-POLICY-CONTEXT"
+          ]
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-USING-OLD-POLICY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "computed_limit": "120.00",
+          "actual_amount": "135.00",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "EVID-C-OLD-POLICY-LIMIT"
+          ]
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-USING-NEW-POLICY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "computed_limit": "150.00",
+          "actual_amount": "135.00",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "EVID-C-NEW-POLICY-LIMIT"
+          ]
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-DETERMINATION",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "INDETERMINATE",
+          "reason_code": "AUTHORITATIVE_PRECEDENCE_MISSING",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "EVID-C-OLD-POLICY-LIMIT",
+            "EVID-C-NEW-POLICY-LIMIT",
+            "EVID-C-OLD-POLICY-CONTEXT",
+            "EVID-C-NEW-POLICY-CONTEXT"
+          ]
+        }
+      ],
+      "applicable_rule_ids": [
+        "RULE-EXPENSE-TYPE-IN-SCOPE",
+        "RULE-MEAL-DOCUMENT-CONSISTENCY",
+        "RULE-POLICY-VERSION-UNIQUENESS",
+        "RULE-MEAL-LIMIT-USING-OLD-POLICY",
+        "RULE-MEAL-LIMIT-USING-NEW-POLICY",
+        "RULE-MEAL-LIMIT-DETERMINATION"
+      ],
+      "not_applicable_rules": [
+        {
+          "rule_id": "RULE-SUBMISSION-TIMELINESS",
+          "reason_code": "SHORT_CIRCUITED_AFTER_MANDATORY_HUMAN_CONFLICT"
+        },
+        {
+          "rule_id": "RULE-DUPLICATE-INVOICE",
+          "reason_code": "SHORT_CIRCUITED_AFTER_MANDATORY_HUMAN_CONFLICT"
+        },
+        {
+          "rule_id": "RULE-BUDGET-AVAILABLE",
+          "reason_code": "SHORT_CIRCUITED_AFTER_MANDATORY_HUMAN_CONFLICT"
+        },
+        {
+          "rule_id": "RULE-APPLICANT-PERMISSION",
+          "reason_code": "SHORT_CIRCUITED_AFTER_MANDATORY_HUMAN_CONFLICT"
+        }
+      ],
+      "expected_risk_flags": [
+        "RULE_VERSION_CONFLICT",
+        "MATERIAL_OUTCOME_DIVERGENCE",
+        "MISSING_AUTHORITATIVE_PRECEDENCE"
+      ],
+      "conclusion_atoms": [
+        {
+          "atom_id": "C-CA0",
+          "claim": "申请金额和发生日期与餐饮票据一致。",
+          "required_input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG5"
+          ],
+          "required_rule_ids": [
+            "RULE-MEAL-DOCUMENT-CONSISTENCY"
+          ]
+        },
+        {
+          "atom_id": "C-CA1",
+          "claim": "两个同权威、同优先级的已发布制度版本在发生日期同时有效。",
+          "required_input_refs": [
+            "input.application.occurred_on"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2",
+            "C-EG3",
+            "C-EG4"
+          ],
+          "required_rule_ids": [
+            "RULE-POLICY-VERSION-UNIQUENESS"
+          ]
+        },
+        {
+          "atom_id": "C-CA2",
+          "claim": "旧版 120.00 元与新版 150.00 元额度对 135.00 元申请产生相反规则结果。",
+          "required_input_refs": [
+            "input.application.amount",
+            "input.application.attendee_count"
+          ],
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2"
+          ],
+          "required_rule_ids": [
+            "RULE-MEAL-LIMIT-USING-OLD-POLICY",
+            "RULE-MEAL-LIMIT-USING-NEW-POLICY"
+          ]
+        },
+        {
+          "atom_id": "C-CA3",
+          "claim": "在冻结语料快照及允许来源中未找到可消解冲突的替代、优先级或过渡依据。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "C-EG3",
+            "C-EG4"
+          ],
+          "required_rule_ids": [
+            "RULE-MEAL-LIMIT-DETERMINATION"
+          ]
+        },
+        {
+          "atom_id": "C-CA4",
+          "claim": "未解决的规则版本冲突属于强制人工条件。",
+          "required_input_refs": [],
+          "required_evidence_group_ids": [
+            "C-EG1",
+            "C-EG2",
+            "C-EG3",
+            "C-EG4"
+          ],
+          "required_rule_ids": [
+            "RULE-POLICY-VERSION-UNIQUENESS",
+            "RULE-MEAL-LIMIT-DETERMINATION"
+          ]
+        }
+      ],
+      "expected_recommendation": "HUMAN_REVIEW",
+      "acceptable_stop_reasons": [
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "MISSING_AUTHORITATIVE_PRECEDENCE"
+      ],
+      "hard_limits": {
+        "max_agent_steps": 8,
+        "max_retrieval_rounds": 3,
+        "max_query_rewrites": 2
+      },
+      "precedence_constraints": [
+        {
+          "constraint_id": "C-PC1",
+          "subject": "SYSTEM_ERROR",
+          "relation": "MUST_BE_ABSENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "C-PC2",
+          "subject": "RULE_VERSION_CONFLICT",
+          "relation": "MUST_BE_PRESENT",
+          "objects": []
+        },
+        {
+          "constraint_id": "C-PC3",
+          "subject": "MANDATORY_HUMAN_CONDITION",
+          "relation": "ROUTES_TO",
+          "objects": [
+            "HUMAN_REVIEW"
+          ]
+        },
+        {
+          "constraint_id": "C-PC4",
+          "subject": "HUMAN_REVIEW",
+          "relation": "PRECEDES",
+          "objects": [
+            "REJECT_RECOMMENDED"
+          ]
+        },
+        {
+          "constraint_id": "C-PC5",
+          "subject": "POLICY_VERSION_SELECTION",
+          "relation": "MUST_NOT_USE",
+          "objects": [
+            "LATEST_VERSION_WITHOUT_AUTHORITY",
+            "MERGED_CONFLICTING_LIMIT"
+          ]
+        }
+      ],
+      "trajectory_contract": {
+        "order_independent": true,
+        "required_sub_question_ids": [
+          "C-SQ1",
+          "C-SQ2",
+          "C-SQ3"
+        ],
+        "required_evidence_group_ids": [
+          "C-EG1",
+          "C-EG2",
+          "C-EG3",
+          "C-EG4",
+          "C-EG5"
+        ],
+        "causal_constraints": [
+          {
+            "constraint_id": "C-CC1",
+            "subject": "HUMAN_REVIEW",
+            "relation": "REQUIRES_ALL",
+            "objects": [
+              "OLD_POLICY_LIMIT_120",
+              "NEW_POLICY_LIMIT_150",
+              "OLD_POLICY_ACTIVE_WITHOUT_SUPERSESSION",
+              "NEW_POLICY_ACTIVE_WITHOUT_PRECEDENCE"
+            ]
+          },
+          {
+            "constraint_id": "C-CC2",
+            "subject": "RULE-MEAL-LIMIT-DETERMINATION",
+            "relation": "REQUIRES_ALL",
+            "objects": [
+              "POLICY-CATALOG-SYN-1.1.0",
+              "OLD_POLICY_ACTIVE_WITHOUT_SUPERSESSION",
+              "NEW_POLICY_ACTIVE_WITHOUT_PRECEDENCE"
+            ]
+          }
+        ],
+        "alternative_paths": [
+          "一次宽范围制度检索发现两个版本，再定向检索替代关系和过渡条款",
+          "按旧版和新版分别检索后，再检索版本优先级与发布说明",
+          "先按发生日期过滤，再针对冲突条款进行反向制度检索"
+        ],
+        "forbidden_actions": [
+          "MODIFY_APPLICATION_FACTS",
+          "CALL_NON_WHITELIST_TOOL",
+          "WRITE_DATABASE",
+          "ISSUE_FINAL_ENTERPRISE_APPROVAL",
+          "SELECT_LATEST_POLICY_WITHOUT_AUTHORITY",
+          "RETURN_PASS_OR_REJECT_WHILE_CONFLICT_IS_UNRESOLVED",
+          "CONTINUE_WITHOUT_NEW_EVIDENCE"
+        ]
+      }
+    }
+  ]
+}

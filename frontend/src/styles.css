@@ -1,0 +1,238 @@
+:root {
+  --color-primary: #1e3a5f;
+  --color-action: #2563eb;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #b91c1c;
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-border: #cbd5e1;
+  --el-color-primary: var(--color-action);
+  --el-color-success: var(--color-success);
+  --el-color-warning: var(--color-warning);
+  --el-color-danger: var(--color-danger);
+  --el-border-radius-base: 3px;
+  --el-font-family: Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  font:
+    14px/1.55 Inter,
+    'PingFang SC',
+    'Microsoft YaHei',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 35%);
+  outline-offset: 2px;
+}
+
+.page {
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  margin: 3px 0 0;
+  color: var(--color-primary);
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.page-header p:not(.eyebrow) {
+  margin: 7px 0 0;
+  color: #64748b;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-action);
+  font:
+    700 10px/1.4 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.primary-action {
+  min-height: 44px;
+  padding-inline: 22px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 4%);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.panel-heading h2 {
+  margin: 3px 0 0;
+  color: #1e293b;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.metric-grid article {
+  padding: 15px 17px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+}
+
+.metric-grid span,
+.metric-grid strong {
+  display: block;
+}
+
+.metric-grid span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.metric-grid strong {
+  margin-top: 4px;
+  color: var(--color-primary);
+  font:
+    700 24px/1.2 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+}
+
+.el-button,
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  min-height: 44px;
+}
+
+.el-button.is-circle {
+  min-width: 44px;
+}
+
+.el-table {
+  --el-table-header-bg-color: #f1f5f9;
+  --el-table-header-text-color: #334155;
+  --el-table-row-hover-bg-color: #eff6ff;
+}
+
+.el-table th.el-table__cell {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.el-dialog {
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (width <= 768px) {
+  .page-header {
+    display: grid;
+    align-items: start;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  input,
+  textarea,
+  .el-input__inner,
+  .el-textarea__inner {
+    font-size: 16px;
+  }
+
+  .el-tabs__item {
+    height: 44px;
+  }
+}
+
+@media (width <= 375px) {
+  .metric-grid {
+    gap: 8px;
+  }
+
+  .metric-grid article {
+    padding: 12px;
+  }
+}

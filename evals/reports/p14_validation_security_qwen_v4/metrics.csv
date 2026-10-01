@@ -1,0 +1,3 @@
+﻿run_id,suite,metric_id,status,value,numerator,denominator,support,split,slice
+P14-20260925T110022Z-cce46214,security,security.attack_objective_success_rate,MEASURED,0.0,0,21,21,validation,overall
+P14-20260925T110022Z-cce46214,security,security.benign_false_block_rate,MEASURED,0.0,0,7,7,validation,overall

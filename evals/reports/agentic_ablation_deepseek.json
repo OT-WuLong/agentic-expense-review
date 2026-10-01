@@ -1,0 +1,136 @@
+{
+  "schema": "p14-agentic-ablation/v1",
+  "generated_at": "2026-09-25T10:07:28.002215+00:00",
+  "status": "MEASURED",
+  "split": "validation",
+  "git_commit": "1767cee0a5223799ccc77f95d055e6647cc8e263",
+  "git_dirty": true,
+  "dataset_sha256": "97cd807b2391ad42a4c8aef9d215237eeacbbeedec405f5723c3ba04c56ee390",
+  "trajectory_sha256": "d6dced1667a2b180fcedf6b4c5b744ede6c1a7f10f9da24f1d82fc629cb96742",
+  "model": "deepseek-flash",
+  "retrieval_mode": "dense",
+  "environment": {
+    "platform": "Windows-10-10.0.22631-SP0",
+    "cpu_count": 16
+  },
+  "same_sample_ids": true,
+  "one_run_per_variant": true,
+  "cost_status": "NOT_MEASURED_PROVIDER_PRICING_UNVERIFIED",
+  "limitations": [
+    "Three synthetic validation cases are descriptive, not a population-level effect estimate.",
+    "Fixed variants omit LLM review; only the no_supervisor pair isolates Supervisor removal.",
+    "Mean steps count planning/review actions, including fixed planning; tokens count Agent LLM only.",
+    "Tool capability scoring uses distinct successful tool calls, not full semantic-purpose matching.",
+    "Exact duplicate-query and monetary-cost metrics remain unmeasured."
+  ],
+  "executions": [
+    {
+      "variant": "fixed_rag",
+      "exit_code": 0
+    },
+    {
+      "variant": "fixed_rewrite",
+      "exit_code": 0
+    },
+    {
+      "variant": "single_retrieval_agent",
+      "exit_code": 0
+    },
+    {
+      "variant": "no_supervisor",
+      "exit_code": 0
+    },
+    {
+      "variant": "multi_agent",
+      "exit_code": 0
+    }
+  ],
+  "variants": [
+    {
+      "variant": "fixed_rag",
+      "sample_count": 3,
+      "task_success": "1/3",
+      "approval_accuracy": 0.3333333333333333,
+      "subquestion_coverage": 0.5,
+      "tool_selection_accuracy": 0.3333333333333333,
+      "mean_steps": 1.0,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.0,
+      "system_error_rate": 0.0,
+      "latency_p95_ms": 34202,
+      "agent_llm_tokens": 0,
+      "tool_calls": 3,
+      "tool_errors": 1,
+      "guardrail_vetoes": 0
+    },
+    {
+      "variant": "fixed_rewrite",
+      "sample_count": 3,
+      "task_success": "2/3",
+      "approval_accuracy": 0.6666666666666666,
+      "subquestion_coverage": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "mean_steps": 1.0,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.0,
+      "system_error_rate": 0.0,
+      "latency_p95_ms": 3309,
+      "agent_llm_tokens": 0,
+      "tool_calls": 6,
+      "tool_errors": 0,
+      "guardrail_vetoes": 0
+    },
+    {
+      "variant": "single_retrieval_agent",
+      "sample_count": 3,
+      "task_success": "1/3",
+      "approval_accuracy": 0.6666666666666666,
+      "subquestion_coverage": 1.0,
+      "tool_selection_accuracy": 0.6666666666666666,
+      "mean_steps": 1.0,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.0,
+      "system_error_rate": 0.0,
+      "latency_p95_ms": 12133,
+      "agent_llm_tokens": 6377,
+      "tool_calls": 4,
+      "tool_errors": 0,
+      "guardrail_vetoes": 0
+    },
+    {
+      "variant": "no_supervisor",
+      "sample_count": 3,
+      "task_success": "1/3",
+      "approval_accuracy": 0.3333333333333333,
+      "subquestion_coverage": 0.6666666666666666,
+      "tool_selection_accuracy": 0.6666666666666666,
+      "mean_steps": 1.3333333333333333,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.3333333333333333,
+      "system_error_rate": 0.3333333333333333,
+      "latency_p95_ms": 32449,
+      "agent_llm_tokens": 19040,
+      "tool_calls": 4,
+      "tool_errors": 0,
+      "guardrail_vetoes": 0
+    },
+    {
+      "variant": "multi_agent",
+      "sample_count": 3,
+      "task_success": "0/3",
+      "approval_accuracy": 0.0,
+      "subquestion_coverage": 0.3333333333333333,
+      "tool_selection_accuracy": 0.3333333333333333,
+      "mean_steps": 0.6666666666666666,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.0,
+      "system_error_rate": 1.0,
+      "latency_p95_ms": 44183,
+      "agent_llm_tokens": 8844,
+      "tool_calls": 2,
+      "tool_errors": 0,
+      "guardrail_vetoes": 0
+    }
+  ],
+  "raw_report_directory": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\agentic_ablation_deepseek_raw"
+}

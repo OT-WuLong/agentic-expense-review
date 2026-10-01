@@ -1,0 +1,40 @@
+{
+  "schema": "p10-frontend-quality/v1",
+  "run_at": "2026-09-22T16:02:00+08:00",
+  "result": "PASS",
+  "verification": {
+    "backend_pytest": "128 passed",
+    "frontend_vitest": "7 passed",
+    "backend_ruff": "PASS",
+    "frontend_typecheck": "PASS",
+    "frontend_eslint_oxlint": "PASS",
+    "frontend_production_build": "PASS"
+  },
+  "viewports": [
+    {"width": 375, "layout": "MOBILE_TABS", "page_horizontal_overflow": false},
+    {"width": 768, "layout": "MOBILE_TABS", "page_horizontal_overflow": false},
+    {"width": 1024, "layout": "TWO_COLUMN_REFLOW", "page_horizontal_overflow": false},
+    {"width": 1440, "layout": "THREE_COLUMN", "page_horizontal_overflow": false}
+  ],
+  "accessibility": {
+    "visible_focus": true,
+    "single_workflow_aria_live_region": true,
+    "status_has_text_and_shape": true,
+    "interactive_targets_min_height_px": 44,
+    "prefers_reduced_motion": true,
+    "keyboard_review_form": true
+  },
+  "contrast_ratios": {
+    "foreground_on_background": 17.06,
+    "secondary_on_white": 4.76,
+    "action_on_white": 5.17,
+    "success_on_white": 5.02,
+    "warning_on_white": 5.02,
+    "danger_on_white": 6.47
+  },
+  "notes": [
+    "Light-only enterprise MVP; dark mode is intentionally outside P10 scope.",
+    "Responsive inspection used the live Vue app with real approval data.",
+    "No chat surface: structured forms and immutable event/evidence panels match the approval domain."
+  ]
+}

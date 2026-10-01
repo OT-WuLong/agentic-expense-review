@@ -1,0 +1,1747 @@
+{
+  "schema_version": "p04-extraction-report/v1",
+  "status": "SMOKE_ONLY",
+  "data_classification": "SYNTHETIC",
+  "parser": "MinerU precision API",
+  "canonicalizer_version": "2",
+  "documents": [
+    {
+      "document_id": "POL-TRANSPORT-2026-V1",
+      "source_sha256": "379eb8d2a9c5ff1c616289bf21bdcf4444da29a9f4790fb4f3d9198cc2915e5b",
+      "parse_artifact_sha256": "ca4e8362992c5a41a3c8f05b50ff3ef1c0da0b3d44cfc128fb72951de4079f6d",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 4,
+      "chunk_count": 8,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "POL-LODGING-2026-V3",
+      "source_sha256": "f3df0660b2d5304eb98f717cb970720d52dab412e24af0d2b354244de9c2c9ef",
+      "parse_artifact_sha256": "e63cee40ed8c49f5b2646533dcdb9f22d62d40a17cf43afb76bc121479dc1495",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 6,
+      "chunk_count": 12,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "POL-DINING-2025-V1",
+      "source_sha256": "219b2c0e861d8954fb2b42f1c1c596a108359e4ce89d2a81c391b5a5ad4d6935",
+      "parse_artifact_sha256": "8768c47346f5dfc66b9fc39d85ca3cf9199fcc403c849b1e7a1dd04628386453",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 4,
+      "chunk_count": 7,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "POL-DINING-2026-V2",
+      "source_sha256": "875cb0f5796f2e506175d9efb8e26c3ee466eecbeae677e17c0b6ad6b7d3c576",
+      "parse_artifact_sha256": "928d61e14717782765249963a011cb8dd957cadea6fda8ed9472d186f0993afa",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 4,
+      "chunk_count": 7,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "source_sha256": "f1023a07c647d81850047674e310ab9c9ce13038cbe3b30bafb855caa5f3bc1d",
+      "parse_artifact_sha256": "6e65f417f499897f404674b092a230d7b01c7ab71f78057a4df5988892d001a8",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 5,
+      "chunk_count": 11,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "source_sha256": "7a19bc588ab48bf99b9ff1af44ba99c9add5e53ad08321d8c420e74fe58fc521",
+      "parse_artifact_sha256": "83fb48d7edd8cfb322db04362d2cf1d7221f98a7bf5ee2a9f3cfcf4f01cb46dd",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 4,
+      "chunk_count": 7,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "source_sha256": "29a0642015b49fb7aecc9e9e961d5b79d184006d66128b4ad8c6574ab453aa40",
+      "parse_artifact_sha256": "d9341b0c2ef7e4c7c63cf6605357f6e77b49bff2c7799aa2586a4b9a1fec4251",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 3,
+      "expected_field_count": 3,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "source_sha256": "902eaf491b9ac567fceaf98160e93d8bcddd45b9d663461953593a75b456bb23",
+      "parse_artifact_sha256": "ad211feb482d408eec4958892b8e4ee2506885e2f68122fd01c61a7a53039bef",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 6,
+      "expected_field_count": 6,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "source_sha256": "da6db5a51ff424433b16b1beda55803de6a934a0f13397516d0b4ff7396767fd",
+      "parse_artifact_sha256": "d9256461ad4e049bd2e7cd489079072c64b2546264d566d93bcca4495ca324d1",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 2,
+      "expected_field_count": 2,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "source_sha256": "0577e7240e61227ff5e7e077498397c437b31dc25ff708141f3617d22609df5d",
+      "parse_artifact_sha256": "c55c2afbea74622112640cb3f177e931fd5b5e038bd194daec320f453a96c1cf",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 3,
+      "expected_field_count": 3,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-MKT-MEAL-PASS-001",
+      "source_sha256": "526398766e76b3eb521d34dd7fe3dbf6f278ff8b3b4cdf779dccbc4a018b3cae",
+      "parse_artifact_sha256": "5741eccf0b8e3cd6f81a5ddfd0365be429647bd0b2fd93df56695f17bec65421",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-MKT-MEAL-MISMATCH-001",
+      "source_sha256": "ef08adbec8dc7d032832765dea7384bb32f0365d718fba2f3f5966bb9e37ffbc",
+      "parse_artifact_sha256": "2d3b60be8b6a8f7a110fb04a2861f96d0fdf3f7fcebcf4fa7f5561ccbbb9b115",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "source_sha256": "6d245cbc87b5e3acfd78f8c1f36ecfdb08b50a702da4da2e01218875f28ea586",
+      "parse_artifact_sha256": "906601363488b2edfc7deff9e4adcabb40e983225ee38298100b7b5c0b9b86cf",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "INCOMPLETE_FIELDS"
+    },
+    {
+      "document_id": "DOC-SALES-TAXI-VAL-001",
+      "source_sha256": "ba4543fa4105b60f36b488620ed35f53fe4f5111dbaf565b98020c7c974503c8",
+      "parse_artifact_sha256": "0e7e3e4425756b5caef32008fce1b5e435c3af3015693fb275362b1856b33427",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-SALES-COMMUTE-VAL-001",
+      "source_sha256": "bb039865472c8016fb99b1d9997ad59ff926a4918c3777b35b2ad26ea2ca857d",
+      "parse_artifact_sha256": "0182ee1631b2dde41bad70bef82af3a6ee193652f4374a8d8799b061a3bf27e4",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-P14-MEAL-COMPLETE-001",
+      "source_sha256": "ca1c2f47ad17dbd445f388b240ed879e697999325966dfdf2e1be2b2d9d5bc1a",
+      "parse_artifact_sha256": "1bb3f76156c219caab7d28458f48157c2bb533b83c9ec10a30aac99862ebcbdb",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-P14-MEAL-HEADCOUNT-001",
+      "source_sha256": "13bb8c395d52ec31bfa543ff671cc8c178ed4fe7c9351aed8d2f90211ba34de2",
+      "parse_artifact_sha256": "4bda5d75df4c469cf2d69deceb7f2c66c7477af3b817f7826b0d52a97efe5a69",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "DOC-P14-TAXI-NET-001",
+      "source_sha256": "c5b35476cfbdfb8592fa84b8eb772efb8d050a18dab7e83db5503ad4c05ca4e2",
+      "parse_artifact_sha256": "3f31cf737a2e579b2533d5ca80703b96907772188e6e99b29bba68c3e6ebcf63",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": false,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 0,
+      "expected_field_count": 0,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "source_sha256": "62a55e2ff46fe91563d93a9fb95ef52ccdeadcfaf37eb733d6ca81f5f99188b4",
+      "parse_artifact_sha256": "e3d42504d6048ed40bdd1388e9756583180695a858f4adcb907e021df0473600",
+      "mineru_version": "3.4.4",
+      "backend": "pipeline",
+      "is_ocr": true,
+      "model_version": "pipeline",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 3,
+      "expected_field_count": 3,
+      "quality_status": "PASS"
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "source_sha256": "350053ab0efcb69e8f5764b2e4eaa1ef40fc318e9f356001166e5bb476869ac7",
+      "parse_artifact_sha256": "97f54fa246294d4a26f09530711fbe5cc31d1c82ab3e2bfaf2d5d5e250b0af6f",
+      "mineru_version": "3.4.4",
+      "backend": "hybrid",
+      "is_ocr": true,
+      "model_version": "vlm",
+      "page_count": 1,
+      "chunk_count": 1,
+      "expected_field_matches": 2,
+      "expected_field_count": 3,
+      "quality_status": "LOW_TEXT_QUALITY"
+    }
+  ],
+  "summary": {
+    "document_count": 20,
+    "page_count": 41,
+    "chunk_count": 66,
+    "golden_pdf_evidence_found": 11,
+    "golden_pdf_evidence_total": 11,
+    "field_exact_match_count": 19,
+    "field_expected_count": 20,
+    "field_macro_f1": 0.9841269841269842,
+    "low_text_quality_document_count": 1,
+    "incomplete_field_document_count": 1
+  },
+  "golden_evidence": [
+    {
+      "case_id": "GC-A-TRANSPORT-COMMUTE-REJECT",
+      "evidence_id": "EVID-A-POLICY-COMMUTE-EXCLUSION",
+      "found": true
+    },
+    {
+      "case_id": "GC-A-TRANSPORT-COMMUTE-REJECT",
+      "evidence_id": "EVID-A-TAXI-INVOICE",
+      "found": true
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "evidence_id": "EVID-B-POLICY-LODGING-LIMIT",
+      "found": true
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "evidence_id": "EVID-B-HOTEL-INVOICE",
+      "found": true
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "evidence_id": "EVID-B-ITINERARY",
+      "found": true
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "evidence_id": "EVID-B-POLICY-SUBMISSION-LIMIT",
+      "found": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "evidence_id": "EVID-C-OLD-POLICY-LIMIT",
+      "found": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "evidence_id": "EVID-C-NEW-POLICY-LIMIT",
+      "found": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "evidence_id": "EVID-C-OLD-POLICY-CONTEXT",
+      "found": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "evidence_id": "EVID-C-NEW-POLICY-CONTEXT",
+      "found": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "evidence_id": "EVID-C-MEAL-INVOICE",
+      "found": true
+    }
+  ],
+  "fields": [
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-TR-20260312-0001",
+      "raw_value": "SYN-TR-20260312-0001",
+      "document_id": "DOC-GC-A-TAXI-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        159,
+        317,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "68.00",
+      "raw_value": "68.00",
+      "document_id": "DOC-GC-A-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        391,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-03-12",
+      "raw_value": "2026-03-12",
+      "document_id": "DOC-GC-A-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        391,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-HT-20260410-0001",
+      "raw_value": "SYN-HT-20260410-0001",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        159,
+        319,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "1100.00",
+      "raw_value": "1100.00",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        702,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "city",
+      "status": "PRESENT",
+      "value": "杭州市",
+      "raw_value": "杭州市",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        702,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "check_in",
+      "status": "PRESENT",
+      "value": "2026-04-08",
+      "raw_value": "2026-04-08",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        702,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "check_out",
+      "status": "PRESENT",
+      "value": "2026-04-10",
+      "raw_value": "2026-04-10",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        702,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "room_count",
+      "status": "PRESENT",
+      "value": 1,
+      "raw_value": "1",
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        702,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "check_in",
+      "status": "PRESENT",
+      "value": "2026-04-08",
+      "raw_value": "2026-04-08",
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        415,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "check_out",
+      "status": "PRESENT",
+      "value": "2026-04-10",
+      "raw_value": "2026-04-10",
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        415,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-MEAL-20260615-0001",
+      "raw_value": "SYN-MEAL-20260615-0001",
+      "document_id": "DOC-GC-C-MEAL-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        159,
+        341,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "135.00",
+      "raw_value": "135.00",
+      "document_id": "DOC-GC-C-MEAL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        383,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-06-15",
+      "raw_value": "2026-06-15",
+      "document_id": "DOC-GC-C-MEAL-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        383,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-MKT-MEAL-001",
+      "raw_value": "SYN-MKT-MEAL-001",
+      "document_id": "DOC-MKT-MEAL-PASS-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        160,
+        307,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "140.00",
+      "raw_value": "140.00",
+      "document_id": "DOC-MKT-MEAL-PASS-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        532,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-05-20",
+      "raw_value": "2026-05-20",
+      "document_id": "DOC-MKT-MEAL-PASS-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        532,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-MKT-MEAL-002",
+      "raw_value": "SYN-MKT-MEAL-002",
+      "document_id": "DOC-MKT-MEAL-MISMATCH-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        160,
+        307,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "120.00",
+      "raw_value": "120.00",
+      "document_id": "DOC-MKT-MEAL-MISMATCH-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        181,
+        583,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-05-22",
+      "raw_value": "2026-05-22",
+      "document_id": "DOC-MKT-MEAL-MISMATCH-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        181,
+        583,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-OPS-HOTEL-001",
+      "raw_value": "SYN-OPS-HOTEL-001",
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        159,
+        310,
+        178
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "740.00",
+      "raw_value": "740.00",
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        181,
+        598,
+        199
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "city",
+      "status": "MISSING",
+      "value": null,
+      "raw_value": null,
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": null,
+      "block_index": null,
+      "bbox": null,
+      "quality_flags": [
+        "PATTERN_NOT_FOUND"
+      ]
+    },
+    {
+      "field": "check_in",
+      "status": "MISSING",
+      "value": null,
+      "raw_value": null,
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": null,
+      "block_index": null,
+      "bbox": null,
+      "quality_flags": [
+        "PATTERN_NOT_FOUND"
+      ]
+    },
+    {
+      "field": "check_out",
+      "status": "MISSING",
+      "value": null,
+      "raw_value": null,
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": null,
+      "block_index": null,
+      "bbox": null,
+      "quality_flags": [
+        "PATTERN_NOT_FOUND"
+      ]
+    },
+    {
+      "field": "room_count",
+      "status": "MISSING",
+      "value": null,
+      "raw_value": null,
+      "document_id": "DOC-OPS-HOTEL-EXCEPTION-001",
+      "page": null,
+      "block_index": null,
+      "bbox": null,
+      "quality_flags": [
+        "PATTERN_NOT_FOUND"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-SALES-TAXI-VAL-001",
+      "raw_value": "SYN-SALES-TAXI-VAL-001",
+      "document_id": "DOC-SALES-TAXI-VAL-001",
+      "page": 1,
+      "block_index": 1,
+      "bbox": [
+        75,
+        116,
+        364,
+        135
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "225.00",
+      "raw_value": "225.00",
+      "document_id": "DOC-SALES-TAXI-VAL-001",
+      "page": 1,
+      "block_index": 6,
+      "bbox": [
+        75,
+        223,
+        233,
+        242
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-04-18",
+      "raw_value": "2026-04-18",
+      "document_id": "DOC-SALES-TAXI-VAL-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        137,
+        245,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-SALES-COMMUTE-VAL-001",
+      "raw_value": "SYN-SALES-COMMUTE-VAL-001",
+      "document_id": "DOC-SALES-COMMUTE-VAL-001",
+      "page": 1,
+      "block_index": 1,
+      "bbox": [
+        75,
+        116,
+        413,
+        135
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "30.00",
+      "raw_value": "30.00",
+      "document_id": "DOC-SALES-COMMUTE-VAL-001",
+      "page": 1,
+      "block_index": 6,
+      "bbox": [
+        75,
+        224,
+        226,
+        242
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-04-20",
+      "raw_value": "2026-04-20",
+      "document_id": "DOC-SALES-COMMUTE-VAL-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        137,
+        245,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-P14-MEAL-001",
+      "raw_value": "SYN-P14-MEAL-001",
+      "document_id": "DOC-P14-MEAL-COMPLETE-001",
+      "page": 1,
+      "block_index": 1,
+      "bbox": [
+        75,
+        117,
+        295,
+        134
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "300.00",
+      "raw_value": "300.00",
+      "document_id": "DOC-P14-MEAL-COMPLETE-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        139,
+        633,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-07-14",
+      "raw_value": "2026-07-14",
+      "document_id": "DOC-P14-MEAL-COMPLETE-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        139,
+        633,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-P14-MEAL-002",
+      "raw_value": "SYN-P14-MEAL-002",
+      "document_id": "DOC-P14-MEAL-HEADCOUNT-001",
+      "page": 1,
+      "block_index": 1,
+      "bbox": [
+        75,
+        117,
+        295,
+        134
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "150.00",
+      "raw_value": "150.00",
+      "document_id": "DOC-P14-MEAL-HEADCOUNT-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        139,
+        435,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-07-20",
+      "raw_value": "2026-07-20",
+      "document_id": "DOC-P14-MEAL-HEADCOUNT-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        139,
+        435,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-P14-TAXI-001",
+      "raw_value": "SYN-P14-TAXI-001",
+      "document_id": "DOC-P14-TAXI-NET-001",
+      "page": 1,
+      "block_index": 1,
+      "bbox": [
+        75,
+        117,
+        305,
+        135
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "318.00",
+      "raw_value": "318.00",
+      "document_id": "DOC-P14-TAXI-NET-001",
+      "page": 1,
+      "block_index": 5,
+      "bbox": [
+        75,
+        203,
+        497,
+        221
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-07-16",
+      "raw_value": "2026-07-16",
+      "document_id": "DOC-P14-TAXI-NET-001",
+      "page": 1,
+      "block_index": 2,
+      "bbox": [
+        75,
+        139,
+        245,
+        156
+      ],
+      "quality_flags": []
+    },
+    {
+      "field": "invoice_number",
+      "status": "PRESENT",
+      "value": "SYN-TR-20260312-0001",
+      "raw_value": "SYN-TR-20260312-0001",
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        73,
+        160,
+        316,
+        177
+      ],
+      "quality_flags": [
+        "OCR",
+        "CLEAR_IMAGE"
+      ]
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "68.00",
+      "raw_value": "68.00",
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        394,
+        199
+      ],
+      "quality_flags": [
+        "OCR",
+        "CLEAR_IMAGE"
+      ]
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-03-12",
+      "raw_value": "2026-03-12",
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        73,
+        180,
+        394,
+        199
+      ],
+      "quality_flags": [
+        "OCR",
+        "CLEAR_IMAGE"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "status": "UNREADABLE",
+      "value": null,
+      "raw_value": "SYN-TR-20280312-0001",
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "page": 1,
+      "block_index": 3,
+      "bbox": [
+        75,
+        159,
+        315,
+        177
+      ],
+      "quality_flags": [
+        "OCR",
+        "VLM_FALLBACK",
+        "LOW_QUALITY_SCAN",
+        "CROSS_FIELD_DATE_MISMATCH"
+      ]
+    },
+    {
+      "field": "amount",
+      "status": "PRESENT",
+      "value": "68.00",
+      "raw_value": "68.00",
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        393,
+        199
+      ],
+      "quality_flags": [
+        "OCR",
+        "VLM_FALLBACK",
+        "LOW_QUALITY_SCAN"
+      ]
+    },
+    {
+      "field": "occurred_on",
+      "status": "PRESENT",
+      "value": "2026-03-12",
+      "raw_value": "2026-03-12",
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "page": 1,
+      "block_index": 4,
+      "bbox": [
+        75,
+        180,
+        393,
+        199
+      ],
+      "quality_flags": [
+        "OCR",
+        "VLM_FALLBACK",
+        "LOW_QUALITY_SCAN"
+      ]
+    }
+  ],
+  "field_evaluations": [
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "invoice_number",
+      "expected_present": true,
+      "expected": "SYN-TR-20260312-0001",
+      "predicted_present": true,
+      "actual": "SYN-TR-20260312-0001",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "amount",
+      "expected_present": true,
+      "expected": "68.00",
+      "predicted_present": true,
+      "actual": "68.00",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "occurred_on",
+      "expected_present": true,
+      "expected": "2026-03-12",
+      "predicted_present": true,
+      "actual": "2026-03-12",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "city",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "check_in",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "check_out",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "field": "room_count",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "invoice_number",
+      "expected_present": true,
+      "expected": "SYN-HT-20260410-0001",
+      "predicted_present": true,
+      "actual": "SYN-HT-20260410-0001",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "amount",
+      "expected_present": true,
+      "expected": "1100.00",
+      "predicted_present": true,
+      "actual": "1100.00",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "occurred_on",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "city",
+      "expected_present": true,
+      "expected": "杭州市",
+      "predicted_present": true,
+      "actual": "杭州市",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "check_in",
+      "expected_present": true,
+      "expected": "2026-04-08",
+      "predicted_present": true,
+      "actual": "2026-04-08",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "check_out",
+      "expected_present": true,
+      "expected": "2026-04-10",
+      "predicted_present": true,
+      "actual": "2026-04-10",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "field": "room_count",
+      "expected_present": true,
+      "expected": 1,
+      "predicted_present": true,
+      "actual": 1,
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "invoice_number",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "amount",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "occurred_on",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "city",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "check_in",
+      "expected_present": true,
+      "expected": "2026-04-08",
+      "predicted_present": true,
+      "actual": "2026-04-08",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "check_out",
+      "expected_present": true,
+      "expected": "2026-04-10",
+      "predicted_present": true,
+      "actual": "2026-04-10",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "field": "room_count",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "invoice_number",
+      "expected_present": true,
+      "expected": "SYN-MEAL-20260615-0001",
+      "predicted_present": true,
+      "actual": "SYN-MEAL-20260615-0001",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "amount",
+      "expected_present": true,
+      "expected": "135.00",
+      "predicted_present": true,
+      "actual": "135.00",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "occurred_on",
+      "expected_present": true,
+      "expected": "2026-06-15",
+      "predicted_present": true,
+      "actual": "2026-06-15",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "city",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "check_in",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "check_out",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "field": "room_count",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "invoice_number",
+      "expected_present": true,
+      "expected": "SYN-TR-20260312-0001",
+      "predicted_present": true,
+      "actual": "SYN-TR-20260312-0001",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "amount",
+      "expected_present": true,
+      "expected": "68.00",
+      "predicted_present": true,
+      "actual": "68.00",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "occurred_on",
+      "expected_present": true,
+      "expected": "2026-03-12",
+      "predicted_present": true,
+      "actual": "2026-03-12",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "city",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "check_in",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "check_out",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "field": "room_count",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "invoice_number",
+      "expected_present": true,
+      "expected": "SYN-TR-20260312-0001",
+      "predicted_present": false,
+      "actual": null,
+      "status": "UNREADABLE",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": true
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "amount",
+      "expected_present": true,
+      "expected": "68.00",
+      "predicted_present": true,
+      "actual": "68.00",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "occurred_on",
+      "expected_present": true,
+      "expected": "2026-03-12",
+      "predicted_present": true,
+      "actual": "2026-03-12",
+      "status": "PRESENT",
+      "exact_match": true,
+      "tp": true,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "city",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "check_in",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "check_out",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "field": "room_count",
+      "expected_present": false,
+      "expected": null,
+      "predicted_present": false,
+      "actual": null,
+      "status": "MISSING",
+      "exact_match": false,
+      "tp": false,
+      "fp": false,
+      "fn": false
+    }
+  ],
+  "field_metrics": {
+    "amount": {
+      "support": 5,
+      "negative_support": 1,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "check_in": {
+      "support": 2,
+      "negative_support": 4,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "check_out": {
+      "support": 2,
+      "negative_support": 4,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "city": {
+      "support": 1,
+      "negative_support": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "invoice_number": {
+      "support": 5,
+      "negative_support": 1,
+      "tp": 4,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.888888888888889
+    },
+    "occurred_on": {
+      "support": 4,
+      "negative_support": 2,
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "room_count": {
+      "support": 1,
+      "negative_support": 5,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "notes": [
+    "Synthetic smoke evaluation only; this is not a production quality claim.",
+    "Field precision/recall/F1 use a complete field universe for labeled documents.",
+    "MinerU cloud retention/training/region terms require review before real documents."
+  ]
+}

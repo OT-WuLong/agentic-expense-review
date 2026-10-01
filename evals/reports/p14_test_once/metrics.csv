@@ -1,0 +1,16 @@
+﻿run_id,suite,metric_id,status,value,numerator,denominator,support,split,slice
+P14-20260925T111538Z-a60ea863,retrieval,retrieval.recall_at_5,MEASURED,1.0,2.0,2,2,test,overall
+P14-20260925T111538Z-a60ea863,retrieval,retrieval.mrr,MEASURED,1.0,2.0,2,2,test,overall
+P14-20260925T111538Z-a60ea863,retrieval,retrieval.ndcg_at_10,MEASURED,0.9251724527673773,1.8503449055347545,2,2,test,overall
+P14-20260925T111538Z-a60ea863,retrieval,retrieval.no_answer_accuracy,NOT_MEASURED,,,1,1,test,overall
+P14-20260925T111538Z-a60ea863,retrieval,retrieval.filter_violation_rate,MEASURED,0.0,0,33,33,test,overall
+P14-20260925T111538Z-a60ea863,workflow,agent.task_success_rate,MEASURED,0.0,0,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,agent.subquestion_coverage,MEASURED,1.0,3.0,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,agent.mean_steps,MEASURED,2.6666666666666665,8,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,agent.tool_selection_case_accuracy,MEASURED,1.0,3,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.accuracy,MEASURED,0.0,0,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.macro_f1,MEASURED,0.0,0.0,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.false_auto_pass_rate,MEASURED,0.0,0,2,2,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.rule_result_exact_match_rate,MEASURED,0.0,0,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.human_intervention_rate,MEASURED,1.0,3,3,3,test,overall
+P14-20260925T111538Z-a60ea863,workflow,approval.system_error_rate,MEASURED,0.0,0,3,3,test,overall

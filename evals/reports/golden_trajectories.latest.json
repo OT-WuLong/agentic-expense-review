@@ -1,0 +1,2100 @@
+{
+  "schema": "golden-approval-trajectories/v5",
+  "generated_at": "2026-09-21T10:27:08.156107+00:00",
+  "git": {
+    "commit": "15183cd5ece6c288ad7b69d322c936f4873fe808",
+    "dirty": true
+  },
+  "models": {
+    "agent": "qwen3.8-flash",
+    "embedding": "qwen3.7-text-embedding-flash"
+  },
+  "graph": "---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tsupervisor(supervisor)\n\tretrieval_agent(retrieval_agent)\n\tpre_tool_guardrail(pre_tool_guardrail)\n\ttools(tools)\n\tevidence_reviewer(evidence_reviewer)\n\tpost_review_guardrail(post_review_guardrail)\n\trule_validator(rule_validator)\n\thuman_rule_validator(human_rule_validator)\n\trisk_router(risk_router)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> supervisor;\n\tevidence_reviewer -. &nbsp;end&nbsp; .-> __end__;\n\tevidence_reviewer -. &nbsp;guard&nbsp; .-> post_review_guardrail;\n\thuman_rule_validator --> risk_router;\n\tpost_review_guardrail -. &nbsp;end&nbsp; .-> __end__;\n\tpost_review_guardrail -.-> supervisor;\n\tpre_tool_guardrail -. &nbsp;end&nbsp; .-> __end__;\n\tpre_tool_guardrail -. &nbsp;review&nbsp; .-> evidence_reviewer;\n\tpre_tool_guardrail -.-> tools;\n\tretrieval_agent -. &nbsp;end&nbsp; .-> __end__;\n\tretrieval_agent -. &nbsp;review&nbsp; .-> evidence_reviewer;\n\tretrieval_agent -. &nbsp;guard&nbsp; .-> pre_tool_guardrail;\n\trule_validator --> risk_router;\n\tsupervisor -. &nbsp;end&nbsp; .-> __end__;\n\tsupervisor -. &nbsp;human_validate&nbsp; .-> human_rule_validator;\n\tsupervisor -. &nbsp;retrieve&nbsp; .-> retrieval_agent;\n\tsupervisor -. &nbsp;human_finalize&nbsp; .-> risk_router;\n\tsupervisor -. &nbsp;validate&nbsp; .-> rule_validator;\n\ttools -. &nbsp;end&nbsp; .-> __end__;\n\ttools -. &nbsp;review&nbsp; .-> evidence_reviewer;\n\trisk_router --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n",
+  "golden_dataset": {
+    "dataset_id": "agentic-rag-approval-golden-cases",
+    "dataset_version": "1.3.4"
+  },
+  "gold_labels_visible_to_agents": false,
+  "upstream_extraction_source": "P04_DATABASE_FIXTURE",
+  "run_scope": {
+    "mode": "TARGETED",
+    "executed_case_ids": [
+      "GC-B-LODGING-MULTIHOP-PASS"
+    ],
+    "merged_previous_results": true
+  },
+  "summary": {
+    "cases": 3,
+    "passed": 3,
+    "total_tokens": 32448,
+    "total_latency_ms": 215438,
+    "evidence_metrics_status": "PARTIALLY_MEASURED",
+    "unmeasured_metrics": [
+      "retrieval_margin"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "GC-A-TRANSPORT-COMMUTE-REJECT",
+      "scenario": "SIMPLE_TRANSPORT_EXPLICIT_PROHIBITION",
+      "status": "BUSINESS_REJECTED",
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "agent_steps": 2,
+      "retrieval_rounds": 1,
+      "query_rewrites": 0,
+      "tokens_used": 5021,
+      "latency_ms": 40761,
+      "trajectory": [
+        {
+          "step_index": 1,
+          "agent": "RETRIEVAL",
+          "action": "RETRIEVE",
+          "thought_summary": "首次检索，需核实交通费用中日常通勤的制度规定、限额及禁止项。",
+          "tool_calls": [
+            {
+              "tool_name": "policy_search",
+              "query": "交通费用报销制度 日常通勤 出租车 限额 禁止项",
+              "purpose": "查询适用于日常通勤交通费的报销政策、限额标准及例外条款",
+              "query_type": null,
+              "filters": {
+                "expense_type": "交通",
+                "effective_at": "2026-03-12",
+                "top_k": 5
+              },
+              "arguments": {},
+              "sub_question_id": "sq_1",
+              "call_id": "R01-C01"
+            }
+          ],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 9063,
+          "tokens_used": 1471,
+          "stop_reason": null
+        },
+        {
+          "step_index": 2,
+          "agent": "EVIDENCE_REVIEWER",
+          "action": "SUFFICIENT",
+          "thought_summary": "现有制度证据（POL-TRANSPORT-2026-V1）明确定义日常通勤为住所与固定办公地点往返，且规定此类费用不予报销，无例外情形。申请人描述的费用性质完全符合该禁止条款，证据覆盖充分且无冲突。",
+          "tool_calls": [],
+          "observation_ids": [
+            "R01-C01"
+          ],
+          "new_evidence_ids": [
+            "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+            "84baebaec57e5ec318fe05c236429af35ca8be2e663b2b589070f4237a722f57",
+            "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c",
+            "24bfabb2198a96adf10bb3feb02043492460f8ebd8d721a11b60237c0e900358",
+            "04caec34308fb1b434b65e7e1b83dd7a47591cc4d4c33e44c9dbc2b1e56ffff4"
+          ],
+          "latency_ms": 21706,
+          "tokens_used": 3550,
+          "stop_reason": null
+        }
+      ],
+      "supervisor_decisions": [
+        {
+          "sequence": 1,
+          "decision_source": "DETERMINISTIC",
+          "trigger": "INITIAL",
+          "action": "RETRIEVE",
+          "reason": "尚无证据评审结果，进入首次检索。",
+          "previous_goal": null,
+          "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "stop_reason": null,
+          "used_model": false,
+          "referenced_call_ids": [],
+          "challenged_question_ids": [],
+          "latency_ms": 0,
+          "tokens_used": 0
+        },
+        {
+          "sequence": 2,
+          "decision_source": "DETERMINISTIC",
+          "trigger": "REVIEW_SUFFICIENT",
+          "action": "VALIDATE",
+          "reason": "证据评审充分，且挑战机会已使用或剩余预算不足。",
+          "previous_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "new_goal": null,
+          "stop_reason": "EVIDENCE_ACCEPTED",
+          "used_model": false,
+          "referenced_call_ids": [
+            "R01-C01"
+          ],
+          "challenged_question_ids": [],
+          "latency_ms": 0,
+          "tokens_used": 0
+        }
+      ],
+      "supervisor_challenge_count": 0,
+      "guardrail_decisions": [],
+      "tool_observations": [
+        {
+          "tool_name": "policy_search",
+          "query": "交通费用报销制度 日常通勤 出租车 限额 禁止项",
+          "items": [
+            {
+              "evidence_id": "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7243986129760742,
+              "document_id": "POL-TRANSPORT-2026-V1",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第五章 不予报销项目 > 5.1 日常通勤",
+              "excerpt": "第五章 不予报销项目\n\n5.1 日常通勤\n\n第二十一条 员工住所与固定办公地点之间的往返属于日常通勤，不予报销；交通方式、出行时段、加班安排或天气变化均不构成例外。\n\n第二十二条 日常通勤途中因个人接送、购物或其他私人事项发生的绕行费用，由员工个人承担。\n\n第二十三条 已由公司班车、交通补贴或其他固定福利覆盖的同一通勤路段，不得重复申请交通费。\n\n第 十 条酒后代驾 交通违法罚款 车辆违章处理费以及个人车辆维修费不属于公务交通费用",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "84baebaec57e5ec318fe05c236429af35ca8be2e663b2b589070f4237a722f57",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.6756254434585571,
+              "document_id": "POL-TRANSPORT-2026-V1",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 3,
+              "section": "第三章 可报销交通",
+              "excerpt": "第三章 可报销交通\n\n第十一条 经批准的飞机、铁路、长途客运费用，按实际行程和允许席别核对。升舱、贵宾服务等个人选择产生的差额由员工承担。\n\n第十二条 出差地或客户拜访期间的出租车、网约车、公交和地铁，可凭与公务路线一致的票据申请。\n\n第十三条 住所至机场或车站的出行，只有与已批准的出差行程直接衔接时，才按该次公务事实另行核对；该情形不改变固定办公地点通勤的性质。\n\n第十四条 因公务发生的停车费、路桥费应单独列示，并提供与同一行程相符的凭证。交通罚款不属于公务费用。\n第十五条 货物快递、设备运输和活动物料配送不按本办法的员工交通条款处理，应转采购或物流费用流程。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.6391196250915527,
+              "document_id": "POL-TRANSPORT-2026-V1",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 2,
+              "section": "第一章 总则与术语",
+              "excerpt": "第一章 总则与术语\n\n第一条 本办法用于区分公务交通、日常通勤和个人出行，并规定申请、审核及凭证要求。\n\n第二条 公务交通是员工为完成经确认的工作任务，在办公地点、客户地点、交通枢纽或临时公务地点之间发生的出行。\n\n第三条 固定办公地点以劳动关系及办公安排中长期指定的地点为准；临时公务地点须有出差、派驻、会议或客户拜访记录。\n\n第四条 日常通勤是员工住所与固定办公地点之间的往返，不因交通工具或费用高低改变性质。\n\n第五条 制度适用性以费用发生日期为准。申请人调动部门或办公地点的，应提供发生当日有效的安排记录。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "24bfabb2198a96adf10bb3feb02043492460f8ebd8d721a11b60237c0e900358",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.6253222227096558,
+              "document_id": "POL-TRANSPORT-2026-V1",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 3,
+              "section": "第四章 凭证与金额核对",
+              "excerpt": "第四章 凭证与金额核对\n\n第十六条 交通票据应能够识别日期、金额和交通类别；可取得起讫地点的，还应与申请路线一致。\n\n第十七条 网约车行程单与发票应对应同一订单。优惠券、平台补贴及退款应从个人实际承担金额中扣除。\n\n第十八条 改签费、退票费和取消费应说明原因。因个人安排变更产生的费用不予报销；因公务安排变化产生的，须附变更记录。\n\n第十九条 票据缺失、金额不一致或路线无法核实时，申请人应补交材料。材料不能补齐的，由财务审核员退回；\n仍需业务裁量的，交财务负责人或其书面授权人处理并记录理由。\n\n第二十条 同一订单、同一票据号码或同一实际支付不得拆分、换名重复申请。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "04caec34308fb1b434b65e7e1b83dd7a47591cc4d4c33e44c9dbc2b1e56ffff4",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.613883376121521,
+              "document_id": "POL-TRANSPORT-2026-V1",
+              "version": "1.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第六章 边界事项与例外材料",
+              "excerpt": "第六章 边界事项与例外材料\n\n第二十五条 临时项目地点与固定办公地点的认定不清时，应核对派驻期限、考勤地点和书面任务安排，不得仅凭申请人的路线描述认定。\n\n第二十六条 夜间公务结束后从客户地点返回住所，可以结合加班或会议记录核对为公务返程；从住所前往固定办公地点仍按日常通勤处理。\n\n第二十七条 紧急公务无法事前申请的，申请人应在报销时说明原因，由部门负责人确认业务事实，财务审核员再按本办法复核。\n\n第二十八条 本章只处理公务事实和材料是否充分，不得作为日常通勤、罚款或个人绕行费用的豁免依据。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            }
+          ],
+          "source_ids": [
+            "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+            "84baebaec57e5ec318fe05c236429af35ca8be2e663b2b589070f4237a722f57",
+            "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c",
+            "24bfabb2198a96adf10bb3feb02043492460f8ebd8d721a11b60237c0e900358",
+            "04caec34308fb1b434b65e7e1b83dd7a47591cc4d4c33e44c9dbc2b1e56ffff4"
+          ],
+          "latency_ms": 9974,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R01-C01",
+          "call_hash": "8e829e5e923087d5cd15e8363cbefc113d2fa173c75e986aa4e3bb23af2f473a",
+          "new_evidence_ids": [
+            "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+            "84baebaec57e5ec318fe05c236429af35ca8be2e663b2b589070f4237a722f57",
+            "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c",
+            "24bfabb2198a96adf10bb3feb02043492460f8ebd8d721a11b60237c0e900358",
+            "04caec34308fb1b434b65e7e1b83dd7a47591cc4d4c33e44c9dbc2b1e56ffff4"
+          ]
+        }
+      ],
+      "input_evidence_ids": [
+        "c1b91987847be5dc32e756c938d6f2cb2d572249d9763ba8be519b9bcf0691cd"
+      ],
+      "retrieved_evidence_ids": [
+        "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+        "84baebaec57e5ec318fe05c236429af35ca8be2e663b2b589070f4237a722f57",
+        "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c",
+        "24bfabb2198a96adf10bb3feb02043492460f8ebd8d721a11b60237c0e900358",
+        "04caec34308fb1b434b65e7e1b83dd7a47591cc4d4c33e44c9dbc2b1e56ffff4"
+      ],
+      "rule_evidence_ids": [],
+      "evidence_review": {
+        "recommended_action": "SUFFICIENT",
+        "reason": "现有制度证据（POL-TRANSPORT-2026-V1）明确定义日常通勤为住所与固定办公地点往返，且规定此类费用不予报销，无例外情形。申请人描述的费用性质完全符合该禁止条款，证据覆盖充分且无冲突。",
+        "coverage": [
+          {
+            "question_id": "sq_1",
+            "status": "SUPPORTED",
+            "evidence_ids": [
+              "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f",
+              "33be80ff9bf497e5584b41ee55f98431add61af502888ca17d0007697636358c"
+            ]
+          }
+        ],
+        "evidence_gaps": [],
+        "conflict_evidence_ids": []
+      },
+      "rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-AMOUNT-DATE-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "extracted_fields.amount",
+            "extracted_fields.occurred_on"
+          ],
+          "evidence_ids": [
+            "c1b91987847be5dc32e756c938d6f2cb2d572249d9763ba8be519b9bcf0691cd"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-TRANSPORT-PURPOSE-ELIGIBILITY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "input_refs": [
+            "input.application.transport_purpose",
+            "input.application.origin_type",
+            "input.application.destination_type"
+          ],
+          "evidence_ids": [
+            "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f"
+          ],
+          "reason_code": "DAILY_COMMUTE_EXPLICITLY_PROHIBITED",
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        }
+      ],
+      "risk_flags": [],
+      "risk_level": "HIGH",
+      "recommendation": "REJECT_RECOMMENDED",
+      "decision_reasons": [
+        {
+          "code": "HARD_RULE_FAILED",
+          "message": "申请命中明确的不予报销或额度规则。",
+          "evidence_ids": [
+            "8aa0e38bc1c0e810b3b7b94ddc39d11b124e2d31ba2513a892dc0214cdb9653f"
+          ],
+          "rule_ids": [
+            "RULE-TRANSPORT-PURPOSE-ELIGIBILITY"
+          ]
+        }
+      ],
+      "evidence_metrics_status": "PARTIALLY_MEASURED",
+      "unmeasured_metrics": [
+        "retrieval_margin"
+      ],
+      "evidence_metrics": {
+        "evidence_coverage": 1.0,
+        "citation_completeness": 1.0,
+        "field_consistency": 1.0,
+        "retrieval_margin": null,
+        "rule_conflict_count": 0,
+        "extraction_quality": 1.0
+      },
+      "evaluation": {
+        "passed": true,
+        "retrieval_passed": true,
+        "stop_reason_accepted": true,
+        "required_capabilities": [
+          {
+            "capability_label": "FIND_APPLICABLE_TRANSPORT_PROHIBITION",
+            "tool_options": [
+              "policy_search"
+            ],
+            "query_type": null,
+            "candidate_call_ids": [
+              "R01-C01"
+            ],
+            "matched_call_ids": [
+              "R01-C01"
+            ],
+            "actual_purposes": [
+              "查询适用于日常通勤交通费的报销政策、限额标准及例外条款"
+            ],
+            "matched": true
+          }
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "A-EG1",
+            "matched": true
+          },
+          {
+            "group_id": "A-EG2",
+            "matched": true
+          }
+        ],
+        "matched_gold_evidence_ids": [
+          "EVID-A-POLICY-COMMUTE-EXCLUSION",
+          "EVID-A-TAXI-INVOICE"
+        ],
+        "rule_results": [
+          {
+            "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-AMOUNT-DATE-CONSISTENCY",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-TRANSPORT-PURPOSE-ELIGIBILITY",
+            "matched": true
+          }
+        ],
+        "recommendation_matched": true,
+        "risk_flags_matched": true,
+        "supervisor_invariants": {
+          "decision_sequence_contiguous": true,
+          "challenge_limit_matches_runtime": true,
+          "challenge_within_limit": true,
+          "challenge_targets_questions": true,
+          "retrieval_goals_changed": true,
+          "model_steps_match": true,
+          "guardrail_sequence_contiguous": true,
+          "guardrail_records_valid": true
+        }
+      }
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "scenario": "MULTIHOP_LODGING_CITY_TIER",
+      "status": "COMPLETED",
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "agent_steps": 3,
+      "retrieval_rounds": 1,
+      "query_rewrites": 0,
+      "tokens_used": 7320,
+      "latency_ms": 83831,
+      "trajectory": [
+        {
+          "step_index": 1,
+          "agent": "RETRIEVAL",
+          "action": "RETRIEVE",
+          "thought_summary": "首次检索需核实杭州住宿限额制度及城市等级，以判断1100元/2晚是否合规。",
+          "tool_calls": [
+            {
+              "tool_name": "policy_search",
+              "query": "杭州 住宿 限额 标准",
+              "purpose": "查询适用于杭州的住宿费用限额规定",
+              "query_type": null,
+              "filters": {
+                "expense_type": "住宿",
+                "effective_at": "2026-04-08",
+                "top_k": 5
+              },
+              "arguments": {},
+              "sub_question_id": "sq_1",
+              "call_id": "R01-C01"
+            },
+            {
+              "tool_name": "structured_lookup",
+              "query": "city_tier:杭州",
+              "purpose": "获取杭州对应的城市等级分类",
+              "query_type": "city_tier",
+              "filters": {},
+              "arguments": {
+                "city": "杭州市"
+              },
+              "sub_question_id": "sq_2",
+              "call_id": "R01-C02"
+            }
+          ],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 6476,
+          "tokens_used": 1872,
+          "stop_reason": null
+        },
+        {
+          "step_index": 2,
+          "agent": "EVIDENCE_REVIEWER",
+          "action": "SUFFICIENT",
+          "thought_summary": "结构化数据明确杭州市为A类城市；制度文档规定A类城市每间夜限额600元，并给出计算公式（标准×间夜数×客房数）。现有证据完整覆盖城市等级认定及限额计算标准，无冲突。",
+          "tool_calls": [],
+          "observation_ids": [
+            "R01-C01",
+            "R01-C02"
+          ],
+          "new_evidence_ids": [
+            "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+            "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+            "cc99a856747184f330464eba8ee4df17fcb7f88b7f458765e2c4009ee040e40b",
+            "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58",
+            "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01"
+          ],
+          "latency_ms": 29036,
+          "tokens_used": 4092,
+          "stop_reason": null
+        },
+        {
+          "step_index": 3,
+          "agent": "SUPERVISOR",
+          "action": "VALIDATE",
+          "thought_summary": "Reviewer确认证据充分，城市等级及限额标准已核实且无冲突，符合进入验证阶段条件。",
+          "tool_calls": [],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 31158,
+          "tokens_used": 1356,
+          "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED"
+        }
+      ],
+      "supervisor_decisions": [
+        {
+          "sequence": 1,
+          "decision_source": "DETERMINISTIC",
+          "trigger": "INITIAL",
+          "action": "RETRIEVE",
+          "reason": "尚无证据评审结果，进入首次检索。",
+          "previous_goal": null,
+          "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "stop_reason": null,
+          "used_model": false,
+          "referenced_call_ids": [],
+          "challenged_question_ids": [],
+          "latency_ms": 0,
+          "tokens_used": 0
+        },
+        {
+          "sequence": 2,
+          "decision_source": "LLM",
+          "trigger": "REVIEW_SUFFICIENT",
+          "action": "VALIDATE",
+          "reason": "Reviewer确认证据充分，城市等级及限额标准已核实且无冲突，符合进入验证阶段条件。",
+          "previous_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "new_goal": null,
+          "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+          "used_model": true,
+          "referenced_call_ids": [
+            "R01-C01",
+            "R01-C02"
+          ],
+          "challenged_question_ids": [],
+          "latency_ms": 31158,
+          "tokens_used": 1356
+        }
+      ],
+      "supervisor_challenge_count": 0,
+      "guardrail_decisions": [],
+      "tool_observations": [
+        {
+          "tool_name": "policy_search",
+          "query": "杭州 住宿 限额 标准",
+          "items": [
+            {
+              "evidence_id": "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5995250940322876,
+              "document_id": "POL-LODGING-2026-V3",
+              "version": "3.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第六章 标准计算与费用边界",
+              "excerpt": "第六章 标准计算与费用边界\n\n第二十六条 可报住宿限额按“适用城市等级每间夜标准 × 实际间夜数 × 公司承担的客房数”计算。\n\n第二十七条 金额以人民币元计，精确到分。外币住宿按《外币费用折算规则》（FIN-FX-2026）规定的汇率折算。第二十八条 房费中不可分拆的税费和基础服务费并入住宿金额；迷你吧、洗衣、付费娱乐和个人升级费用不计入可报住宿额。\n\n第二十九条 房费包含早餐且酒店不单独定价的，随房费核对；另行购买的餐饮按相应餐饮制度处理。\n\n第三十条 示例：一间客房住宿两晚，应以两间夜计算。示例只说明计算单位，不新增额度或例外。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5700705051422119,
+              "document_id": "POL-LODGING-2026-V3",
+              "version": "3.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 5,
+              "section": "第七章 城市等级住宿标准",
+              "excerpt": "城市等级 | 每间夜上限 | 核算单位\nA类城市 | 600.00元 | 每间客房每夜\nB类城市 | 450.00元 | 每间客房每夜\n第三十二条 同一笔申请应先确认城市等级、实际间夜数和公司承担的客房数，再计算总限额。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "cc99a856747184f330464eba8ee4df17fcb7f88b7f458765e2c4009ee040e40b",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5437527298927307,
+              "document_id": "POL-LODGING-2026-V3",
+              "version": "3.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 5,
+              "section": "第七章 城市等级住宿标准",
+              "excerpt": "第三十三条 入住价格低于标准的，按实际金额报销；未使用的额度不能转移到其他日期、房间或同行人员。\n\n第三十四条 酒店将房费与个人消费合并开票的，申请人应要求酒店拆分或提供明细，个人消费部分不予报销。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5426193475723267,
+              "document_id": "POL-LODGING-2026-V3",
+              "version": "3.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 5,
+              "section": "第七章 城市等级住宿标准",
+              "excerpt": "第七章 城市等级住宿标准\n\n第三十一条 住宿标准按城市等级执行：A 类城市每间夜最高 600.00 元，B 类城市每间夜最高 450.00 元。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5395962595939636,
+              "document_id": "POL-LODGING-2026-V3",
+              "version": "3.0",
+              "effective_from": "2026-01-01",
+              "effective_to": null,
+              "page": 2,
+              "section": "第一章 总则与术语",
+              "excerpt": "第一章 总则与术语\n\n第一条 本办法规定住宿预订、标准计算、凭证审核、例外审批和提交归档要求。\n\n第二条 间夜数按入住日至退房日的自然日差计算；当天入住、次日退房计一间夜。\n\n第三条 客房数是同一申请中由公司承担的实际房间数量。同行人员分别申请时，不得重复计算同一客房。\n\n第四条 公务住宿不包括个人提前到达、延迟离开或随行家属增加的房费。\n\n第五条 费用发生日期用于筛选当时有效的制度，退房日期用于计算提交时限。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            }
+          ],
+          "source_ids": [
+            "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+            "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+            "cc99a856747184f330464eba8ee4df17fcb7f88b7f458765e2c4009ee040e40b",
+            "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58",
+            "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6"
+          ],
+          "latency_ms": 4485,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R01-C01",
+          "call_hash": "b865fb8db9f8f2f8b50805a878b9816ad7f74ea78515d80b3937079beedd1732",
+          "new_evidence_ids": [
+            "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+            "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+            "cc99a856747184f330464eba8ee4df17fcb7f88b7f458765e2c4009ee040e40b",
+            "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58",
+            "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6"
+          ]
+        },
+        {
+          "tool_name": "structured_lookup",
+          "query": "city_tier:杭州",
+          "items": [
+            {
+              "evidence_id": "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01",
+              "source_type": "STRUCTURED_RECORD",
+              "score": null,
+              "document_id": null,
+              "version": null,
+              "effective_from": null,
+              "effective_to": null,
+              "page": null,
+              "section": null,
+              "excerpt": null,
+              "catalog_snapshot_id": null,
+              "published_status": null,
+              "authority_level": null,
+              "priority": null,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": "STRUCTURED-DATA-SYN-1.0.0",
+              "fixture_id": "CITY-TIER-2026-01",
+              "query_type": "city_tier",
+              "record_key": "杭州市",
+              "snapshot_version": "2026.01",
+              "effective_at": "2026-04-08",
+              "value": "A",
+              "available_amount": null,
+              "consumer": "structured_lookup"
+            }
+          ],
+          "source_ids": [
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01"
+          ],
+          "latency_ms": 8,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R01-C02",
+          "call_hash": "56a4f131168b46dba1c15f7227ed37ee85a0afc8fe70dab98544e7e559cc0f50",
+          "new_evidence_ids": [
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01"
+          ]
+        }
+      ],
+      "input_evidence_ids": [
+        "d3201d0dd48ddb0036b7e5a6752943ebd68815bab14fb3487f724b458e1b74ae",
+        "c7a462876f20756fee4756319b50fc5bcf7a2b2e10e41d02a6ed8ce4c6cb9cad"
+      ],
+      "retrieved_evidence_ids": [
+        "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+        "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+        "cc99a856747184f330464eba8ee4df17fcb7f88b7f458765e2c4009ee040e40b",
+        "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58",
+        "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6",
+        "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01"
+      ],
+      "rule_evidence_ids": [
+        "STRUCT:STRUCTURED-DATA-SYN-1.0.0:DUPLICATE-INVOICE-SNAPSHOT-B",
+        "STRUCT:STRUCTURED-DATA-SYN-1.0.0:BUDGET-SNAPSHOT-B",
+        "STRUCT:STRUCTURED-DATA-SYN-1.0.0:APPROVAL-PERMISSION-SNAPSHOT-B"
+      ],
+      "evidence_review": {
+        "recommended_action": "SUFFICIENT",
+        "reason": "结构化数据明确杭州市为A类城市；制度文档规定A类城市每间夜限额600元，并给出计算公式（标准×间夜数×客房数）。现有证据完整覆盖城市等级认定及限额计算标准，无冲突。",
+        "coverage": [
+          {
+            "question_id": "sq_1",
+            "status": "SUPPORTED",
+            "evidence_ids": [
+              "5b935ef506037b48ccfba3e1fa96508b7b66c7b4d3b475f2163b6fd8ede8f47c",
+              "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+              "b9d1695f669624af004c737a8c1ad9bb9443d2afcd06b60b28406e1b4e3fca58"
+            ]
+          },
+          {
+            "question_id": "sq_2",
+            "status": "SUPPORTED",
+            "evidence_ids": [
+              "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01"
+            ]
+          }
+        ],
+        "evidence_gaps": [],
+        "conflict_evidence_ids": []
+      },
+      "rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-LODGING-NIGHT-COUNT",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.check_in",
+            "input.application.check_out",
+            "input.application.room_count"
+          ],
+          "evidence_ids": [
+            "c7a462876f20756fee4756319b50fc5bcf7a2b2e10e41d02a6ed8ce4c6cb9cad"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": 2,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-LODGING-AMOUNT-LIMIT",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.room_count",
+            "input.application.check_in",
+            "input.application.check_out"
+          ],
+          "evidence_ids": [
+            "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01",
+            "c7a462876f20756fee4756319b50fc5bcf7a2b2e10e41d02a6ed8ce4c6cb9cad"
+          ],
+          "reason_code": null,
+          "computed_limit": "1200.00",
+          "actual_amount": "1100.00",
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-LODGING-DOCUMENT-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "extracted_fields.amount",
+            "extracted_fields.city",
+            "extracted_fields.check_in",
+            "extracted_fields.check_out",
+            "extracted_fields.room_count"
+          ],
+          "evidence_ids": [
+            "d3201d0dd48ddb0036b7e5a6752943ebd68815bab14fb3487f724b458e1b74ae",
+            "c7a462876f20756fee4756319b50fc5bcf7a2b2e10e41d02a6ed8ce4c6cb9cad"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-SUBMISSION-TIMELINESS",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.check_out",
+            "input.application.submitted_on"
+          ],
+          "evidence_ids": [
+            "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6"
+          ],
+          "reason_code": null,
+          "computed_limit": "30",
+          "actual_amount": null,
+          "computed_value": 5,
+          "unit": "days"
+        },
+        {
+          "rule_id": "RULE-DUPLICATE-INVOICE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "extracted_fields.invoice_number"
+          ],
+          "evidence_ids": [
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:DUPLICATE-INVOICE-SNAPSHOT-B"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-BUDGET-AVAILABLE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.applicant.department_id",
+            "input.application.amount"
+          ],
+          "evidence_ids": [
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:BUDGET-SNAPSHOT-B"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-APPLICANT-PERMISSION",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.applicant.employee_id",
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:APPROVAL-PERMISSION-SNAPSHOT-B"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        }
+      ],
+      "risk_flags": [],
+      "risk_level": "LOW",
+      "recommendation": "PASS_RECOMMENDED",
+      "decision_reasons": [
+        {
+          "code": "ALL_RULES_PASSED",
+          "message": "检索证据充分，全部适用的确定性规则通过。",
+          "evidence_ids": [
+            "c7a462876f20756fee4756319b50fc5bcf7a2b2e10e41d02a6ed8ce4c6cb9cad",
+            "00094f11669dff55d82b648834c980abff26427b8149f76af3f4ec8f46eab0b7",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:CITY-TIER-2026-01",
+            "d3201d0dd48ddb0036b7e5a6752943ebd68815bab14fb3487f724b458e1b74ae",
+            "2c80ca348eb929b10923cca2184e10918d1f2e96f1277265801f4ee10fa695b6",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:DUPLICATE-INVOICE-SNAPSHOT-B",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:BUDGET-SNAPSHOT-B",
+            "STRUCT:STRUCTURED-DATA-SYN-1.0.0:APPROVAL-PERMISSION-SNAPSHOT-B"
+          ],
+          "rule_ids": [
+            "RULE-EXPENSE-TYPE-IN-SCOPE",
+            "RULE-LODGING-NIGHT-COUNT",
+            "RULE-LODGING-AMOUNT-LIMIT",
+            "RULE-LODGING-DOCUMENT-CONSISTENCY",
+            "RULE-SUBMISSION-TIMELINESS",
+            "RULE-DUPLICATE-INVOICE",
+            "RULE-BUDGET-AVAILABLE",
+            "RULE-APPLICANT-PERMISSION"
+          ]
+        }
+      ],
+      "evidence_metrics_status": "PARTIALLY_MEASURED",
+      "unmeasured_metrics": [
+        "retrieval_margin"
+      ],
+      "evidence_metrics": {
+        "evidence_coverage": 1.0,
+        "citation_completeness": 1.0,
+        "field_consistency": 1.0,
+        "retrieval_margin": null,
+        "rule_conflict_count": 0,
+        "extraction_quality": 1.0
+      },
+      "evaluation": {
+        "passed": true,
+        "retrieval_passed": true,
+        "stop_reason_accepted": true,
+        "required_capabilities": [
+          {
+            "capability_label": "FIND_APPLICABLE_LODGING_LIMITS",
+            "tool_options": [
+              "policy_search"
+            ],
+            "query_type": null,
+            "candidate_call_ids": [
+              "R01-C01"
+            ],
+            "matched_call_ids": [
+              "R01-C01"
+            ],
+            "actual_purposes": [
+              "查询适用于杭州的住宿费用限额规定"
+            ],
+            "matched": true
+          },
+          {
+            "capability_label": "LOOKUP_CITY_TIER",
+            "tool_options": [
+              "structured_lookup"
+            ],
+            "query_type": "city_tier",
+            "candidate_call_ids": [
+              "R01-C02"
+            ],
+            "matched_call_ids": [
+              "R01-C02"
+            ],
+            "actual_purposes": [
+              "获取杭州对应的城市等级分类"
+            ],
+            "matched": true
+          }
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "B-EG1",
+            "matched": true
+          },
+          {
+            "group_id": "B-EG2",
+            "matched": true
+          },
+          {
+            "group_id": "B-EG3",
+            "matched": true
+          },
+          {
+            "group_id": "B-EG4",
+            "matched": true
+          }
+        ],
+        "matched_gold_evidence_ids": [
+          "EVID-B-BUDGET-LOOKUP",
+          "EVID-B-CITY-TIER-HANGZHOU",
+          "EVID-B-DUPLICATE-LOOKUP",
+          "EVID-B-HOTEL-INVOICE",
+          "EVID-B-ITINERARY",
+          "EVID-B-PERMISSION-LOOKUP",
+          "EVID-B-POLICY-LODGING-LIMIT"
+        ],
+        "rule_results": [
+          {
+            "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-LODGING-NIGHT-COUNT",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-LODGING-AMOUNT-LIMIT",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-LODGING-DOCUMENT-CONSISTENCY",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-SUBMISSION-TIMELINESS",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-DUPLICATE-INVOICE",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-BUDGET-AVAILABLE",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-APPLICANT-PERMISSION",
+            "matched": true
+          }
+        ],
+        "recommendation_matched": true,
+        "risk_flags_matched": true,
+        "supervisor_invariants": {
+          "decision_sequence_contiguous": true,
+          "challenge_limit_matches_runtime": true,
+          "challenge_within_limit": true,
+          "challenge_targets_questions": true,
+          "retrieval_goals_changed": true,
+          "model_steps_match": true,
+          "guardrail_sequence_contiguous": true,
+          "guardrail_records_valid": true
+        }
+      }
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "scenario": "OVERLAPPING_POLICY_VERSION_CONFLICT",
+      "status": "HUMAN_PENDING",
+      "stop_reason": "UNRESOLVED_POLICY_VERSION_CONFLICT",
+      "agent_steps": 5,
+      "retrieval_rounds": 2,
+      "query_rewrites": 1,
+      "tokens_used": 20107,
+      "latency_ms": 90846,
+      "trajectory": [
+        {
+          "step_index": 1,
+          "agent": "RETRIEVAL",
+          "action": "RETRIEVE",
+          "thought_summary": "首次检索，需核实餐饮费用制度限额、业务接待定义及单人参加是否合规。",
+          "tool_calls": [
+            {
+              "tool_name": "policy_search",
+              "query": "餐饮费 业务接待 报销标准 限额 参加人数要求",
+              "purpose": "获取当前有效的餐饮及业务接待费用管理制度，确认金额限额和人员数量规定。",
+              "query_type": null,
+              "filters": {
+                "expense_type": "餐饮",
+                "effective_at": "2026-06-15",
+                "top_k": 5
+              },
+              "arguments": {},
+              "sub_question_id": "Q1",
+              "call_id": "R01-C01"
+            },
+            {
+              "tool_name": "policy_search",
+              "query": "业务招待 单人用餐 禁止项 例外情况",
+              "purpose": "查询关于单人参与业务接待的禁止性规定或特殊例外条款。",
+              "query_type": null,
+              "filters": {
+                "expense_type": "餐饮",
+                "effective_at": "2026-06-15",
+                "top_k": 5
+              },
+              "arguments": {},
+              "sub_question_id": "Q2",
+              "call_id": "R01-C02"
+            }
+          ],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 7972,
+          "tokens_used": 1602,
+          "stop_reason": null
+        },
+        {
+          "step_index": 2,
+          "agent": "EVIDENCE_REVIEWER",
+          "action": "RETRIEVE_MORE",
+          "thought_summary": "费用发生日2026-06-15同时处于POL-DINING-2025-V1（有效期至2026-06-30）和POL-DINING-2026-V2（生效于2026-06-01）的覆盖期内。两制度均为FORMAL_POLICY且priority相同，但规定的人均限额不同（120元 vs 150元）。现有证据未包含明确的废止、替代或过渡条款来消除冲突，需检索权威元数据确定适用版本。",
+          "tool_calls": [],
+          "observation_ids": [
+            "R01-C01",
+            "R01-C02"
+          ],
+          "new_evidence_ids": [
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+            "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "4ca5b956803bb38db8ba196d0b4ef70b8222772ee4cc09df7a02ff8014add543",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e"
+          ],
+          "latency_ms": 18638,
+          "tokens_used": 4932,
+          "stop_reason": null
+        },
+        {
+          "step_index": 3,
+          "agent": "SUPERVISOR",
+          "action": "RETRIEVE",
+          "thought_summary": "Reviewer指出2026-06-15处于新旧餐饮制度重叠期，存在限额冲突（120元 vs 150元），且缺乏明确的废止或过渡条款证据。当前预算充足，需检索权威元数据确定适用版本以消除Q1冲突。",
+          "tool_calls": [],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 13160,
+          "tokens_used": 1933,
+          "stop_reason": null
+        },
+        {
+          "step_index": 4,
+          "agent": "RETRIEVAL",
+          "action": "RETRIEVE_MORE",
+          "thought_summary": "针对Q1的限额冲突，需检索POL-DINING-2025-V1与POL-DINING-2026-V2在重叠期（2026年6月）的效力优先级、废止令或过渡条款，以确定适用标准。",
+          "tool_calls": [
+            {
+              "tool_name": "policy_search",
+              "query": "POL-DINING-2025-V1 POL-DINING-2026-V2 废止 替代 过渡期 效力优先级 衔接条款",
+              "purpose": "确定新旧餐饮制度在重叠期的适用版本以解决限额冲突",
+              "query_type": null,
+              "filters": {
+                "expense_type": "餐饮",
+                "effective_at": "2026-06-15",
+                "top_k": 5
+              },
+              "arguments": {},
+              "sub_question_id": "SQ1",
+              "call_id": "R02-C01"
+            }
+          ],
+          "observation_ids": [],
+          "new_evidence_ids": [],
+          "latency_ms": 8622,
+          "tokens_used": 4906,
+          "stop_reason": null
+        },
+        {
+          "step_index": 5,
+          "agent": "EVIDENCE_REVIEWER",
+          "action": "ESCALATE",
+          "thought_summary": "Q1存在制度限额冲突（2025版120元 vs 2026版150元），费用发生日2026-06-15处于两制度重叠期。虽已检索替代/衔接条款，但现有证据未明确该日期适用哪一版本或是否有过渡规定，需进一步定向查询权威元数据以解决冲突。",
+          "tool_calls": [],
+          "observation_ids": [
+            "R02-C01"
+          ],
+          "new_evidence_ids": [
+            "dd3d4d91a9af227050c8ca4ace0df0b09973f2dbbd0e667b9053a77239612491",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7",
+            "8672864148c013cb0a5c79bc14df3c2b5d4eb685fda03ae96c665f01025289f1",
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3"
+          ],
+          "latency_ms": 38975,
+          "tokens_used": 6734,
+          "stop_reason": null
+        }
+      ],
+      "supervisor_decisions": [
+        {
+          "sequence": 1,
+          "decision_source": "DETERMINISTIC",
+          "trigger": "INITIAL",
+          "action": "RETRIEVE",
+          "reason": "尚无证据评审结果，进入首次检索。",
+          "previous_goal": null,
+          "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "stop_reason": null,
+          "used_model": false,
+          "referenced_call_ids": [],
+          "challenged_question_ids": [],
+          "latency_ms": 0,
+          "tokens_used": 0
+        },
+        {
+          "sequence": 2,
+          "decision_source": "LLM",
+          "trigger": "REVIEW_RETRIEVE_MORE",
+          "action": "RETRIEVE",
+          "reason": "Reviewer指出2026-06-15处于新旧餐饮制度重叠期，存在限额冲突（120元 vs 150元），且缺乏明确的废止或过渡条款证据。当前预算充足，需检索权威元数据确定适用版本以消除Q1冲突。",
+          "previous_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+          "new_goal": "检索POL-DINING-2025-V1与POL-DINING-2026-V2在2026年6月的效力优先级、废止令、替代关系或过渡期通知等正式文件。",
+          "stop_reason": null,
+          "used_model": true,
+          "referenced_call_ids": [
+            "R01-C01"
+          ],
+          "challenged_question_ids": [],
+          "latency_ms": 13160,
+          "tokens_used": 1933
+        },
+        {
+          "sequence": 3,
+          "decision_source": "DETERMINISTIC",
+          "trigger": "REVIEW_ESCALATE",
+          "action": "ESCALATE",
+          "reason": "Q1存在制度限额冲突（2025版120元 vs 2026版150元），费用发生日2026-06-15处于两制度重叠期。虽已检索替代/衔接条款，但现有证据未明确该日期适用哪一版本或是否有过渡规定，需进一步定向查询权威元数据以解决冲突。",
+          "previous_goal": "检索POL-DINING-2025-V1与POL-DINING-2026-V2在2026年6月的效力优先级、废止令、替代关系或过渡期通知等正式文件。",
+          "new_goal": null,
+          "stop_reason": "REVIEWER_FOUND_UNRESOLVED_CONFLICT",
+          "used_model": false,
+          "referenced_call_ids": [
+            "R01-C01",
+            "R01-C02",
+            "R02-C01"
+          ],
+          "challenged_question_ids": [],
+          "latency_ms": 0,
+          "tokens_used": 0
+        }
+      ],
+      "supervisor_challenge_count": 0,
+      "guardrail_decisions": [],
+      "tool_observations": [
+        {
+          "tool_name": "policy_search",
+          "query": "餐饮费 业务接待 报销标准 限额 参加人数要求",
+          "items": [
+            {
+              "evidence_id": "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7578961849212646,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第六章 业务餐饮标准与附则",
+              "excerpt": "第六章 业务餐饮标准与附则\n\n第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 150.00 元。\n\n第二十六条 实际金额低于上限的，按实际金额报销；未使用额度不得结转至其他人员或日期。\n\n第二十七条 申请、发票、消费明细、参加人员、审批及更正记录应按《财务档案管理规范》（FIN-ARCH-2026）保存。\n\n第二十八条 本办法由财务部负责解释。修订、废止或制度衔接事项须按第一条规定另行发布。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7535988688468933,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 4,
+              "section": "第六章 业务餐饮标准与档案",
+              "excerpt": "第六章 业务餐饮标准与档案\n\n第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 120.00 元。\n\n第二十六条 实际金额低于上限的，按实际金额报销；未使用额度不得结转、转让或用于其他日期。\n\n第二十七条 申请、发票、消费明细、参加人员和审批记录应按《财务档案管理规范》（FIN-ARCH-2026）保存。\n\n第二十八条 本办法由财务部负责解释。任何修订、废止或衔接安排均须形成正式书面文件并完成发布。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7236133813858032,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 4,
+              "section": "第五章 计算口径与不予报销项目",
+              "excerpt": "第五章 计算口径与不予报销项目\n\n第二十条 业务餐饮按实际参加人数和费用发生日计算人均每日金额，同一人员同日多笔费用应合并核对。\n\n第二十一条 商家折扣、优惠券、退款和第三方补贴应从公司或员工实际承担金额中扣除。\n\n第二十二条 部门自行设定的接待预算是预算控制，不是提高本办法人均标准的依据。\n\n第二十三条 个人用餐、虚增人数、拆分票据、无业务目的或无法核实参加人员的费用不予报销。\n\n第二十四条 超出本办法标准的金额应如实记录为超限，不得通过拆单、虚增人数或改换日期改变计算结果。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7109681367874146,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 3,
+              "section": "第三章 事前申请与接待安排",
+              "excerpt": "第三章 事前申请与接待安排\n\n第十条 部门可在可预见的客户接待发生前登记业务事项、预计人数和费用承担部门；未事前登记的，财务仍按申请事实、票据和本办法标准核对。\n\n第十一条 临时业务餐饮无法事前申请的，应在报销时说明原因，由部门负责人补充确认业务事实。\n\n第十二条 同一业务事项连续发生多场餐饮的，应分别记录时间、参加人员和业务目的，不得合并人数提高单场额度。\n\n第十三条 由客户、供应商或会议主办方承担的餐费，不得再次申请报销。\n\n第十四条 活动整体预算审批不替代单笔餐饮的标准和凭证审核。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.7000021934509277,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第五章 核算与异常事项",
+              "excerpt": "第五章 核算与异常事项\n\n第二十条 人均金额按同一费用发生日的可报餐饮总额除以实际参加人数计算。\n\n第二十一条 同一人员同日参加多场由公司承担的业务餐饮，财务可合并核对当日金额和业务必要性。\n\n第二十二条 活动总预算、对公采购审批金额和餐饮人均标准属于不同控制口径，不得相互替代。\n\n第二十三条 参加人数无法确认、消费内容混杂或票据真伪待核实时，应先补充材料再处理。\n\n第二十四条 虚增人数、重复报销或将个人消费列入业务餐饮的，不予报销并按公司规定处理。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            }
+          ],
+          "source_ids": [
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd"
+          ],
+          "latency_ms": 1346,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R01-C01",
+          "call_hash": "4a058b89825426411d0b562c721c80b3dd8cb9a42191186afe890ad52b4de0ba",
+          "new_evidence_ids": [
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd"
+          ]
+        },
+        {
+          "tool_name": "policy_search",
+          "query": "业务招待 单人用餐 禁止项 例外情况",
+          "items": [
+            {
+              "evidence_id": "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5976839065551758,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 4,
+              "section": "第五章 核算与异常事项",
+              "excerpt": "第五章 核算与异常事项\n\n第二十条 人均金额按同一费用发生日的可报餐饮总额除以实际参加人数计算。\n\n第二十一条 同一人员同日参加多场由公司承担的业务餐饮，财务可合并核对当日金额和业务必要性。\n\n第二十二条 活动总预算、对公采购审批金额和餐饮人均标准属于不同控制口径，不得相互替代。\n\n第二十三条 参加人数无法确认、消费内容混杂或票据真伪待核实时，应先补充材料再处理。\n\n第二十四条 虚增人数、重复报销或将个人消费列入业务餐饮的，不予报销并按公司规定处理。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5960099697113037,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 2,
+              "section": "第二章 适用范围、术语与职责",
+              "excerpt": "第二章 适用范围、术语与职责\n\n第五条 业务餐饮是因客户接待、业务洽谈、项目会议等工作事项发生，并能说明参加人员和业务目的的餐饮。\n\n第六条 员工日常个人用餐、家庭聚餐及与业务无关的消费不属于业务餐饮。\n\n第七条 申请人如实填写事由、日期、地点、参加人数及人员构成，并提交发票和消费明细。\n\n第八条 部门负责人确认业务事项及参加人员；财务审核员核对标准、凭证、预算和重复报销记录。\n\n第九条 负责人对业务事实的确认不等于对缺失票据、超标准金额或个人消费的豁免。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5946589708328247,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 4,
+              "section": "第五章 计算口径与不予报销项目",
+              "excerpt": "第五章 计算口径与不予报销项目\n\n第二十条 业务餐饮按实际参加人数和费用发生日计算人均每日金额，同一人员同日多笔费用应合并核对。\n\n第二十一条 商家折扣、优惠券、退款和第三方补贴应从公司或员工实际承担金额中扣除。\n\n第二十二条 部门自行设定的接待预算是预算控制，不是提高本办法人均标准的依据。\n\n第二十三条 个人用餐、虚增人数、拆分票据、无业务目的或无法核实参加人员的费用不予报销。\n\n第二十四条 超出本办法标准的金额应如实记录为超限，不得通过拆单、虚增人数或改换日期改变计算结果。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "4ca5b956803bb38db8ba196d0b4ef70b8222772ee4cc09df7a02ff8014add543",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5910505056381226,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 3,
+              "section": "第三章 申请与审批",
+              "excerpt": "第三章 申请与审批\n\n第十条 部门可在计划性客户接待发生前登记业务目的、预计人数、地点和预算来源；未事前登记的，财务仍按申请事实、票据和本办法标准核对。\n\n第十一条 临时发生的客户工作餐，应在报销时补充发生原因及业务联系人，由部门负责人确认。\n\n第十二条 负责人确认业务必要性，不得以此替代发票、消费明细或参加人员记录。\n\n第十三条 同一事项在同日分多次发生的，按实际参加人员合并核对人均金额；不得通过拆单改变标准。\n\n第十四条 由其他单位承担或已经对公结算的餐费，不得再次以个人垫付方式申请。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5863546133041382,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 3,
+              "section": "第三章 事前申请与接待安排",
+              "excerpt": "第三章 事前申请与接待安排\n\n第十条 部门可在可预见的客户接待发生前登记业务事项、预计人数和费用承担部门；未事前登记的，财务仍按申请事实、票据和本办法标准核对。\n\n第十一条 临时业务餐饮无法事前申请的，应在报销时说明原因，由部门负责人补充确认业务事实。\n\n第十二条 同一业务事项连续发生多场餐饮的，应分别记录时间、参加人员和业务目的，不得合并人数提高单场额度。\n\n第十三条 由客户、供应商或会议主办方承担的餐费，不得再次申请报销。\n\n第十四条 活动整体预算审批不替代单笔餐饮的标准和凭证审核。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            }
+          ],
+          "source_ids": [
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+            "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "4ca5b956803bb38db8ba196d0b4ef70b8222772ee4cc09df7a02ff8014add543",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e"
+          ],
+          "latency_ms": 1569,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R01-C02",
+          "call_hash": "845e6bfd12af638a540f539eb1a6cc14ca3d0eb54d991ded45895c1b67f15425",
+          "new_evidence_ids": [
+            "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+            "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+            "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+            "4ca5b956803bb38db8ba196d0b4ef70b8222772ee4cc09df7a02ff8014add543",
+            "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e"
+          ]
+        },
+        {
+          "tool_name": "policy_search",
+          "query": "POL-DINING-2025-V1 POL-DINING-2026-V2 废止 替代 过渡期 效力优先级 衔接条款",
+          "items": [
+            {
+              "evidence_id": "dd3d4d91a9af227050c8ca4ace0df0b09973f2dbbd0e667b9053a77239612491",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.524320125579834,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 1,
+              "section": "合成企业甲业务餐饮费用实施办法",
+              "excerpt": "合成企业甲业务餐饮费用实施办法\n\n制度编号：POL-DINING-2026-V2\n\n版本：2.0\n\n状态：已发布\n\n生效日期：2026-06-01\n\n归口部门：财务部费用管理组\n\n会签部门：行政部、市场部\n\n批准主体：财务负责人\n\n适用范围：客户工作餐、业务接待及经批准的项目会议餐饮。\n\n发布说明：细化参加人员、消费明细和票据更正要求。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.5091908574104309,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 1,
+              "section": "合成企业甲业务餐饮费用管理办法（试行）",
+              "excerpt": "合成企业甲业务餐饮费用管理办法（试行）\n\n制度编号：POL-DINING-2025-V1\n\n版本：1.0\n\n状态：已发布\n\n生效日期：2025-01-01\n\n有效期至：2026-06-30\n\n归口部门：财务部费用管理组\n\n会签部门：行政部\n\n批准主体：财务负责人\n\n适用范围：客户接待、业务洽谈及经批准的工作餐费用。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "8672864148c013cb0a5c79bc14df3c2b5d4eb685fda03ae96c665f01025289f1",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.44287198781967163,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 2,
+              "section": "第一章 施行期间与文件管理",
+              "excerpt": "第一章 施行期间与文件管理\n\n第一条 本办法自 2025 年 1 月 1 日起施行，有效期至 2026 年 6 月 30 日。修订、提前终止或者续行，须履行原审批程序并另行发布书面通知。\n\n第二条 费用是否适用本办法，以餐饮实际发生日期为准，不以发票开具日期或报销提交日期替代。\n\n第三条 部门内部通知、口头说明和历史报销案例不能修改本办法的有效期或标准。\n\n第四条 财务部负责保存本办法的发布、修订和废止记录。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.4257303476333618,
+              "document_id": "POL-DINING-2026-V2",
+              "version": "2.0",
+              "effective_from": "2026-06-01",
+              "effective_to": null,
+              "page": 2,
+              "section": "第一章 施行与文件管理",
+              "excerpt": "第一章 施行与文件管理\n\n第一条 本办法自 2026 年 6 月 1 日起施行。修订、废止以及与其他费用制度的衔接事项，须经原审批程序另行发布书面通知。\n\n第二条 适用制度以餐饮实际发生日期判断。发票补开日期和报销提交日期不改变费用发生日期。\n\n第三条 未经正式发布的邮件、群消息和口头意见，不构成本办法的修订或衔接文件。\n\n第四条 财务部负责保管制度原件、发布记录和后续修订文件。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            },
+            {
+              "evidence_id": "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+              "source_type": "POLICY_DOCUMENT",
+              "score": 0.36613011360168457,
+              "document_id": "POL-DINING-2025-V1",
+              "version": "1.0",
+              "effective_from": "2025-01-01",
+              "effective_to": "2026-06-30",
+              "page": 4,
+              "section": "第六章 业务餐饮标准与档案",
+              "excerpt": "第六章 业务餐饮标准与档案\n\n第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 120.00 元。\n\n第二十六条 实际金额低于上限的，按实际金额报销；未使用额度不得结转、转让或用于其他日期。\n\n第二十七条 申请、发票、消费明细、参加人员和审批记录应按《财务档案管理规范》（FIN-ARCH-2026）保存。\n\n第二十八条 本办法由财务部负责解释。任何修订、废止或衔接安排均须形成正式书面文件并完成发布。",
+              "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0",
+              "published_status": "PUBLISHED",
+              "authority_level": "FORMAL_POLICY",
+              "priority": 100,
+              "supersedes_document_id": null,
+              "structured_data_snapshot_id": null,
+              "fixture_id": null,
+              "query_type": null,
+              "record_key": null,
+              "snapshot_version": null,
+              "effective_at": null,
+              "value": null,
+              "available_amount": null,
+              "consumer": null
+            }
+          ],
+          "source_ids": [
+            "dd3d4d91a9af227050c8ca4ace0df0b09973f2dbbd0e667b9053a77239612491",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7",
+            "8672864148c013cb0a5c79bc14df3c2b5d4eb685fda03ae96c665f01025289f1",
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3",
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466"
+          ],
+          "latency_ms": 541,
+          "error": null,
+          "is_degraded": false,
+          "call_id": "R02-C01",
+          "call_hash": "19190a26b23027eff5d2972b44d635f2112e32ee7826234974db6d834553a434",
+          "new_evidence_ids": [
+            "dd3d4d91a9af227050c8ca4ace0df0b09973f2dbbd0e667b9053a77239612491",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7",
+            "8672864148c013cb0a5c79bc14df3c2b5d4eb685fda03ae96c665f01025289f1",
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3"
+          ]
+        }
+      ],
+      "input_evidence_ids": [
+        "f817f4a6ade50ee301a4f8614cddcfe871e390585d7fbe4a767880f6972fc5be"
+      ],
+      "retrieved_evidence_ids": [
+        "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+        "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+        "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+        "9a43ea8377131212b85ca75d7d6e7284143a5e05d00632f39a049b8e0f90f37e",
+        "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd",
+        "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+        "4ca5b956803bb38db8ba196d0b4ef70b8222772ee4cc09df7a02ff8014add543",
+        "dd3d4d91a9af227050c8ca4ace0df0b09973f2dbbd0e667b9053a77239612491",
+        "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7",
+        "8672864148c013cb0a5c79bc14df3c2b5d4eb685fda03ae96c665f01025289f1",
+        "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3"
+      ],
+      "rule_evidence_ids": [],
+      "evidence_review": {
+        "recommended_action": "ESCALATE",
+        "reason": "Q1存在制度限额冲突（2025版120元 vs 2026版150元），费用发生日2026-06-15处于两制度重叠期。虽已检索替代/衔接条款，但现有证据未明确该日期适用哪一版本或是否有过渡规定，需进一步定向查询权威元数据以解决冲突。",
+        "coverage": [
+          {
+            "question_id": "Q1",
+            "status": "CONFLICTING",
+            "evidence_ids": [
+              "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+              "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09"
+            ]
+          },
+          {
+            "question_id": "Q2",
+            "status": "SUPPORTED",
+            "evidence_ids": [
+              "c78ffe55e6661db6d62f6a715053cfc08c3406cca0d525b031fd9ae4df5e699d",
+              "a7411ef60503422e95821c435dec88a486d2faae4897c1ba5fe7f13441598dee",
+              "e0924f441912c731bbaf0e41e12114abebc3348b1e19c598020ed30533f7effd"
+            ]
+          },
+          {
+            "question_id": "SQ1",
+            "status": "MISSING",
+            "evidence_ids": []
+          }
+        ],
+        "evidence_gaps": [
+          "缺少明确指定2026年6月1日至6月30日期间餐饮费用适用标准（120元或150元）的正式废止、替代或过渡期文件。",
+          "缺少关于POL-DINING-2025-V1与POL-DINING-2026-V2在重叠生效期的具体效力优先级裁定依据。"
+        ],
+        "conflict_evidence_ids": [
+          "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+          "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09"
+        ]
+      },
+      "rule_results": [
+        {
+          "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-MEAL-DOCUMENT-CONSISTENCY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "extracted_fields.amount",
+            "extracted_fields.occurred_on"
+          ],
+          "evidence_ids": [
+            "f817f4a6ade50ee301a4f8614cddcfe871e390585d7fbe4a767880f6972fc5be"
+          ],
+          "reason_code": null,
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-POLICY-VERSION-UNIQUENESS",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "input_refs": [
+            "input.application.occurred_on",
+            "input.application.expense_type"
+          ],
+          "evidence_ids": [
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7"
+          ],
+          "reason_code": "MULTIPLE_PUBLISHED_VERSIONS_APPLY",
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-USING-OLD-POLICY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "FAIL",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466"
+          ],
+          "reason_code": "MEAL_LIMIT_EXCEEDED",
+          "computed_limit": "120.00",
+          "actual_amount": "135.00",
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-USING-NEW-POLICY",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "PASS",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09"
+          ],
+          "reason_code": null,
+          "computed_limit": "150.00",
+          "actual_amount": "135.00",
+          "computed_value": null,
+          "unit": null
+        },
+        {
+          "rule_id": "RULE-MEAL-LIMIT-DETERMINATION",
+          "rule_version": "1.0",
+          "producer": "RULE_VALIDATOR",
+          "outcome": "INDETERMINATE",
+          "input_refs": [
+            "input.application.amount",
+            "input.application.occurred_on",
+            "input.application.attendee_count"
+          ],
+          "evidence_ids": [
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7"
+          ],
+          "reason_code": "AUTHORITATIVE_PRECEDENCE_MISSING",
+          "computed_limit": null,
+          "actual_amount": null,
+          "computed_value": null,
+          "unit": null
+        }
+      ],
+      "risk_flags": [
+        "RULE_VERSION_CONFLICT",
+        "MATERIAL_OUTCOME_DIVERGENCE",
+        "MISSING_AUTHORITATIVE_PRECEDENCE"
+      ],
+      "risk_level": "HIGH",
+      "recommendation": "HUMAN_REVIEW",
+      "decision_reasons": [
+        {
+          "code": "MANUAL_REVIEW_REQUIRED",
+          "message": "存在无法由确定性规则消除的制度冲突，需要人工确认权威版本。",
+          "evidence_ids": [
+            "75b4a3cd328d6a514078c9ee4491c37c00e3dbe741327a5363b21ee5ea821466",
+            "e10f2f3b9c27083b5358d8254d40cc3c51b5d8cc29c785e4820c67ed7aed0a09",
+            "ac5cabb4da64a62e0fdd1d6d227ce7200089ac985fd095ee1f894f09a9695ba3",
+            "7969d585c9c450940500d329484468238713c4028aef53b085729e5b7f2181f7"
+          ],
+          "rule_ids": [
+            "RULE-MEAL-LIMIT-DETERMINATION"
+          ]
+        }
+      ],
+      "evidence_metrics_status": "PARTIALLY_MEASURED",
+      "unmeasured_metrics": [
+        "retrieval_margin"
+      ],
+      "evidence_metrics": {
+        "evidence_coverage": 0.3333333333333333,
+        "citation_completeness": 1.0,
+        "field_consistency": 1.0,
+        "retrieval_margin": null,
+        "rule_conflict_count": 1,
+        "extraction_quality": 1.0
+      },
+      "evaluation": {
+        "passed": true,
+        "retrieval_passed": true,
+        "stop_reason_accepted": true,
+        "required_capabilities": [
+          {
+            "capability_label": "FIND_ALL_OVERLAPPING_POLICY_VERSIONS",
+            "tool_options": [
+              "policy_search"
+            ],
+            "query_type": null,
+            "candidate_call_ids": [
+              "R01-C01"
+            ],
+            "matched_call_ids": [
+              "R01-C01"
+            ],
+            "actual_purposes": [
+              "获取当前有效的餐饮及业务接待费用管理制度，确认金额限额和人员数量规定。"
+            ],
+            "matched": true
+          },
+          {
+            "capability_label": "CHECK_PRECEDENCE_SUPERSESSION_AND_TRANSITION_CONTEXT",
+            "tool_options": [
+              "policy_search"
+            ],
+            "query_type": null,
+            "candidate_call_ids": [
+              "R02-C01"
+            ],
+            "matched_call_ids": [
+              "R02-C01"
+            ],
+            "actual_purposes": [
+              "确定新旧餐饮制度在重叠期的适用版本以解决限额冲突"
+            ],
+            "matched": true
+          }
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "C-EG1",
+            "matched": true
+          },
+          {
+            "group_id": "C-EG2",
+            "matched": true
+          },
+          {
+            "group_id": "C-EG3",
+            "matched": true
+          },
+          {
+            "group_id": "C-EG4",
+            "matched": true
+          },
+          {
+            "group_id": "C-EG5",
+            "matched": true
+          }
+        ],
+        "matched_gold_evidence_ids": [
+          "EVID-C-MEAL-INVOICE",
+          "EVID-C-NEW-POLICY-CONTEXT",
+          "EVID-C-NEW-POLICY-LIMIT",
+          "EVID-C-OLD-POLICY-CONTEXT",
+          "EVID-C-OLD-POLICY-LIMIT"
+        ],
+        "rule_results": [
+          {
+            "rule_id": "RULE-EXPENSE-TYPE-IN-SCOPE",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-MEAL-DOCUMENT-CONSISTENCY",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-POLICY-VERSION-UNIQUENESS",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-MEAL-LIMIT-USING-OLD-POLICY",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-MEAL-LIMIT-USING-NEW-POLICY",
+            "matched": true
+          },
+          {
+            "rule_id": "RULE-MEAL-LIMIT-DETERMINATION",
+            "matched": true
+          }
+        ],
+        "recommendation_matched": true,
+        "risk_flags_matched": true,
+        "supervisor_invariants": {
+          "decision_sequence_contiguous": true,
+          "challenge_limit_matches_runtime": true,
+          "challenge_within_limit": true,
+          "challenge_targets_questions": true,
+          "retrieval_goals_changed": true,
+          "model_steps_match": true,
+          "guardrail_sequence_contiguous": true,
+          "guardrail_records_valid": true
+        }
+      }
+    }
+  ],
+  "run_outcome": "PARTIAL"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "synthetic-structured-records/v1",
+  "snapshot_id": "STRUCTURED-DATA-DEMO-1.0.0",
+  "created_on": "2026-09-28",
+  "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+  "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+  "records": [
+    {
+      "fixture_id": "DEMO-CITY-TIER-HANGZHOU-2026",
+      "query_type": "city_tier",
+      "record_key": "杭州市",
+      "snapshot_version": "2026.01",
+      "effective_at": "2026-04-08",
+      "value": "A",
+      "consumer": "structured_lookup"
+    },
+    {
+      "fixture_id": "DEMO-BUDGET-RD-2026-04",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-04",
+      "snapshot_version": "2026-04-15T09:00:00+08:00",
+      "effective_at": "2026-04-15",
+      "value": "AVAILABLE",
+      "available_amount": "5000.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DEMO-PERMISSION-RD-LODGING",
+      "query_type": "approval_permission",
+      "record_key": "EMP-DEMO-001:住宿",
+      "snapshot_version": "2026-01-01T09:00:00+08:00",
+      "effective_at": "2026-01-01",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DEMO-DUPLICATE-HOTEL-001",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-HT-20260410-0001",
+      "snapshot_version": "2026-04-15T09:00:00+08:00",
+      "effective_at": "2026-04-15",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    }
+  ]
+}

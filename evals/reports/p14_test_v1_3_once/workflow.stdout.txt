@@ -1,0 +1,3 @@
+{"sample_id": "APP-HO-MEAL-PASS", "status": "COMPLETED", "task_success": true}
+{"sample_id": "APP-HO-TAXI-REJECT", "status": "BUSINESS_REJECTED", "task_success": true}
+{"sample_id": "APP-HO-MEAL-HEADCOUNT", "status": "INSUFFICIENT_EVIDENCE", "task_success": false}

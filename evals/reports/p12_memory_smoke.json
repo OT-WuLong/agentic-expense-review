@@ -1,0 +1,15 @@
+{
+  "schema": "p12-memory-smoke/v1",
+  "status": "PASS",
+  "case_write_count": 1,
+  "same_department_results": 2,
+  "other_department_results": 0,
+  "published_rule_version": "P12-3",
+  "rollback_restored_version": "1.0",
+  "unreviewed_publish_blocked": true,
+  "model": "FakeDraftModel; tests workflow wiring only",
+  "case_memory_ablation": {
+    "status": "NOT_MEASURED",
+    "reason": "No independent historical-case evaluation split is frozen yet."
+  }
+}

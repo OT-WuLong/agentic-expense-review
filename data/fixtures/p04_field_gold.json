@@ -1,0 +1,66 @@
+{
+  "schema_version": "p04-field-gold/v1",
+  "data_classification": "SYNTHETIC",
+  "evaluation_scope": "SMOKE_ONLY",
+  "field_universe": [
+    "invoice_number",
+    "amount",
+    "occurred_on",
+    "city",
+    "check_in",
+    "check_out",
+    "room_count"
+  ],
+  "documents": [
+    {
+      "document_id": "DOC-GC-A-TAXI-001",
+      "expected": {
+        "invoice_number": "SYN-TR-20260312-0001",
+        "amount": "68.00",
+        "occurred_on": "2026-03-12"
+      }
+    },
+    {
+      "document_id": "DOC-GC-B-HOTEL-001",
+      "expected": {
+        "invoice_number": "SYN-HT-20260410-0001",
+        "amount": "1100.00",
+        "city": "杭州市",
+        "check_in": "2026-04-08",
+        "check_out": "2026-04-10",
+        "room_count": 1
+      }
+    },
+    {
+      "document_id": "DOC-GC-B-ITINERARY-001",
+      "expected": {
+        "check_in": "2026-04-08",
+        "check_out": "2026-04-10"
+      }
+    },
+    {
+      "document_id": "DOC-GC-C-MEAL-001",
+      "expected": {
+        "invoice_number": "SYN-MEAL-20260615-0001",
+        "amount": "135.00",
+        "occurred_on": "2026-06-15"
+      }
+    },
+    {
+      "document_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "expected": {
+        "invoice_number": "SYN-TR-20260312-0001",
+        "amount": "68.00",
+        "occurred_on": "2026-03-12"
+      }
+    },
+    {
+      "document_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "expected": {
+        "invoice_number": "SYN-TR-20260312-0001",
+        "amount": "68.00",
+        "occurred_on": "2026-03-12"
+      }
+    }
+  ]
+}

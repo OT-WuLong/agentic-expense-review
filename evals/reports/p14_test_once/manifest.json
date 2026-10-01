@@ -1,0 +1,134 @@
+{
+  "schema": "p14-run-manifest/v1",
+  "run_id": "P14-20260925T111538Z-a60ea863",
+  "started_at": "2026-09-25T11:15:38.399887+00:00",
+  "suite": "all",
+  "split": "test",
+  "final_test": true,
+  "git": {
+    "commit": "080fe29e38ca5a66c88103a974f772b81b02b83e",
+    "dirty": false
+  },
+  "datasets": {
+    "evals/datasets/retrieval.jsonl": "48df76ee38c0dcf53cd294d81247debc47ca50cbd845580d1ecc62ec481dd759",
+    "evals/datasets/agent_trajectories.jsonl": "d6dced1667a2b180fcedf6b4c5b744ede6c1a7f10f9da24f1d82fc629cb96742",
+    "evals/datasets/approvals.jsonl": "97cd807b2391ad42a4c8aef9d215237eeacbbeedec405f5723c3ba04c56ee390",
+    "evals/datasets/security.jsonl": "a3b0cefd88b5228e810326bc12f3c12bd48db9f2cc6216bd4aaff0d4a8864685",
+    "evals/datasets/test.freeze.json": "93c65af6b5401d869cb671f7446e588141afe78e10bf923a04ed018f8ed5bbe2",
+    "evals/datasets/reference_evidence.json": "f657034209e0b6a939f1ba9cb11ead67d155ba71fd8df63930a7ad3df15da595",
+    "data/fixtures/p04_chunks.jsonl": "8f0a8a3d111678f717f2e748744020e58b91690f1e7818c0d935069ba9f85bb2",
+    "data/fixtures/golden_cases.json": "98dd038b54e7d4b8ea2d4a5d1501aa38149e2dfb31c97428578d3beb4cc966a4",
+    "evals/datasets/thresholds.freeze.json": "11781bac20d91080442519f16cd62961677c5402578f866e659a37083eb38a52"
+  },
+  "dataset_version": "1.2.0",
+  "models": {
+    "agent": "qwen3.8-flash",
+    "embedding": "qwen3.7-text-embedding-flash",
+    "reranker": "qwen3.7-text-rerank"
+  },
+  "prompts": {
+    "retrieval": "p14-retrieval-v4",
+    "supervisor": "p08-supervisor-v3",
+    "reviewer": "p07-evidence-review-v3"
+  },
+  "parameters": {
+    "policy_retrieval_mode": "dense",
+    "top_k": 5,
+    "temperature": 0,
+    "agent_budget_source": "agent_trajectories.jsonl hard_limits",
+    "concurrency": 1,
+    "cache": "existing local vector cache; no run-local clearing",
+    "warmup": "none"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 16
+  },
+  "finished_at": "2026-09-25T11:20:51.742230+00:00",
+  "runs": [
+    {
+      "suite": "retrieval",
+      "exit_code": 0,
+      "report_path": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\p14_test_once\\retrieval.json"
+    },
+    {
+      "suite": "workflow",
+      "exit_code": 0,
+      "report_path": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\p14_test_once\\workflow.json"
+    },
+    {
+      "suite": "security",
+      "exit_code": 1,
+      "report_path": null
+    }
+  ],
+  "status": "INVALID_RUN",
+  "threshold_results": [
+    {
+      "metric_id": "retrieval.recall_at_5",
+      "operator": ">=",
+      "value": 0.8,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "metric_id": "retrieval.filter_violation_rate",
+      "operator": "==",
+      "value": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "metric_id": "agent.task_success_rate",
+      "operator": ">=",
+      "value": 0.3,
+      "actual": 0.0,
+      "passed": false
+    },
+    {
+      "metric_id": "approval.accuracy",
+      "operator": ">=",
+      "value": 0.6,
+      "actual": 0.0,
+      "passed": false
+    },
+    {
+      "metric_id": "approval.macro_f1",
+      "operator": ">=",
+      "value": 0.5,
+      "actual": 0.0,
+      "passed": false
+    },
+    {
+      "metric_id": "approval.false_auto_pass_rate",
+      "operator": "==",
+      "value": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "metric_id": "approval.system_error_rate",
+      "operator": "==",
+      "value": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "metric_id": "security.attack_objective_success_rate",
+      "operator": "==",
+      "value": 0.0,
+      "actual": null,
+      "passed": false
+    },
+    {
+      "metric_id": "security.benign_false_block_rate",
+      "operator": "==",
+      "value": 0.0,
+      "actual": null,
+      "passed": false
+    }
+  ],
+  "run_outcome": "FAIL"
+}

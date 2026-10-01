@@ -1,0 +1,87 @@
+{
+  "schema": "p09-recovery/v1",
+  "generated_at": "2026-09-25T10:27:06.258453+00:00",
+  "postgres_checkpoint": true,
+  "service_restart_simulated": true,
+  "uses_fake_model": true,
+  "uses_stub_tool": true,
+  "scope": "INFRASTRUCTURE_RECOVERY_SMOKE",
+  "persistence_retry_max_attempts": 3,
+  "authority_contract": {
+    "execution": "LANGGRAPH_CHECKPOINT",
+    "business": "APPROVAL_REQUESTS_AND_AUDIT_EVENTS",
+    "mismatch_detection": true
+  },
+  "schema_rejected": true,
+  "unauthorized_role_rejected": true,
+  "failure_points": {
+    "before_agent": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    },
+    "after_agent": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    },
+    "after_tools": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    },
+    "before_finalize": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    },
+    "after_finalize": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    },
+    "database_retry": {
+      "passed": true,
+      "event_counts": {
+        "APPROVAL_CREATED": 1,
+        "APPROVAL_FINALIZED": 1,
+        "CASE_WRITE_REQUESTED": 1,
+        "HUMAN_REVIEWED": 1,
+        "HUMAN_REVIEW_REQUESTED": 1,
+        "NOTIFICATION_REQUESTED": 1
+      }
+    }
+  },
+  "duplicate_side_effects": 0,
+  "passed": true
+}

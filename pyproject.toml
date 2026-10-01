@@ -1,0 +1,48 @@
+[project]
+name = "agentic-rag-approval"
+version = "0.1.0"
+description = "Agentic RAG pre-review service for enterprise expenses"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.14,<2",
+    "dashscope>=1.27.5",
+    "fastapi",
+    "httpx2",
+    "langgraph>=1.2.11",
+    "langgraph-checkpoint-postgres>=3,<4",
+    "psycopg[binary]>=3.2,<4",
+    "pydantic>=2.13,<3",
+    "pymilvus>=2.6,<3",
+    "pypdf>=6.18.1",
+    "python-multipart>=0.0.20,<1",
+    "requests>=2.34,<3",
+    "sqlalchemy>=2,<3",
+    "typing-extensions>=4.14,<5",
+    "uvicorn",
+]
+
+[dependency-groups]
+dev = [
+    "milvus-lite==3.2.1",
+    "pytest",
+    "reportlab>=5.0.1",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: requires local services such as PostgreSQL",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

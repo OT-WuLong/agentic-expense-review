@@ -1,0 +1,168 @@
+{
+  "schema_version": "synthetic-structured-records/v2",
+  "snapshot_id": "STRUCTURED-DATA-REF-1.2.0",
+  "created_on": "2026-09-15",
+  "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+  "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+  "records": [
+    {
+      "fixture_id": "BUDGET-MKT-MEAL-PASS",
+      "query_type": "budget_status",
+      "record_key": "DEPT-MARKETING:2026-05",
+      "snapshot_version": "2026-05-21T09:00:00+08:00",
+      "effective_at": "2026-05-21",
+      "value": "AVAILABLE",
+      "available_amount": "8000.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "PERMISSION-MKT-MEAL-PASS",
+      "query_type": "approval_permission",
+      "record_key": "EMP-TEST-01:餐饮",
+      "snapshot_version": "2026-05-21T09:00:00+08:00",
+      "effective_at": "2026-05-21",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DUPLICATE-MKT-MEAL-PASS",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-MKT-MEAL-001",
+      "snapshot_version": "2026-05-21T09:00:00+08:00",
+      "effective_at": "2026-05-21",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "BUDGET-MKT-MEAL-MISMATCH",
+      "query_type": "budget_status",
+      "record_key": "DEPT-MARKETING:2026-05",
+      "snapshot_version": "2026-05-23T09:00:00+08:00",
+      "effective_at": "2026-05-23",
+      "value": "AVAILABLE",
+      "available_amount": "7800.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "PERMISSION-MKT-MEAL-MISMATCH",
+      "query_type": "approval_permission",
+      "record_key": "EMP-TEST-02:餐饮",
+      "snapshot_version": "2026-05-23T09:00:00+08:00",
+      "effective_at": "2026-05-23",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DUPLICATE-MKT-MEAL-MISMATCH",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-MKT-MEAL-002",
+      "snapshot_version": "2026-05-23T09:00:00+08:00",
+      "effective_at": "2026-05-23",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "BUDGET-OPS-HOTEL-HUMAN",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "snapshot_version": "2026-05-25T09:00:00+08:00",
+      "effective_at": "2026-05-25",
+      "value": "AVAILABLE",
+      "available_amount": "6000.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "PERMISSION-OPS-HOTEL-HUMAN",
+      "query_type": "approval_permission",
+      "record_key": "EMP-TEST-03:住宿",
+      "snapshot_version": "2026-05-25T09:00:00+08:00",
+      "effective_at": "2026-05-25",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DUPLICATE-OPS-HOTEL-HUMAN",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-OPS-HOTEL-001",
+      "snapshot_version": "2026-05-25T09:00:00+08:00",
+      "effective_at": "2026-05-25",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "BUDGET-SALES-TAXI-PASS",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "snapshot_version": "2026-04-19T09:00:00+08:00",
+      "effective_at": "2026-04-19",
+      "value": "AVAILABLE",
+      "available_amount": "3000.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "PERMISSION-SALES-TAXI-PASS",
+      "query_type": "approval_permission",
+      "record_key": "EMP-VAL-01:交通",
+      "snapshot_version": "2026-04-19T09:00:00+08:00",
+      "effective_at": "2026-04-19",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DUPLICATE-SALES-TAXI-PASS",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-SALES-TAXI-VAL-001",
+      "snapshot_version": "2026-04-19T09:00:00+08:00",
+      "effective_at": "2026-04-19",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "BUDGET-SALES-COMMUTE-REJECT",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "snapshot_version": "2026-04-21T09:00:00+08:00",
+      "effective_at": "2026-04-21",
+      "value": "AVAILABLE",
+      "available_amount": "3000.00",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "PERMISSION-SALES-COMMUTE-REJECT",
+      "query_type": "approval_permission",
+      "record_key": "EMP-VAL-02:交通",
+      "snapshot_version": "2026-04-21T09:00:00+08:00",
+      "effective_at": "2026-04-21",
+      "value": "AUTHORIZED",
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "DUPLICATE-SALES-COMMUTE-REJECT",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-SALES-COMMUTE-VAL-001",
+      "snapshot_version": "2026-04-21T09:00:00+08:00",
+      "effective_at": "2026-04-21",
+      "value": false,
+      "consumer": "RULE_VALIDATOR"
+    },
+    {
+      "fixture_id": "CITY-TIER-OPS-HOTEL-HUMAN",
+      "query_type": "city_tier",
+      "record_key": "A 类城市",
+      "snapshot_version": "2026.05",
+      "effective_at": "2026-05-24",
+      "value": "A",
+      "consumer": "structured_lookup"
+    },
+    {
+      "fixture_id": "CUSTOMER-VISIT-SALES-TAXI-PASS",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-VAL-001",
+      "snapshot_version": "2026-04-18T08:00:00+08:00",
+      "effective_at": "2026-04-18",
+      "value": "CUST-PROJ-2026-041:CONFIRMED",
+      "consumer": "RULE_VALIDATOR"
+    }
+  ],
+  "updated_on": "2026-09-16"
+}

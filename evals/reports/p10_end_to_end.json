@@ -1,0 +1,65 @@
+{
+  "schema": "p10-end-to-end/v1",
+  "run_at": "2026-09-22T16:02:00+08:00",
+  "stubbed": false,
+  "infrastructure": {
+    "api": "FastAPI BackgroundTasks",
+    "checkpoint": "PostgreSQL PostgresSaver",
+    "retrieval": "Milvus Lite + qwen3.7-text-embedding-flash",
+    "agent_models": ["deepseek-flash", "qwen3.8-flash"]
+  },
+  "cases": [
+    {
+      "case_id": "GC-A-TRANSPORT-COMMUTE-REJECT",
+      "request_id": "REQ-P10-A-DS-202609221555",
+      "agent_model": "deepseek-flash",
+      "status": "BUSINESS_REJECTED",
+      "recommendation": "REJECT_RECOMMENDED",
+      "risk_level": "HIGH",
+      "agent_steps": 2,
+      "retrieval_rounds": 1,
+      "query_rewrites": 0,
+      "tokens_used": 8227,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "passed": true
+    },
+    {
+      "case_id": "GC-B-LODGING-MULTIHOP-PASS",
+      "request_id": "REQ-P10-B-DS-202609221556",
+      "agent_model": "deepseek-flash",
+      "status": "COMPLETED",
+      "recommendation": "PASS_RECOMMENDED",
+      "risk_level": "LOW",
+      "agent_steps": 3,
+      "retrieval_rounds": 1,
+      "query_rewrites": 0,
+      "tokens_used": 9447,
+      "stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+      "passed": true
+    },
+    {
+      "case_id": "GC-C-DINING-VERSION-CONFLICT-HUMAN",
+      "request_id": "REQ-P10-C-20260922004744",
+      "agent_model": "qwen3.8-flash",
+      "status_before_review": "HUMAN_PENDING",
+      "status": "COMPLETED",
+      "recommendation": "REJECT_RECOMMENDED",
+      "risk_level": "HIGH",
+      "agent_steps": 5,
+      "retrieval_rounds": 2,
+      "query_rewrites": 1,
+      "tokens_used": 19921,
+      "stop_reason": "UNRESOLVED_POLICY_VERSION_CONFLICT",
+      "human_resume_verified": true,
+      "duplicate_side_effects": 0,
+      "passed": true
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "cases": 3,
+    "api_returned_before_agent_completion": true,
+    "sse_last_event_id_verified": true,
+    "human_interrupt_resume_verified": true
+  }
+}

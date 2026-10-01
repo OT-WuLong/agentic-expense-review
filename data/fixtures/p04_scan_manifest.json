@@ -1,0 +1,24 @@
+{
+  "schema_version": "p04-scan-fixtures/v1",
+  "data_classification": "SYNTHETIC",
+  "source_document_id": "DOC-GC-A-TAXI-001",
+  "fixtures": [
+    {
+      "fixture_id": "P04-CLEAR-IMAGE-TAXI-001",
+      "path": "data/raw/scans/DOC-GC-A-TAXI-001-clear.png",
+      "media_type": "image/png",
+      "sha256": "62a55e2ff46fe91563d93a9fb95ef52ccdeadcfaf37eb733d6ca81f5f99188b4",
+      "quality_class": "CLEAR_IMAGE",
+      "is_ocr": true
+    },
+    {
+      "fixture_id": "P04-LOW-QUALITY-SCAN-TAXI-001",
+      "path": "data/raw/scans/DOC-GC-A-TAXI-001-low-quality.pdf",
+      "media_type": "application/pdf",
+      "sha256": "350053ab0efcb69e8f5764b2e4eaa1ef40fc318e9f356001166e5bb476869ac7",
+      "quality_class": "LOW_QUALITY_SCAN",
+      "is_ocr": true
+    }
+  ],
+  "evaluation_scope": "SMOKE_ONLY"
+}

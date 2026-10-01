@@ -1,0 +1,51 @@
+{
+  "schema": "supervisor-guardrail-smoke/v3",
+  "golden_dataset_version": "1.3.4",
+  "generated_at": "2026-09-21T10:59:44.057029+00:00",
+  "uses_fake_model": true,
+  "passed": true,
+  "challenge_action": "CHALLENGE_AND_RETRIEVE",
+  "challenged_question_ids": [
+    "Q1"
+  ],
+  "planned_question_ids": [
+    "Q1"
+  ],
+  "planned_call_question_ids": [
+    "Q1"
+  ],
+  "open_question_ids_after_challenge": [
+    "Q0",
+    "Q1"
+  ],
+  "query_rewrite_count": 1,
+  "unrelated_plan_rejected": true,
+  "pre_tool_veto_recorded": true,
+  "post_review_stop_recorded": true,
+  "guardrail_preserves_review": true,
+  "hard_violations_are_system_errors": true,
+  "soft_stop_owned_by_supervisor": true,
+  "canonical_stop_reasons": true,
+  "model_validate_stop_reason": "ALL_NECESSARY_EVIDENCE_COVERED",
+  "guardrail_decisions": [
+    {
+      "sequence": 1,
+      "phase": "PRE_TOOL",
+      "action": "VETO",
+      "reason": "MAX_QUERY_REWRITES",
+      "subject_role": "RETRIEVAL",
+      "subject_action": "RETRIEVE_MORE",
+      "related_supervisor_sequence": 1
+    },
+    {
+      "sequence": 2,
+      "phase": "POST_REVIEW",
+      "action": "STOP",
+      "reason": "TOKEN_BUDGET",
+      "subject_role": "EVIDENCE_REVIEWER",
+      "subject_action": "RETRIEVE_MORE",
+      "related_supervisor_sequence": null
+    }
+  ],
+  "contract_matches_runtime": true
+}

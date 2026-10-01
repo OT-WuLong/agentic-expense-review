@@ -1,0 +1,827 @@
+{
+  "schema": "p14-workflow-evaluation/v1",
+  "generated_at": "2026-09-25T10:07:27.664398+00:00",
+  "split": "validation",
+  "model": "deepseek-flash",
+  "retrieval_mode": "dense",
+  "variant": "multi_agent",
+  "sample_count": 3,
+  "upstream_extraction": "P04 extractor on frozen parsed attachment chunks; gold fields hidden",
+  "stop_equivalents": {
+    "EVIDENCE_SUFFICIENT": [
+      "ALL_NECESSARY_EVIDENCE_COVERED"
+    ],
+    "CLEAR_RULE_FAILURE": [
+      "ALL_NECESSARY_EVIDENCE_COVERED"
+    ],
+    "MATERIALS_UNAVAILABLE": [
+      "REQUEST_DOCUMENTS"
+    ],
+    "MANDATORY_HUMAN_EXCEPTION": [
+      "EVIDENCE_ESCALATION",
+      "UNRESOLVED_POLICY_VERSION_CONFLICT"
+    ]
+  },
+  "class_support": {
+    "PASS_RECOMMENDED": 1,
+    "REJECT_RECOMMENDED": 1,
+    "HUMAN_REVIEW": 1
+  },
+  "class_f1": {
+    "PASS_RECOMMENDED": 0.0,
+    "REJECT_RECOMMENDED": 0.0,
+    "HUMAN_REVIEW": 0.0
+  },
+  "metrics": [
+    {
+      "metric_id": "agent.task_success_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.subquestion_coverage",
+      "status": "MEASURED",
+      "numerator": 1.0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.3333333333333333,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.mean_steps",
+      "status": "MEASURED",
+      "numerator": 2,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.6666666666666666,
+      "unit": "steps",
+      "direction": "conditional",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.tool_selection_case_accuracy",
+      "status": "MEASURED",
+      "numerator": 1,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.3333333333333333,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.accuracy",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.macro_f1",
+      "status": "MEASURED",
+      "numerator": 0.0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.false_auto_pass_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 2,
+      "support": 2,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "lower",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.rule_result_exact_match_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.human_intervention_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 3,
+      "support": 3,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "conditional",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.system_error_rate",
+      "status": "MEASURED",
+      "numerator": 3,
+      "denominator": 3,
+      "support": 3,
+      "value": 1.0,
+      "unit": "ratio",
+      "direction": "lower",
+      "split": "validation",
+      "slice": "overall"
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "APP-VAL-DEADLINE-EXCEPTION",
+      "case_id": "CASE-VAL-DEADLINE-EXCEPTION",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "recommendation": null,
+      "raw_recommendation": null,
+      "status": "SYSTEM_ERROR",
+      "human_interrupted": false,
+      "stop_reason": "SUPERVISOR_FAILED",
+      "stop_match": false,
+      "matched_evidence_ids": [
+        "EVID-DEPT-DEADLINE",
+        "EVID-DEPT-MEAL-CONSISTENCY",
+        "EVID-DEPT-MEAL-LIMIT",
+        "EVID-DEPT-TRANSPORT-MISSING",
+        "EVID-DEPT-TRANSPORT-RULE"
+      ],
+      "agent_evidence_ids": [
+        "EVID-DEPT-DEADLINE",
+        "EVID-DEPT-MEAL-CONSISTENCY",
+        "EVID-DEPT-MEAL-LIMIT",
+        "EVID-DEPT-TRANSPORT-MISSING",
+        "EVID-DEPT-TRANSPORT-RULE"
+      ],
+      "reviewer_cited_evidence_ids": [
+        "EVID-DEPT-DEADLINE",
+        "EVID-DEPT-TRANSPORT-MISSING",
+        "EVID-DEPT-TRANSPORT-RULE"
+      ],
+      "evidence_match": true,
+      "rule_match": false,
+      "risk_flags": [],
+      "business_risk_match": false,
+      "covered_subquestions": 2,
+      "total_subquestions": 2,
+      "capability_match": true,
+      "tool_names": [
+        "policy_search",
+        "policy_search"
+      ],
+      "agent_steps": 2,
+      "retrieval_rounds": 1,
+      "query_rewrites": 0,
+      "tokens": 8844,
+      "latency_ms": 44183,
+      "task_success": false,
+      "error": null,
+      "raw_prediction": {
+        "extracted_fields": [],
+        "agent_trajectory": [
+          {
+            "step_index": 1,
+            "agent": "RETRIEVAL",
+            "action": "RETRIEVE",
+            "thought_summary": "尚无证据评审结果，先并行核实交通费基础制度/限额与提交时限/版本衔接，覆盖首次检索目标。",
+            "tool_calls": [
+              {
+                "tool_name": "policy_search",
+                "query": "客户拜访 公务地面交通费 报销范围 标准 限额 禁止项 例外",
+                "purpose": "查找交通费基础制度、适用范围、限额及例外条款",
+                "query_type": null,
+                "filters": {
+                  "expense_type": "交通",
+                  "effective_at": "2026-02-01",
+                  "top_k": 5
+                },
+                "arguments": {},
+                "sub_question_id": "q1",
+                "call_id": "R01-C01"
+              },
+              {
+                "tool_name": "policy_search",
+                "query": "交通费报销时限 跨月提交 2026 版本 衔接",
+                "purpose": "查找提交时限、跨期报销限制及版本适用与衔接规定",
+                "query_type": null,
+                "filters": {
+                  "expense_type": "交通",
+                  "effective_at": "2026-02-01",
+                  "top_k": 5
+                },
+                "arguments": {},
+                "sub_question_id": "q2",
+                "call_id": "R01-C02"
+              }
+            ],
+            "observation_ids": [],
+            "new_evidence_ids": [],
+            "latency_ms": 10340,
+            "tokens_used": 2006,
+            "stop_reason": null
+          },
+          {
+            "step_index": 2,
+            "agent": "EVIDENCE_REVIEWER",
+            "action": "SUFFICIENT",
+            "thought_summary": "已提供POL-DEPT-OPS-MKT-2026-V1已发布生效版本：第三章覆盖客户拜访公务地面交通适用范围及单次300元限额，第七章覆盖发生之日起45个日历日提交时限及超时处理；费用发生和提交均在2026-01-01生效版本期内，未发现同优先级冲突。",
+            "tool_calls": [],
+            "observation_ids": [
+              "R01-C01",
+              "R01-C02"
+            ],
+            "new_evidence_ids": [
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+              "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+              "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+              "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f"
+            ],
+            "latency_ms": 18424,
+            "tokens_used": 6838,
+            "stop_reason": null
+          }
+        ],
+        "supervisor_decisions": [
+          {
+            "sequence": 1,
+            "decision_source": "DETERMINISTIC",
+            "trigger": "INITIAL",
+            "action": "RETRIEVE",
+            "reason": "尚无证据评审结果，进入首次检索。",
+            "previous_goal": null,
+            "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+            "stop_reason": null,
+            "used_model": false,
+            "referenced_call_ids": [],
+            "challenged_question_ids": [],
+            "latency_ms": 0,
+            "tokens_used": 0
+          }
+        ],
+        "guardrail_decisions": [],
+        "tool_observations": [
+          {
+            "tool_name": "policy_search",
+            "query": "客户拜访 公务地面交通费 报销范围 标准 限额 禁止项 例外",
+            "items": [
+              {
+                "evidence_id": "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.6712453365325928,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 3,
+                "section": "第三章 公务地面交通",
+                "excerpt": "第三章 公务地面交通\n\n第十二条 临时客户拜访、市场活动执行和运营任务期间的出租车、网约车等地面交通，应说明日期、起讫地点和业务目的。\n\n第十三条 公务地面交通单次实际承担金额不超过 300.00 元时，可进入票据、行程和预算核对。\n\n第十四条 “单次”以一段连续行程及其对应订单为准，同一行程拆分开票不得规避标准。\n\n第十五条 优惠券、退款和平台补贴应从支付金额中扣除，第十三条限额以扣除后的实际承担金额比较；停车费和路桥费应凭单独票据按通用制度核对。\n\n第十六条 城际机票、铁路票、活动物料配送和供应商运输不适用本章的 300.00 元标准。\n\n第十七条 缺少交通票据，或者业务目的、起讫地点无法确认的，申请人应补交材料；材料不能补齐的，由财务审核员处理。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.545226514339447,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 2,
+                "section": "第一章 术语与职责",
+                "excerpt": "第一章 术语与职责\n\n第一条 业务目的是能够关联客户、项目、活动或运营任务的具体事项，不能只填写“工作需要”。\n\n第二条 原始票据包括依法取得的发票、行程单、酒店结算单及能够证明实际支付的材料。\n\n第三条 例外材料应载明事项、原因、金额、审批人和日期，并与申请及票据相互对应。\n\n第四条 申请人对事实和材料真实性负责；部门负责人确认业务必要性及成本中心。\n\n第五条 财务审核员复核制度、标准、凭证、预算和重复报销情况，并记录退回、例外或不予报销的理由。\n\n第六条 销售部交通费用不适用本细则，按销售部交通补充细则处理。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.5103380680084229,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 2,
+                "section": "第二章 事前申请与预算",
+                "excerpt": "第二章 事前申请与预算\n\n第七条 可预见的市场活动、客户会议和跨城运营任务应事前说明时间、地点、人数及预计费用。\n\n第八条 单项活动预计总预算达到 5,000.00 元时，应完成活动预算申请。该金额是活动预算审批门槛，不是交通、住宿或餐饮的单笔报销标准\n\n第九条 部门负责人确认预算归属后，财务仍应按各费用类别的票据和限额逐笔审核。\n\n第十条 临时业务无法事前申请的，应在报销时说明原因。事后说明不能替代票据，也不能自动形成金额例外。\n\n第十一条 已由供应商对公结算或公司统一支付的费用，不得再以个人垫付方式申请。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.4981452524662018,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 4,
+                "section": "第六章 业务餐饮与票据",
+                "excerpt": "第六章 业务餐饮与票据\n\n第二十九条 业务餐饮按实际参加人数核算，每人每日报销上限为 160.00 元。\n\n第三十条 申请应填写业务目的、日期、地点和实际参加人数。票据无法区分餐饮与其他商品时，应补充消费明细。\n\n第三十一条 客户工作餐和经批准的项目会议餐可按本章核对；员工日常个人餐、礼品、娱乐及会员储值不属于业务餐饮。\n\n第三十二条 同一人员同日多笔由公司承担的餐饮应合并核对，不得通过拆票提高人均标准。\n\n第三十三条 原始票据已经核实，申请金额与票面金额不一致且没有真实更正材料的，该笔费用不予报销。\n\n第三十四条 部门负责人说明、截图改字或申请人承诺不能替代商家出具的更正票据或退款记录。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.48228031396865845,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 4,
+                "section": "第五章 会议酒店与住宿例外",
+                "excerpt": "第二十六条 部门负责人确认业务事实不等于批准超标准金额；材料不完整时，由财务审核员退回补充，补齐后仍需财务负责人或其书面授权人作出例外决定。\n\n第二十七条 个人提前入住、延迟退房、房型升级和随行家属费用不属于住宿例外。\n\n第二十八条 已批准的住宿例外只适用于对应日期和申请，不得转用于其他行程。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              }
+            ],
+            "source_ids": [
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+              "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759"
+            ],
+            "latency_ms": 4238,
+            "error": null,
+            "is_degraded": false,
+            "call_id": "R01-C01",
+            "call_hash": "28828ca504027f7282382613a28ddda97c189ad4fb7eb23408efdd4269e8c4e8",
+            "new_evidence_ids": [
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+              "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759"
+            ]
+          },
+          {
+            "tool_name": "policy_search",
+            "query": "交通费报销时限 跨月提交 2026 版本 衔接",
+            "items": [
+              {
+                "evidence_id": "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.5686914324760437,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 5,
+                "section": "第七章 提交时限与预算处理",
+                "excerpt": "第七章 提交时限与预算处理\n\n第三十五条 费用应在发生之日起 45 个日历日内提交；住宿费用的发生日按退房日计算。\n\n第三十六条 超过时限且没有已批准的时限例外记录的，由财务审核员处理，不得直接按正常时限内申请报销。\n\n第三十七条 时限例外只处理延迟提交，不改变金额标准、票据要求和费用性质。\n\n第三十八条 部门预算不足时，由预算负责人确认资金安排，财务负责人或其书面授权人决定后续处理，不得拆分或改换费用类别。\n\n第三十九条 预算余额、申请人权限或重复票据情况暂时无法核实时，财务应暂停处理并查明记录。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.505540132522583,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 1,
+                "section": "合成企业甲市场与运营费用补充细则",
+                "excerpt": "合成企业甲市场与运营费用补充细则\n\n制度编号：POL-DEPT-OPS-MKT-2026-V1\n\n版本：1.0\n\n状态：已发布\n\n生效日期：2026-01-01\n\n归口部门：财务部费用管理组\n\n会签部门：市场部、运营部\n\n批准主体：财务负责人\n\n适用范围：市场部、运营部发生的公务交通、住宿和业务餐饮。\n\n适用关系：本细则在上述部门和费用类别内优先适用；未规定事项执行《费用报销总则》（FIN-GEN-2026）。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.48823031783103943,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 3,
+                "section": "第三章 公务地面交通",
+                "excerpt": "第三章 公务地面交通\n\n第十二条 临时客户拜访、市场活动执行和运营任务期间的出租车、网约车等地面交通，应说明日期、起讫地点和业务目的。\n\n第十三条 公务地面交通单次实际承担金额不超过 300.00 元时，可进入票据、行程和预算核对。\n\n第十四条 “单次”以一段连续行程及其对应订单为准，同一行程拆分开票不得规避标准。\n\n第十五条 优惠券、退款和平台补贴应从支付金额中扣除，第十三条限额以扣除后的实际承担金额比较；停车费和路桥费应凭单独票据按通用制度核对。\n\n第十六条 城际机票、铁路票、活动物料配送和供应商运输不适用本章的 300.00 元标准。\n\n第十七条 缺少交通票据，或者业务目的、起讫地点无法确认的，申请人应补交材料；材料不能补齐的，由财务审核员处理。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.4586434066295624,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 2,
+                "section": "第二章 事前申请与预算",
+                "excerpt": "第二章 事前申请与预算\n\n第七条 可预见的市场活动、客户会议和跨城运营任务应事前说明时间、地点、人数及预计费用。\n\n第八条 单项活动预计总预算达到 5,000.00 元时，应完成活动预算申请。该金额是活动预算审批门槛，不是交通、住宿或餐饮的单笔报销标准\n\n第九条 部门负责人确认预算归属后，财务仍应按各费用类别的票据和限额逐笔审核。\n\n第十条 临时业务无法事前申请的，应在报销时说明原因。事后说明不能替代票据，也不能自动形成金额例外。\n\n第十一条 已由供应商对公结算或公司统一支付的费用，不得再以个人垫付方式申请。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              },
+              {
+                "evidence_id": "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+                "source_type": "POLICY_DOCUMENT",
+                "score": 0.45694872736930847,
+                "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+                "version": "1.0",
+                "effective_from": "2026-01-01",
+                "effective_to": null,
+                "page": 4,
+                "section": "第六章 业务餐饮与票据",
+                "excerpt": "第六章 业务餐饮与票据\n\n第二十九条 业务餐饮按实际参加人数核算，每人每日报销上限为 160.00 元。\n\n第三十条 申请应填写业务目的、日期、地点和实际参加人数。票据无法区分餐饮与其他商品时，应补充消费明细。\n\n第三十一条 客户工作餐和经批准的项目会议餐可按本章核对；员工日常个人餐、礼品、娱乐及会员储值不属于业务餐饮。\n\n第三十二条 同一人员同日多笔由公司承担的餐饮应合并核对，不得通过拆票提高人均标准。\n\n第三十三条 原始票据已经核实，申请金额与票面金额不一致且没有真实更正材料的，该笔费用不予报销。\n\n第三十四条 部门负责人说明、截图改字或申请人承诺不能替代商家出具的更正票据或退款记录。",
+                "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+                "published_status": "PUBLISHED",
+                "authority_level": "FORMAL_POLICY",
+                "priority": 110,
+                "supersedes_document_id": null,
+                "structured_data_snapshot_id": null,
+                "fixture_id": null,
+                "query_type": null,
+                "record_key": null,
+                "snapshot_version": null,
+                "effective_at": null,
+                "value": null,
+                "available_amount": null,
+                "consumer": null,
+                "case_id": null,
+                "rule_id": null
+              }
+            ],
+            "source_ids": [
+              "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+              "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f"
+            ],
+            "latency_ms": 1153,
+            "error": null,
+            "is_degraded": false,
+            "call_id": "R01-C02",
+            "call_hash": "cff1061a69ac7ee2d8702d6528b07e402582cc11c9a78dac5bac364046c716f1",
+            "new_evidence_ids": [
+              "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+              "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+              "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+              "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+              "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f"
+            ]
+          }
+        ],
+        "evidence_review": {
+          "recommended_action": "SUFFICIENT",
+          "reason": "已提供POL-DEPT-OPS-MKT-2026-V1已发布生效版本：第三章覆盖客户拜访公务地面交通适用范围及单次300元限额，第七章覆盖发生之日起45个日历日提交时限及超时处理；费用发生和提交均在2026-01-01生效版本期内，未发现同优先级冲突。",
+          "coverage": [
+            {
+              "question_id": "q1",
+              "status": "SUPPORTED",
+              "evidence_ids": [
+                "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+                "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2"
+              ]
+            },
+            {
+              "question_id": "q2",
+              "status": "SUPPORTED",
+              "evidence_ids": [
+                "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+                "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320"
+              ]
+            }
+          ],
+          "evidence_gaps": [],
+          "conflict_evidence_ids": []
+        },
+        "rule_results": [],
+        "decision_reasons": []
+      }
+    },
+    {
+      "sample_id": "APP-VAL-SALES-TAXI-PASS",
+      "case_id": "CASE-VAL-SALES-TAXI-PASS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "recommendation": null,
+      "raw_recommendation": null,
+      "status": "SYSTEM_ERROR",
+      "human_interrupted": false,
+      "stop_reason": "RETRIEVAL_FAILED",
+      "stop_match": false,
+      "matched_evidence_ids": [
+        "EVID-SALES-TAXI-AMOUNT",
+        "EVID-SALES-TAXI-ROUTE"
+      ],
+      "agent_evidence_ids": [
+        "EVID-SALES-TAXI-AMOUNT",
+        "EVID-SALES-TAXI-ROUTE"
+      ],
+      "reviewer_cited_evidence_ids": [],
+      "evidence_match": false,
+      "rule_match": false,
+      "risk_flags": [],
+      "business_risk_match": true,
+      "covered_subquestions": 0,
+      "total_subquestions": 2,
+      "capability_match": false,
+      "tool_names": [],
+      "agent_steps": 0,
+      "retrieval_rounds": 0,
+      "query_rewrites": 0,
+      "tokens": 0,
+      "latency_ms": 10014,
+      "task_success": false,
+      "error": null,
+      "raw_prediction": {
+        "extracted_fields": [
+          {
+            "field": "invoice_number",
+            "status": "PRESENT",
+            "value": "SYN-SALES-TAXI-VAL-001",
+            "raw_value": "SYN-SALES-TAXI-VAL-001",
+            "document_id": "DOC-SALES-TAXI-VAL-001",
+            "page": 1
+          },
+          {
+            "field": "amount",
+            "status": "PRESENT",
+            "value": "225.00",
+            "raw_value": "225.00",
+            "document_id": "DOC-SALES-TAXI-VAL-001",
+            "page": 1
+          },
+          {
+            "field": "occurred_on",
+            "status": "PRESENT",
+            "value": "2026-04-18",
+            "raw_value": "2026-04-18",
+            "document_id": "DOC-SALES-TAXI-VAL-001",
+            "page": 1
+          }
+        ],
+        "agent_trajectory": [],
+        "supervisor_decisions": [
+          {
+            "sequence": 1,
+            "decision_source": "DETERMINISTIC",
+            "trigger": "INITIAL",
+            "action": "RETRIEVE",
+            "reason": "尚无证据评审结果，进入首次检索。",
+            "previous_goal": null,
+            "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+            "stop_reason": null,
+            "used_model": false,
+            "referenced_call_ids": [],
+            "challenged_question_ids": [],
+            "latency_ms": 0,
+            "tokens_used": 0
+          }
+        ],
+        "guardrail_decisions": [],
+        "tool_observations": [],
+        "evidence_review": null,
+        "rule_results": [],
+        "decision_reasons": []
+      }
+    },
+    {
+      "sample_id": "APP-VAL-SALES-COMMUTE-REJECT",
+      "case_id": "CASE-VAL-SALES-COMMUTE-REJECT",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "recommendation": null,
+      "raw_recommendation": null,
+      "status": "SYSTEM_ERROR",
+      "human_interrupted": false,
+      "stop_reason": "RETRIEVAL_FAILED",
+      "stop_match": false,
+      "matched_evidence_ids": [
+        "EVID-SALES-COMMUTE-AMOUNT",
+        "EVID-SALES-COMMUTE-ROUTE"
+      ],
+      "agent_evidence_ids": [
+        "EVID-SALES-COMMUTE-AMOUNT",
+        "EVID-SALES-COMMUTE-ROUTE"
+      ],
+      "reviewer_cited_evidence_ids": [],
+      "evidence_match": false,
+      "rule_match": false,
+      "risk_flags": [],
+      "business_risk_match": false,
+      "covered_subquestions": 0,
+      "total_subquestions": 1,
+      "capability_match": false,
+      "tool_names": [],
+      "agent_steps": 0,
+      "retrieval_rounds": 0,
+      "query_rewrites": 0,
+      "tokens": 0,
+      "latency_ms": 10013,
+      "task_success": false,
+      "error": null,
+      "raw_prediction": {
+        "extracted_fields": [
+          {
+            "field": "invoice_number",
+            "status": "PRESENT",
+            "value": "SYN-SALES-COMMUTE-VAL-001",
+            "raw_value": "SYN-SALES-COMMUTE-VAL-001",
+            "document_id": "DOC-SALES-COMMUTE-VAL-001",
+            "page": 1
+          },
+          {
+            "field": "amount",
+            "status": "PRESENT",
+            "value": "30.00",
+            "raw_value": "30.00",
+            "document_id": "DOC-SALES-COMMUTE-VAL-001",
+            "page": 1
+          },
+          {
+            "field": "occurred_on",
+            "status": "PRESENT",
+            "value": "2026-04-20",
+            "raw_value": "2026-04-20",
+            "document_id": "DOC-SALES-COMMUTE-VAL-001",
+            "page": 1
+          }
+        ],
+        "agent_trajectory": [],
+        "supervisor_decisions": [
+          {
+            "sequence": 1,
+            "decision_source": "DETERMINISTIC",
+            "trigger": "INITIAL",
+            "action": "RETRIEVE",
+            "reason": "尚无证据评审结果，进入首次检索。",
+            "previous_goal": null,
+            "new_goal": "核实适用制度、关键结构化事实、例外和潜在版本冲突。",
+            "stop_reason": null,
+            "used_model": false,
+            "referenced_call_ids": [],
+            "challenged_question_ids": [],
+            "latency_ms": 0,
+            "tokens_used": 0
+          }
+        ],
+        "guardrail_decisions": [],
+        "tool_observations": [],
+        "evidence_review": null,
+        "rule_results": [],
+        "decision_reasons": []
+      }
+    }
+  ]
+}

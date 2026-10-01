@@ -1,0 +1,6 @@
+﻿run_id,suite,metric_id,status,value,numerator,denominator,support,split,slice
+P14-20260925T094413Z-d7fa9722,retrieval,retrieval.recall_at_5,MEASURED,1.0,3.0,3,3,validation,overall
+P14-20260925T094413Z-d7fa9722,retrieval,retrieval.mrr,MEASURED,1.0,3.0,3,3,validation,overall
+P14-20260925T094413Z-d7fa9722,retrieval,retrieval.ndcg_at_10,MEASURED,1.0,3.0,3,3,validation,overall
+P14-20260925T094413Z-d7fa9722,retrieval,retrieval.no_answer_accuracy,NOT_APPLICABLE,,,0,0,validation,overall
+P14-20260925T094413Z-d7fa9722,retrieval,retrieval.filter_violation_rate,MEASURED,0.0,0,25,25,validation,overall

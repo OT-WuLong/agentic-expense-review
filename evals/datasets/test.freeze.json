@@ -1,0 +1,59 @@
+{
+  "dataset_version": "1.3.0",
+  "datasets": {
+    "agent_trajectories": {
+      "file_sha256": "dea1d1cb00630b2f299d99d77fb8a0725767ca6534f5279c0219d93d848fba02",
+      "test_canonical_sha256": "91ce1207e6e2557feac710cf64dcc10e557bceebf0498fe103c09011c281b51c",
+      "test_count": 3,
+      "total_count": 7
+    },
+    "approvals": {
+      "file_sha256": "2e304f7db33e5c90ee029511c62ba0cabaf8d51bd11f0ad508729fe558242f29",
+      "test_canonical_sha256": "a26ba5a01bbc6d0bfbdfff6a3517528aba6ae3ef55d61e290bc7b3ed9ca54782",
+      "test_count": 3,
+      "total_count": 7
+    },
+    "retrieval": {
+      "file_sha256": "0f272a8c485a62337c2c7e560cc24a53fbcc504378ff7b7ce3153d23d260c64b",
+      "test_canonical_sha256": "4cc3ffe4fa98dfd1a9a59464f49a30a0f7ded874d222c5fcdc26af30f8e863b6",
+      "test_count": 4,
+      "total_count": 8
+    },
+    "security": {
+      "file_sha256": "46ec1baae532e58f85a5e376e6855da5f9b4da231cf1f65cd857e07edf17ea47",
+      "test_canonical_sha256": "36a276af4cb471d75e9e28af4cd9f6f9c3e91428510bf4d58c23a1adc1fb1cbd",
+      "test_count": 2,
+      "total_count": 6
+    }
+  },
+  "frozen_on": "2026-09-25",
+  "policy_catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0",
+  "schema_version": "dataset-test-freeze/v1",
+  "sources": {
+    "golden_cases": {
+      "count": 3,
+      "sha256": "98dd038b54e7d4b8ea2d4a5d1501aa38149e2dfb31c97428578d3beb4cc966a4",
+      "version": "1.3.4"
+    },
+    "reference_evidence": {
+      "count": 37,
+      "sha256": "cf8031dfb3143298d49571d19dee682247054c2bec2a21716e64c0b07727bdeb",
+      "version": "1.4.0"
+    },
+    "reference_structured_records": {
+      "count": 17,
+      "sha256": "8bc001195704cfb5ac857c48b59a7fc91fbef95b7552b0d11ee74ccc199b3200",
+      "version": "STRUCTURED-DATA-REF-1.2.0"
+    },
+    "source_manifest": {
+      "count": 18,
+      "sha256": "f3474fce9f471be3c7e986cd25399b6c2dde9edc918e43b8b0bffa64cc518a3f",
+      "version": "1.4.0"
+    },
+    "structured_records": {
+      "count": 4,
+      "sha256": "0c466f92ff45b468df45b7d358545df443a1bf53a713efb5a1b93aa193fae005",
+      "version": "STRUCTURED-DATA-SYN-1.0.0"
+    }
+  }
+}

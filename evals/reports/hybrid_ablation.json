@@ -1,0 +1,591 @@
+{
+  "schema": "hybrid-retrieval-ablation/v1",
+  "status": "MEASURED",
+  "generated_at": "2026-09-22T14:11:14.343522+00:00",
+  "split": "validation",
+  "sample_count": 3,
+  "top_k": 10,
+  "rrf_k": 60,
+  "embedding_model": "qwen3.7-text-embedding-flash",
+  "reranker_model": "qwen3.7-text-rerank",
+  "configurations": [
+    {
+      "mode": "bm25",
+      "recall_at_5": 1.0,
+      "ndcg_at_10": 0.8769765845238192,
+      "p95_latency_ms": 4.843,
+      "filter_violations": 0,
+      "degraded_queries": 0,
+      "usage": {
+        "embedding_input_tokens": 0,
+        "embedding_requests": 0,
+        "rerank_input_tokens": 0,
+        "rerank_requests": 0
+      },
+      "samples": [
+        {
+          "sample_id": "RET-VAL-DEADLINE",
+          "latency_ms": 4.843,
+          "candidate_ids": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [],
+          "bm25_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d"
+          ],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-TAXI",
+          "latency_ms": 3.19,
+          "candidate_ids": [
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [],
+          "bm25_candidates": [
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-COMMUTE",
+          "latency_ms": 3.156,
+          "candidate_ids": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [],
+          "bm25_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "filter_violations": []
+        }
+      ]
+    },
+    {
+      "mode": "qwen_sparse",
+      "recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "p95_latency_ms": 19656.721,
+      "filter_violations": 0,
+      "degraded_queries": 0,
+      "usage": {
+        "embedding_input_tokens": 101,
+        "embedding_requests": 3,
+        "rerank_input_tokens": 0,
+        "rerank_requests": 0
+      },
+      "samples": [
+        {
+          "sample_id": "RET-VAL-DEADLINE",
+          "latency_ms": 19656.721,
+          "candidate_ids": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-TAXI",
+          "latency_ms": 745.987,
+          "candidate_ids": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-COMMUTE",
+          "latency_ms": 747.664,
+          "candidate_ids": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [],
+          "sparse_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        }
+      ]
+    },
+    {
+      "mode": "dense",
+      "recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "p95_latency_ms": 1272.575,
+      "filter_violations": 0,
+      "degraded_queries": 0,
+      "usage": {
+        "embedding_input_tokens": 101,
+        "embedding_requests": 3,
+        "rerank_input_tokens": 0,
+        "rerank_requests": 0
+      },
+      "samples": [
+        {
+          "sample_id": "RET-VAL-DEADLINE",
+          "latency_ms": 598.649,
+          "candidate_ids": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467"
+          ],
+          "sparse_candidates": [],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-TAXI",
+          "latency_ms": 1272.575,
+          "candidate_ids": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "sparse_candidates": [],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-COMMUTE",
+          "latency_ms": 552.32,
+          "candidate_ids": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "sparse_candidates": [],
+          "bm25_candidates": [],
+          "filter_violations": []
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rrf",
+      "recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "p95_latency_ms": 904.538,
+      "filter_violations": 0,
+      "degraded_queries": 0,
+      "usage": {
+        "embedding_input_tokens": 101,
+        "embedding_requests": 3,
+        "rerank_input_tokens": 0,
+        "rerank_requests": 0
+      },
+      "samples": [
+        {
+          "sample_id": "RET-VAL-DEADLINE",
+          "latency_ms": 904.538,
+          "candidate_ids": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467"
+          ],
+          "sparse_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-TAXI",
+          "latency_ms": 771.792,
+          "candidate_ids": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "sparse_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-COMMUTE",
+          "latency_ms": 723.774,
+          "candidate_ids": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "sparse_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "p95_latency_ms": 4080.837,
+      "filter_violations": 0,
+      "degraded_queries": 0,
+      "usage": {
+        "embedding_input_tokens": 101,
+        "embedding_requests": 3,
+        "rerank_input_tokens": 6349,
+        "rerank_requests": 3
+      },
+      "samples": [
+        {
+          "sample_id": "RET-VAL-DEADLINE",
+          "latency_ms": 3396.657,
+          "candidate_ids": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467"
+          ],
+          "sparse_candidates": [
+            "858235f281e9793e3e9ee830f732c6cd2dfbc2584a266d44bbce831675b45c2b",
+            "f10d610fc2dc72ac0a554c561cb14ec68c66d8ca33e4a29295215b659a0ea235",
+            "e5c908e409e96ae1d4e809280959df2e87dc65b6731af8aea42a050989af1759",
+            "e00d9e523f7fdd0b3fff0719a797699eb425139a1087605f5f0dddb38d6aac4e",
+            "b5046ee6dae6b12846809f38046dbcb14ba7e7fd4d54b923fb1542f0bcde096f",
+            "2da4737c9747cca1e21c3167889f9db85f815952faf70dcb701d587008c196e2",
+            "3416278eb9c20236f43cbb6450e23d6d86f64884678e604c66ebaa8309495f71",
+            "b605a29161042adda7ae8115d10f4865aca8bb415d1b83c9d409a5732d657320",
+            "6cc25faa72ffff1623c3d5467ea05462401cdd9cd80015de8992d327766af88d",
+            "a91cb4bda3f81e4b1a6f9820382c43f78a1a288e59462a333d4d208068753467",
+            "c8d5339d93c858acf6ee88610b461139a04330da18db0d2729cd4e78ab4166a9"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-TAXI",
+          "latency_ms": 4080.837,
+          "candidate_ids": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763"
+          ],
+          "sparse_candidates": [
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c",
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        },
+        {
+          "sample_id": "RET-VAL-SALES-COMMUTE",
+          "latency_ms": 3462.09,
+          "candidate_ids": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "degraded_sources": [],
+          "dense_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "sparse_candidates": [
+            "60215f930cbe6c7d4e49c290469ba36811d3bbafe30a04d617bbbda330a90763",
+            "d4ae7710dd7521bc716c44840d8e5a40b423d9b4a83446bec1c03cd82631040a",
+            "8ea5e009e8abb1e839329b58ad13b3f74e831ff8e8f3475afa4d957c0ef051d1",
+            "72eb313537b4c3a74496391e02bd4dfedf5a768e28cc30ca0cb92acd5f3ba1da",
+            "e0e32cfabafc19528af88d65927f98a90e72b9bdd8f609bd05676fae1023baf8",
+            "62c2d9c0c373a4dc7d12d4f0986b1f1b930b79c174e0ba4e0f0c1edb4f5ea69b",
+            "ac372b9513dc5340963e81d61bb4b1958b1cb7434cc4739c08648b915781838c"
+          ],
+          "bm25_candidates": [],
+          "filter_violations": []
+        }
+      ]
+    }
+  ],
+  "milvus_resource_snapshot": {
+    "status": "MEASURED",
+    "BlockIO": "185MB / 1.78MB",
+    "CPUPerc": "2.96%",
+    "Container": "agentic-approval-milvus",
+    "ID": "a55ee1827e10",
+    "MemPerc": "1.39%",
+    "MemUsage": "220.8MiB / 15.51GiB",
+    "Name": "agentic-approval-milvus",
+    "NetIO": "11.8MB / 11.1MB",
+    "PIDs": "60"
+  },
+  "notes": [
+    "Qwen Dense and Qwen Sparse are stored and queried as separate candidate routes.",
+    "BM25 is an ablation baseline and network-independent fallback, not the primary sparse route.",
+    "A reranker failure preserves RRF order and is counted as a degraded query."
+  ]
+}

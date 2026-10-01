@@ -1,0 +1,3 @@
+{"sample_id": "APP-VAL-DEADLINE-EXCEPTION", "status": "HUMAN_PENDING", "task_success": false}
+{"sample_id": "APP-VAL-SALES-TAXI-PASS", "status": "COMPLETED", "task_success": true}
+{"sample_id": "APP-VAL-SALES-COMMUTE-REJECT", "status": "BUSINESS_REJECTED", "task_success": true}

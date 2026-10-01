@@ -62,14 +62,17 @@ Compose 默认只将应用、数据库和 Milvus 端口绑定到 `127.0.0.1`。`
 
 ## 评测与复现
 
-最近一次 [60 条合成 validation 完整报告](evals/reports/validation_1_5_2_active_deepseek_postfix_full.md)使用 `deepseek-flash` 和 Dense 检索：
+在 [60 条合成 validation 的单 Agent / 多 Agent 对照](evals/reports/single_vs_multi_dense_1_5_2_deepseek_20261002_interpretation.md)中，两组均使用 `deepseek-flash`、Dense 检索、同一制度目录和确定性规则，各完整运行一次：
 
-| 指标 | 结果 |
-| --- | ---: |
-| 预审建议匹配 | 60/60（100%） |
-| 严格任务成功：同时检查证据、规则、工具能力与 Agent 停因 | 51/60（85%） |
-| 非通过样本中错误自动建议通过 | 0/37 |
-| 系统错误 | 0/60 |
+| 指标 | 单轮单 Agent + Dense | 多 Agent + Dense |
+| --- | ---: | ---: |
+| 预审建议匹配 | 57/60（95.0%） | 59/60（98.3%） |
+| 业务完整成功：建议、关键证据、规则和风险项均正确 | 54/60（90.0%） | 56/60（93.3%） |
+| 原合同严格任务成功：额外检查工具能力与 Agent 停因 | 47/60（78.3%） | 50/60（83.3%） |
+| 非通过样本中错误自动建议通过 | 0/37 | 0/37 |
+| 系统错误 | 1/60 | 0/60 |
+
+本轮建议匹配和业务完整成功均高 3.3 个百分点。基线有一条模型超时，另有一条餐饮地点要求与金标边界待复核；均保留原分母和评分。多 Agent 的 60 条全部一轮结束，因此这次对照不能证明补检循环或挑战机制的收益。此前 [60/60、51/60 单独运行](evals/reports/validation_1_5_2_active_deepseek_postfix_full.md)仍保留，不与本轮基线混用。
 
 这 60 条输入是**预解析的合成票据切片**，不是 60 次网页 PDF 上传，也不是独立外部盲测。另用原始合成 PDF 经上传接口、MinerU 和后台 Agent 跑通通过、驳回、转人工三条路径；网页手工上传流程也已验证一条通过案例。不要把这些结果外推为真实企业票据准确率或生产可用率。评测定义见 [评测契约](docs/evaluation-contract.md)，业务范围见 [范围约定](docs/scope.md)，语料来源见 [来源清单](data/fixtures/source_manifest.json)。
 

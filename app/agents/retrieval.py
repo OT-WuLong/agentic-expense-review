@@ -13,7 +13,7 @@ from app.agents.contracts import (
 from app.agents.model import StructuredChatClient
 from app.graph.state import ApprovalState
 
-RETRIEVAL_PROMPT_VERSION = "p15-retrieval-catalog-v3"
+RETRIEVAL_PROMPT_VERSION = "p15-retrieval-required-calls-v4"
 
 _SYSTEM_PROMPT = """你是企业费用预审系统的 Retrieval Agent，只规划当前一轮只读检索。
 先拆成可独立核实的子问题，再从 allowed_tools 中选择工具。不得修改申请事实、猜测企业制度、
@@ -166,8 +166,7 @@ def plan_retrieval(
         round_count == 0
         and "Q-EXCEPTION" in required_ids
         and not any(
-            call.tool_name == ToolName.POLICY_SEARCH
-            and call.sub_question_id == "Q-EXCEPTION"
+            call.tool_name == ToolName.POLICY_SEARCH and call.sub_question_id == "Q-EXCEPTION"
             for call in plan.tool_calls
         )
     ):
@@ -221,7 +220,9 @@ def plan_retrieval(
                     None,
                 )
                 if invoice_number is None:
-                    raise ValueError("duplicate invoice lookup requires an extracted invoice number")
+                    raise ValueError(
+                        "duplicate invoice lookup requires an extracted invoice number"
+                    )
                 data["arguments"] = {"invoice_number": invoice_number}
         normalized_calls.append(ToolCall.model_validate(data))
 
@@ -243,6 +244,17 @@ def plan_retrieval(
             normalized_calls = [
                 next(item for item in normalized_calls if item.sub_question_id == question_id)
                 for question_id in challenge_question_ids
+            ]
+        elif round_count == 0 and "Q-EXCEPTION" in required_ids:
+            exception_call = next(
+                item for item in normalized_calls if item.sub_question_id == "Q-EXCEPTION"
+            )
+            other = [item for item in normalized_calls if item is not exception_call]
+            normalized_calls = [
+                exception_call,
+                next(
+                    (item for item in other if item.tool_name != exception_call.tool_name), other[0]
+                ),
             ]
         else:
             first = normalized_calls[0]

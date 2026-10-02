@@ -1,0 +1,26 @@
+{
+  "dataset_version": "1.6.0",
+  "status": "DRAFT_LIVE_EVALUATED_ONCE",
+  "latest_comparison_report": "evals/reports/single_vs_multi_dense_challenge_1_6_deepseek_20261002.json",
+  "samples": 40,
+  "difficulty": {
+    "HIGH": 20,
+    "MEDIUM": 20
+  },
+  "expense_types": {
+    "住宿": 16,
+    "餐饮": 12,
+    "交通": 12
+  },
+  "recommendations": {
+    "PASS_RECOMMENDED": 15,
+    "REJECT_RECOMMENDED": 9,
+    "HUMAN_REVIEW": 16
+  },
+  "invoices": 40,
+  "pdf_documents": 58,
+  "structured_records": 131,
+  "synthetic": true,
+  "external_blind_test": false,
+  "frozen_test_modified": false
+}

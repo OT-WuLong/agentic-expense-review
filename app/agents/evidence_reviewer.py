@@ -12,11 +12,13 @@ from app.agents.contracts import (
     ToolName,
 )
 from app.agents.model import StructuredChatClient
+from app.database import PostgresStore
 from app.graph.state import ApprovalState
 from app.models import EvidenceItem, EvidenceSource
+from app.rules import policy_rule_checks
 from app.tools.registry import ToolExecutionContext
 
-EVIDENCE_REVIEW_PROMPT_VERSION = "p15-evidence-review-catalog-v4"
+EVIDENCE_REVIEW_PROMPT_VERSION = "p15-evidence-review-grounding-v5"
 REVIEWER_FORMAT_ATTEMPTS = 3
 
 _SYSTEM_PROMPT = """你是 Evidence Reviewer，只判断现有证据能否覆盖本轮子问题并给出 recommended_action；
@@ -29,8 +31,11 @@ REQUEST_DOCUMENTS。若申请和票据的金额、日期、人数或路线都明
 不是证据缺口：Q-RECEIPT 标为 SUPPORTED，在 reason 写明差异；其他问题也已覆盖时输出 SUFFICIENT，
 交由规则引擎决定驳回或转人工。不得因猜测将来可能提交更正票据，就把当前明确的不一致改判补件。
 无法通过权威元数据解决的制度冲突输出 ESCALATE；全部问题均有充分证据且无制度冲突才输出
-SUFFICIENT。若两个同时有效、权威等级和优先级相同、互不替代的制度对同一费用给出不同
-额度，不得自行选择较新版本：尚未定向查询替代关系、优先级或过渡条款时先 RETRIEVE_MORE；已经
+SUFFICIENT。不同额度不等于本单存在实质冲突：在每个适用版本下分别核算本单，均在限额内或均超限时，
+引用全部适用额度并标 SUPPORTED，交给规则引擎，不需选择唯一版本，也不得因此补检或转人工。
+只有适用版本会给本单带来不同结果时才构成实质额度冲突。
+若两个同时有效、权威等级和优先级相同、互不替代的制度产生这种不同结果，
+不得自行选择较新版本：尚未定向查询替代关系、优先级或过渡条款时先 RETRIEVE_MORE；已经
 补检仍没有权威依据时才列出冲突证据并 ESCALATE。若通用制度与适用部门细则的 priority 不同，
 同一额度以较高 priority 为准，不得称为制度版本冲突；会议通知等材料缺失应 REQUEST_DOCUMENTS。
 部门、日期和权限已经由服务端过滤；不能仅因
@@ -40,6 +45,10 @@ questions 是服务端按已发布目录确定的必核清单，不得增加清�
 applicable_rule_ids 是本单必核规则的完整集合。若集合没有出租车限额规则，不能因为没有找到
 出租车限额、超限例外或审批条款而判 MISSING。Q-EXCEPTION 只核对制度是否写明例外通道；
 找到条款就引用原文判 SUPPORTED，未提交会议通知等实际材料则另列 evidence_gaps 并请求补件。
+policy_rule_checks 列出服务端已发布规则的参数与原文引用；参数本身不是证据，evidence_ids 为空表示
+还没有检出必要条款。Q-POLICY 必须逐条核对必要额度和提交时限的具体参数，泛泛提及提交的总则
+不能证明 30/45 天期限。缺这种条款应定向 RETRIEVE_MORE，不是向申请人要求新的制度文件。
+amount_within_limit 是用票据人数和申请金额核算的辅助结果，不代替你核对票据与申请是否一致。
 只检查实际制度和票据证据对 questions 的覆盖。"""
 
 
@@ -235,6 +244,8 @@ def review_evidence(
     client: StructuredChatClient,
     state: ApprovalState,
     context: ToolExecutionContext,
+    *,
+    database: PostgresStore | None = None,
 ) -> tuple[EvidenceReview, int, int, int]:
     """Reject stale/untraceable evidence before asking the model about semantics."""
 
@@ -263,6 +274,13 @@ def review_evidence(
         f"E{index:03d}": item.evidence_id for index, item in enumerate(evidence, start=1)
     }
     evidence_by_alias = dict(zip(alias_to_id, evidence, strict=True))
+    id_to_alias = {value: key for key, value in alias_to_id.items()}
+    checks = (
+        policy_rule_checks({**state, "evidence": evidence}, database, context)
+        if database is not None
+        else []
+    )
+    missing_checks = [item for item in checks if not item["evidence_ids"]]
     valid_ids = set(alias_to_id)
     question_ids = {item.question_id for item in questions}
     payload: dict[str, object] = {
@@ -272,6 +290,10 @@ def review_evidence(
         "applicable_policy_ids": context.allowed_document_ids,
         "applicable_rule_ids": context.applicable_rule_ids,
         "rule_scope_complete": context.rule_scope_complete,
+        "policy_rule_checks": [
+            {**item, "evidence_ids": [id_to_alias[eid] for eid in item["evidence_ids"]]}
+            for item in checks
+        ],
         "provided_evidence_ids": list(alias_to_id),
         "evidence": [
             {**_evidence_payload(item), "evidence_id": alias}
@@ -320,6 +342,23 @@ def review_evidence(
             review = _resolve_priority_conflict(
                 review, evidence_by_alias, state["application"].expense_type.value
             )
+            if missing_checks and review.recommended_action == EvidenceAction.SUFFICIENT:
+                # A broad Q-POLICY label cannot conceal a missing required parameter citation.
+                gaps = [
+                    f"检索 {item['source_document_id']} 的 {item['rule_id']} 原文参数 {item['parameters']}"
+                    for item in missing_checks
+                ]
+                review = EvidenceReview(
+                    recommended_action=EvidenceAction.RETRIEVE_MORE,
+                    reason="必核规则缺少对应额度或提交时限条款，需定向补检；目录参数不能替代原文。",
+                    coverage=[
+                        item.model_copy(update={"status": CoverageStatus.MISSING})
+                        if item.question_id == "Q-POLICY"
+                        else item
+                        for item in review.coverage
+                    ],
+                    evidence_gaps=[*review.evidence_gaps, *gaps],
+                )
             if review.recommended_action == EvidenceAction.REQUEST_DOCUMENTS:
                 exception_ids = [
                     alias

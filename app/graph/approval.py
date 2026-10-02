@@ -416,6 +416,7 @@ def _reviewer_node(state: ApprovalState, runtime: Runtime[ApprovalRuntime]) -> d
             runtime.context.model,
             state,
             runtime.context.tool_context,
+            database=runtime.context.database,
         )
     except Exception as exc:  # noqa: BLE001 - model/schema failures become a controlled state
         LOGGER.warning("Evidence Reviewer failed: %s", type(exc).__name__)

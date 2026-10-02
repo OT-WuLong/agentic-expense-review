@@ -1,0 +1,872 @@
+{
+  "dataset_version": "1.6.1",
+  "cases": [
+    {
+      "slug": "H01",
+      "sample_id": "APP-C16-H01",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "入住日城市等级仍为 B；不能按提交日的新 A 级追溯。实际入住水单补齐发票日期。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H01-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H01-STAY.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十四条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第十九条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H02",
+      "sample_id": "APP-C16-H02",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "5 月 15 日调整已生效，A 级两间夜限额 1200；不是旧 B 级的 900。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H02-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十四条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H03",
+      "sample_id": "APP-C16-H03",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "发生日 B 级，运营部门标准 520 优先于通用 450；后来的 A 级不追溯。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H03-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H03-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H03-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H04",
+      "sample_id": "APP-C16-H04",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "发票与实际水单合并核对两间房三晚，部门 A 级限额 680×3×2=4080。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H04-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H04-STAY.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-HOTEL-第十九条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H04-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H04-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H05",
+      "sample_id": "APP-C16-H05",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "通用 A 级两房两晚限额 2400，超限 40；不能借用运营部门 680 标准。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H05-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十四条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H06",
+      "sample_id": "APP-C16-H06",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "调整前 B 级部门限额 520×2×2=2080；按后续 A 级会误通过。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H06-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H06-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H06-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H07",
+      "sample_id": "APP-C16-H07",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "金额、住宿与城市记录齐全，但权威预算记录缺失，不能据申请人说明通过。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H07-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H07-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条",
+        "EVID-C16-HOTEL-第四十二条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H08",
+      "sample_id": "APP-C16-H08",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "部门 B 级金额合规但预算数据缺失；额度合规不等于预算已核实。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H08-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条",
+        "EVID-C16-OPS-第三十九条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H08-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H09",
+      "sample_id": "APP-C16-H09",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "分级记录 6 月 1 日才生效，发生日无等级；不得把未来记录当有效依据。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H09-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十四条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H10",
+      "sample_id": "APP-C16-H10",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "部门限额内且日期一致，但查重记录为真，应暂停并人工核实重复申请。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H10-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H10-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H11",
+      "sample_id": "APP-C16-H11",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "B 级部门限额 1040，预算恰好等于申请金额 1030；两个边界均满足。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H11-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H11-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H12",
+      "sample_id": "APP-C16-H12",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "两晚通用 A 级限额 1200，普通驻场超标；不能自行套会议指定酒店例外。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H12-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H13",
+      "sample_id": "APP-C16-H13",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "会议指定酒店超标；通知、指定说明和部门确认齐全，但部门确认不是财务例外批准。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H13-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H13-NOTE1.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H13-NOTE2.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条",
+        "EVID-C16-OPS-第二十四条",
+        "EVID-C16-OPS-第二十六条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H13-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H14",
+      "sample_id": "APP-C16-H14",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "已有对应申请的财务书面例外材料，但超标例外仍交复核员作最终裁量，不能当正常限额内自动通过。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H14-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H14-NOTE1.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H14-NOTE2.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条",
+        "EVID-C16-HOTEL-第三十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "H15",
+      "sample_id": "APP-C16-H15",
+      "difficulty": "MEDIUM",
+      "expense_type": "住宿",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "从退房日到提交日 46 天，超过部门 45 天；部门延迟说明不等于正式时限例外。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H15-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H15-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十八条",
+        "EVID-C16-OPS-第二十条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": [
+        {
+          "group_id": "APP-C16-H15-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "H16",
+      "sample_id": "APP-C16-H16",
+      "difficulty": "HIGH",
+      "expense_type": "住宿",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "城市按入住日 B 级，提交按退房日起算；450 恰等于额度且提交恰为第 30 天。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-H16-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-HOTEL-第三十一条",
+        "EVID-C16-HOTEL-第二十一条",
+        "EVID-C16-HOTEL-第二十四条",
+        "EVID-C16-HOTEL-第二十六条",
+        "EVID-C16-HOTEL-第四十条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M01",
+      "sample_id": "APP-C16-M01",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "重叠期人均 135：旧版不通过、新版通过；同权威且无替代关系，需要人工消歧。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M01-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OLD-第一条",
+        "EVID-C16-OLD-第二条",
+        "EVID-C16-OLD-第二十五条",
+        "EVID-C16-NEW-第一条",
+        "EVID-C16-NEW-第二条",
+        "EVID-C16-NEW-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M02",
+      "sample_id": "APP-C16-M02",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "两版同时有效但人均 100 在两版都通过；标准不同不等于实质结论冲突。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M02-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OLD-第一条",
+        "EVID-C16-OLD-第二条",
+        "EVID-C16-OLD-第二十五条",
+        "EVID-C16-NEW-第一条",
+        "EVID-C16-NEW-第二条",
+        "EVID-C16-NEW-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M03",
+      "sample_id": "APP-C16-M03",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "人均 170 在两版都超限；无须先解决版本优先级才能建议驳回。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M03-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OLD-第一条",
+        "EVID-C16-OLD-第二条",
+        "EVID-C16-OLD-第二十五条",
+        "EVID-C16-NEW-第一条",
+        "EVID-C16-NEW-第二条",
+        "EVID-C16-NEW-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M04",
+      "sample_id": "APP-C16-M04",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "旧版有效期末日仍生效；人均 135 使两版结论分歧，不能提前排除旧版。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M04-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OLD-第一条",
+        "EVID-C16-OLD-第二条",
+        "EVID-C16-OLD-第二十五条",
+        "EVID-C16-NEW-第一条",
+        "EVID-C16-NEW-第二条",
+        "EVID-C16-NEW-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M05",
+      "sample_id": "APP-C16-M05",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "旧版刚失效，仅新版 150 上限适用；不能要求检索已失效的旧规则。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M05-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-NEW-第一条",
+        "EVID-C16-NEW-第二条",
+        "EVID-C16-NEW-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M06",
+      "sample_id": "APP-C16-M06",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "发生日仅旧版 120 有效，6 月 2 日提交不能套用新标准。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M06-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OLD-第一条",
+        "EVID-C16-OLD-第二条",
+        "EVID-C16-OLD-第二十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M07",
+      "sample_id": "APP-C16-M07",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-MARKETING",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "人均 150 按部门 160 标准通过；通用新旧版本的重叠不应制造部门内冲突。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M07-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M08",
+      "sample_id": "APP-C16-M08",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "部门上限 320，实际金额 350；业务必要性说明不能豁免人均超限。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M08-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M09",
+      "sample_id": "APP-C16-M09",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-MARKETING",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "人均 157.5 高于通用 150 但低于部门 160，必须按部门优先关系判断。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M09-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M10",
+      "sample_id": "APP-C16-M10",
+      "difficulty": "MEDIUM",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "申请填写 3 人而原票据只有 2 人；两种人数下额度都合规也不能忽略事实冲突。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M10-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条",
+        "EVID-C16-OPS-第三十条",
+        "EVID-C16-OPS-第三十四条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M11",
+      "sample_id": "APP-C16-M11",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "活动总预算 6200 已审批；5000 是活动预算门槛，不是本笔工作餐额度，155 按人均 160 核对。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M11-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M11-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条",
+        "EVID-C16-OPS-第八条",
+        "EVID-C16-OPS-第九条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "M12",
+      "sample_id": "APP-C16-M12",
+      "difficulty": "HIGH",
+      "expense_type": "餐饮",
+      "department_id": "DEPT-MARKETING",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "原票据未记录人数，部门便笺不能代替商家明细；申请 2 人虽在额度内仍须补原始材料。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M12-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-M12-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第二十九条",
+        "EVID-C16-OPS-第三十条",
+        "EVID-C16-OPS-第三十四条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T01",
+      "sample_id": "APP-C16-T01",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "销售单次限额 260，票据、已确认客户拜访、预算、权限和查重均满足。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T01-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T01-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十二条",
+        "EVID-C16-SALES-第十六条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T02",
+      "sample_id": "APP-C16-T02",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "原价 300 减优惠 35 后实付 265，仍超销售 260；不能借用运营 300。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T02-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十二条",
+        "EVID-C16-SALES-第十六条",
+        "EVID-C16-SALES-第十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T03",
+      "sample_id": "APP-C16-T03",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "原价 315 减优惠 45，实付 270 按运营 300 核对；不是按订单原价判断。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T03-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十三条",
+        "EVID-C16-OPS-第十七条",
+        "EVID-C16-OPS-第三十五条",
+        "EVID-C16-OPS-第十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T04",
+      "sample_id": "APP-C16-T04",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "票据最终实付 298，申请却填退款前 318；真实金额冲突，不能仅因 298 在限额内通过。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T04-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十三条",
+        "EVID-C16-OPS-第十七条",
+        "EVID-C16-OPS-第三十五条",
+        "EVID-C16-OPS-第十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T05",
+      "sample_id": "APP-C16-T05",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "票据和客户拜访正常，但权威预算记录缺失；部门备忘录不能代替财务台账。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T05-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T05-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十二条",
+        "EVID-C16-SALES-第十六条",
+        "EVID-C16-SALES-第十七条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T06",
+      "sample_id": "APP-C16-T06",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "只有另一员工的交通权限记录；当前申请人权限未核实，不能跨员工借用授权。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T06-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T06-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十二条",
+        "EVID-C16-SALES-第十六条",
+        "EVID-C16-SALES-第十七条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T07",
+      "sample_id": "APP-C16-T07",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "REJECT_RECOMMENDED",
+      "rationale": "票据明确住所至固定办公地点，即使申请称客户拜访且存在拜访登记，也不能改写通勤性质。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T07-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T07-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十八条",
+        "EVID-C16-SALES-第二十二条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T08",
+      "sample_id": "APP-C16-T08",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-SYN-RD",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "住所到高铁站与已批准公务出差衔接，不是住所到固定办公地点；通用制度无此笔 260 上限。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T08-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T08-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-TAXI-第二十二条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T09",
+      "sample_id": "APP-C16-T09",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "PASS_RECOMMENDED",
+      "rationale": "提交第 43 天：超过通用 30 天但未超部门 45 天，应按运营补充细则。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T09-INVOICE.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十三条",
+        "EVID-C16-OPS-第十七条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T10",
+      "sample_id": "APP-C16-T10",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "提交第 49 天超部门 45 天；部门负责人延迟说明不是时限例外批准。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T10-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T10-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十三条",
+        "EVID-C16-OPS-第十七条",
+        "EVID-C16-OPS-第三十五条",
+        "EVID-C16-OPS-第三十六条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T11",
+      "sample_id": "APP-C16-T11",
+      "difficulty": "HIGH",
+      "expense_type": "交通",
+      "department_id": "DEPT-SALES",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "权威查重为真，而经办便笺称未报销；不能用较低权威说明覆盖查重风险。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T11-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T11-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-SALES-第十二条",
+        "EVID-C16-SALES-第十六条",
+        "EVID-C16-SALES-第二十九条"
+      ],
+      "acceptable_evidence_groups": []
+    },
+    {
+      "slug": "T12",
+      "sample_id": "APP-C16-T12",
+      "difficulty": "MEDIUM",
+      "expense_type": "交通",
+      "department_id": "DEPT-OPERATIONS",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "rationale": "发票缺实际路线；计划行程只说明原定安排，不能证明实际乘车起讫地点。",
+      "documents": [
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T12-INVOICE.pdf",
+        "evals/datasets/challenge_1_6/attachments/DOC-C16-T12-NOTE1.pdf"
+      ],
+      "policy_evidence_ids": [
+        "EVID-C16-OPS-适用关系：",
+        "EVID-C16-OPS-第十三条",
+        "EVID-C16-OPS-第十七条",
+        "EVID-C16-OPS-第三十五条"
+      ],
+      "acceptable_evidence_groups": []
+    }
+  ]
+}

@@ -10,3 +10,5 @@ TODO.md
 dev.ps1
 tmp/
 data/indexes/
+evals/reports/*_raw/*.stdout.txt
+evals/reports/*_raw/*.stderr.txt

@@ -57,6 +57,9 @@ def main() -> int:
         input_paths["attachment_chunks"] = args.attachment_chunks
     if args.attachment_evidence:
         input_paths["attachment_evidence"] = args.attachment_evidence
+    structured_path = args.dataset_dir / "structured_snapshots.json"
+    if structured_path.exists():
+        input_paths["structured_snapshots"] = structured_path
     input_hashes = {
         name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in input_paths.items()
     }

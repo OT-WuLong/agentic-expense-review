@@ -96,4 +96,8 @@ class StructuredChatClient:
             total_tokens = int(body.get("usage", {}).get("total_tokens", 0))
         except (KeyError, IndexError, TypeError, ValueError) as exc:
             raise RuntimeError("Agent model returned an invalid response envelope") from exc
-        return schema.model_validate_json(_json_content(content)), total_tokens, latency_ms
+        return (
+            schema.model_validate_json(_json_content(content), context=payload),
+            total_tokens,
+            latency_ms,
+        )

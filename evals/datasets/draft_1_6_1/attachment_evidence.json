@@ -1,0 +1,2008 @@
+{
+  "dataset_version": "1.6.1",
+  "items": [
+    {
+      "evidence_id": "EVID-V14-MEAL-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：1 人\n票面金额：150.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：300.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-MEAL-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-MEAL-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "实际参加人数：2 人\n票面金额：240.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：客户服务中心至合作园区\n业务目的：现场服务巡检\n员工实际支付：128.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：研发园区至客户服务中心\n业务目的：客户现场设备检查\n员工实际支付：288.00 元"
+    },
+    {
+      "evidence_id": "EVID-V14-TAXI-03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V14-TAXI-03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "路线：会展中心至合作园区\n业务目的：客户活动现场协调\n员工实际支付：295.00 元"
+    },
+    {
+      "evidence_id": "EVID-V15-M01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M01\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n供应商交付计划工作餐\n核验字段\n票据号：SYN-V15-M01\n开票日期：2026-06-01\n用餐事项：供应商交付计划工作餐\n实际参加人数：1 人\n票面金额：118.00 元\n附件编号：DOC-V15-M01\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M02\n业务餐饮电子票据\n经办单位：市场业务中心\n电子票据信息\n票据号：SYN-V15-M02\n开票日期：2026-06-02\n用餐事项：渠道合作季度复盘餐叙\n实际参加人数：2 人\n票面金额：320.00 元\n附件编号：DOC-V15-M02\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M03\n运营服务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M03\n开票日期：2026-06-03\n用餐事项：客户现场验收后的简餐\n实际参加人数：2 人\n票面金额：216.00 元\n附件编号：DOC-V15-M03\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M04",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M04\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n产品演示后客户工作餐\n核验字段\n票据号：SYN-V15-M04\n开票日期：2026-06-04\n用餐事项：产品演示后客户工作餐\n实际参加人数：1 人\n票面金额：185.00 元\n附件编号：DOC-V15-M04\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M05",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M05\n业务餐饮电子票据\n经办单位：市场业务中心\n电子票据信息\n票据号：SYN-V15-M05\n开票日期：2026-06-05\n用餐事项：区域合作方沟通工作餐\n实际参加人数：2 人\n票面金额：348.00 元\n附件编号：DOC-V15-M05\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M06",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M06\n市场业务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M06\n开票日期：2026-06-06\n用餐事项：合作协议讨论工作餐\n实际参加人数：1 人\n票面金额：145.00 元\n附件编号：DOC-V15-M06\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M07",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M07\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n项目启动会后工作餐\n核验字段\n票据号：SYN-V15-M07\n开票日期：2026-06-07\n用餐事项：项目启动会后工作餐\n实际参加人数：1 人\n票面金额：138.00 元\n附件编号：DOC-V15-M07\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M08",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M08\n业务餐饮电子票据\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-M08\n开票日期：2026-06-08\n用餐事项：服务点位巡检工作餐\n实际参加人数：2 人\n票面金额：242.00 元\n附件编号：DOC-V15-M08\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M09",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M09\n市场业务中心费用记录\n业务餐饮电子票据\n记录用途：业务报销核对\n票据号：SYN-V15-M09\n开票日期：2026-06-09\n用餐事项：联合营销活动工作餐\n实际参加人数：2 人\n票面金额：285.00 元\n附件编号：DOC-V15-M09\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-M10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-M10",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-M10\n业务餐饮电子票据\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n客户方案确认工作餐\n核验字段\n票据号：SYN-V15-M10\n开票日期：2026-06-10\n用餐事项：客户方案确认工作餐\n实际参加人数：1 人\n票面金额：160.00 元\n附件编号：DOC-V15-M10\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T01",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T01\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T01\n开票日期：2026-06-11\n路线：研发园区至客户培训中心\n业务目的：培训设备搬运协调\n员工实际支付：86.00 元\n附件编号：DOC-V15-T01\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T02",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T02\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T02\n开票日期：2026-06-12\n路线：会展北门至合作园区\n业务目的：展会布展现场支持\n员工实际支付：300.00 元\n附件编号：DOC-V15-T02\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T03",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T03\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n运营服务中心\n费用场景\n客户设备复核\n核验字段\n票据号：SYN-V15-T03\n开票日期：2026-06-13\n路线：服务中心至工业园东门\n业务目的：客户设备复核\n员工实际支付：228.00 元\n附件编号：DOC-V15-T03\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T04",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T04\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T04\n开票日期：2026-06-14\n路线：酒店会议中心至客户园区\n业务目的：技术交流交通\n员工实际支付：326.00 元\n附件编号：DOC-V15-T04\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T05",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T05\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T05\n开票日期：2026-06-15\n路线：合作方仓库至售后站点\n业务目的：物料交接交通\n员工实际支付：307.00 元\n附件编号：DOC-V15-T05\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T06",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T06\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n运营服务中心\n费用场景\n现场故障排查\n核验字段\n票据号：SYN-V15-T06\n开票日期：2026-06-16\n路线：测试基地至客户大楼\n业务目的：现场故障排查\n员工实际支付：126.00 元\n附件编号：DOC-V15-T06\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T07",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T07\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T07\n开票日期：2026-06-17\n路线：会展中心至联络办公室\n业务目的：活动收尾协调\n员工实际支付：174.00 元\n附件编号：DOC-V15-T07\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T08",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T08\n运营服务中心费用记录\n公务出行费用凭证\n记录用途：业务报销核对\n票据号：SYN-V15-T08\n开票日期：2026-06-18\n路线：服务网点至客户数据中心\n业务目的：设备巡检交通\n员工实际支付：98.00 元\n附件编号：DOC-V15-T08\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T09",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T09\n公务出行费用凭证\n凭证项目\n记录内容\n使用部门\n市场业务中心\n费用场景\n联合测试现场支持\n核验字段\n票据号：SYN-V15-T09\n开票日期：2026-06-19\n路线：客户研发楼至项目指挥部\n业务目的：联合测试现场支持\n员工实际支付：265.00 元\n附件编号：DOC-V15-T09\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-V15-T10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-V15-T10",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-V15-T10\n公务出行费用凭证\n经办单位：运营服务中心\n电子票据信息\n票据号：SYN-V15-T10\n开票日期：2026-06-20\n业务目的：外勤交通，票据未列明起讫地点\n员工实际支付：72.00 元\n附件编号：DOC-V15-T10\n本票据由项目合成，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第三十一条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 5,
+      "section": "第七章 城市等级住宿标准",
+      "excerpt": "第三十一条 住宿标准按城市等级执行：A 类城市每间夜最高 600.00 元，B 类城市每间夜最高 450.00 元。",
+      "authoring_excerpt": "第三十一条 住宿标准按城市等级执行：A 类城市每间夜最高 600.00 元，B 类城市每间夜最高 450.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第二十一条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 4,
+      "section": "第五章 城市等级",
+      "excerpt": "第二十一条 城市等级以财务部发布并在费用发生日有效的城市分级清单（CITY-TIER-2026-01）为准。",
+      "authoring_excerpt": "第二十一条 城市等级以财务部发布并在费用发生日有效的城市分级清单（CITY-TIER-2026-01）为准。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第二十四条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 4,
+      "section": "第五章 城市等级",
+      "excerpt": "第二十四条 城市分级调整只适用于生效日后的住宿；不得据后续等级追溯调整已发生费用。",
+      "authoring_excerpt": "第二十四条 城市分级调整只适用于生效日后的住宿；不得据后续等级追溯调整已发生费用。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第二十六条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 4,
+      "section": "第六章 标准计算与费用边界",
+      "excerpt": "第二十六条 可报住宿限额按“适用城市等级每间夜标准 × 实际间夜数 × 公司承担的客房数”计算。",
+      "authoring_excerpt": "第二十六条 可报住宿限额按“适用城市等级每间夜标准 × 实际间夜数 × 公司承担的客房数”计算。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第十九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 3,
+      "section": "第四章 凭证要求",
+      "excerpt": "第十九条 发票无法显示入住日期的，可用酒店水单或经确认的订单补充，但不得仅凭行程计划认定实际住宿。",
+      "authoring_excerpt": "第十九条 发票无法显示入住日期的，可用酒店水单或经确认的订单补充，但不得仅凭行程计划认定实际住宿。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第四十条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 6,
+      "section": "第九章 提交、预算与档案",
+      "excerpt": "第四十条 住宿费用须在退房之日起 30 个日历日内提交。",
+      "authoring_excerpt": "第四十条 住宿费用须在退房之日起 30 个日历日内提交。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H01-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H01-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H01\n实际承担金额：880.00 元\n城市：常州市\n客房数量：1 间客房\n本发票未列示入住和退房日期，请与酒店实际结算水单核对。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H01-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-STAY",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H01-STAY",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H01-STAY\n酒店实际住宿结算水单\n对应票据：SYN-C16-H01\n城市：常州市\n酒店确认：2026-05-13 入住，2026-05-15 退房。\n实际客房：1 间客房\n本水单证明已完成的住宿，不是预订或行程计划。\n附件编号：DOC-C16-H01-STAY\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-CITY-OLD",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H01-CITY-OLD",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H01-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H01-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H01-1.6.0",
+      "snapshot_version": "2026-05-16T08:00:00+08:00",
+      "effective_at": "2026-05-16"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H01-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H01:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H01-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H01-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H01-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H01",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H01-1.6.0",
+      "snapshot_version": "2026-05-16T08:00:00+08:00",
+      "effective_at": "2026-05-16"
+    },
+    {
+      "evidence_id": "EVID-C16-H02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H02-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H02-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H02\n实际承担金额：1180.00 元\n城市：常州市\n客房数量：1 间客房\n实际住宿：2026-05-16 入住，2026-05-18 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H02-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H02-CITY-NEW",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H02-CITY-NEW",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H02-1.6.0",
+      "snapshot_version": "2026-05-15T08:00:00+08:00",
+      "effective_at": "2026-05-15"
+    },
+    {
+      "evidence_id": "EVID-C16-H02-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H02-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H02-1.6.0",
+      "snapshot_version": "2026-05-19T08:00:00+08:00",
+      "effective_at": "2026-05-19"
+    },
+    {
+      "evidence_id": "EVID-C16-H02-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H02-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H02:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H02-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H02-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H02-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H02",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H02-1.6.0",
+      "snapshot_version": "2026-05-19T08:00:00+08:00",
+      "effective_at": "2026-05-19"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-适用关系：",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 1,
+      "section": "合成企业甲市场与运营费用补充细则",
+      "excerpt": "适用关系：本细则在上述部门和费用类别内优先适用；未规定事项执行《费用报销总则》（FIN-GEN-2026）。",
+      "authoring_excerpt": "适用关系：本细则在上述部门和费用类别内优先适用；未规定事项执行《费用报销总则》（FIN-GEN-2026）。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第十八条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第四章 住宿标准与计算",
+      "excerpt": "第十八条 市场部、运营部住宿标准为：A 类城市每间夜最高 680.00 元，B 类城市每间夜最高 520.00 元。",
+      "authoring_excerpt": "第十八条 市场部、运营部住宿标准为：A 类城市每间夜最高 680.00 元，B 类城市每间夜最高 520.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第二十条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第四章 住宿标准与计算",
+      "excerpt": "第二十条 总限额按城市等级每间夜标准、实际间夜数和公司承担的客房数计算。",
+      "authoring_excerpt": "第二十条 总限额按城市等级每间夜标准、实际间夜数和公司承担的客房数计算。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第三十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 5,
+      "section": "第七章 提交时限与预算处理",
+      "excerpt": "第三十五条 费用应在发生之日起 45 个日历日内提交；住宿费用的发生日按退房日计算。",
+      "authoring_excerpt": "第三十五条 费用应在发生之日起 45 个日历日内提交；住宿费用的发生日按退房日计算。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H03-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H03-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H03\n实际承担金额：500.00 元\n城市：常州市\n客房数量：1 间客房\n实际住宿：2026-05-14 入住，2026-05-15 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H03-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H03-CITY-OLD",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H03-CITY-OLD",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H03-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H03-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H03-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H03-1.6.0",
+      "snapshot_version": "2026-05-16T08:00:00+08:00",
+      "effective_at": "2026-05-16"
+    },
+    {
+      "evidence_id": "EVID-C16-H03-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H03-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H03:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H03-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H03-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H03-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H03",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H03-1.6.0",
+      "snapshot_version": "2026-05-16T08:00:00+08:00",
+      "effective_at": "2026-05-16"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H04-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H04-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H04\n实际承担金额：4000.00 元\n城市：常州市\n客房数量：2 间客房\n本发票未列示入住和退房日期，请与酒店实际结算水单核对。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H04-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-STAY",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H04-STAY",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H04-STAY\n酒店实际住宿结算水单\n对应票据：SYN-C16-H04\n城市：常州市\n酒店确认：2026-05-17 入住，2026-05-20 退房。\n实际客房：2 间客房\n本水单证明已完成的住宿，不是预订或行程计划。\n附件编号：DOC-C16-H04-STAY\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-CITY-NEW",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H04-CITY-NEW",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H04-1.6.0",
+      "snapshot_version": "2026-05-15T08:00:00+08:00",
+      "effective_at": "2026-05-15"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H04-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H04-1.6.0",
+      "snapshot_version": "2026-05-21T08:00:00+08:00",
+      "effective_at": "2026-05-21"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H04-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H04:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H04-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H04-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H04-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H04",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H04-1.6.0",
+      "snapshot_version": "2026-05-21T08:00:00+08:00",
+      "effective_at": "2026-05-21"
+    },
+    {
+      "evidence_id": "EVID-C16-H05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H05-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H05-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H05\n实际承担金额：2440.00 元\n城市：常州市\n客房数量：2 间客房\n实际住宿：2026-05-18 入住，2026-05-20 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H05-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H05-CITY-NEW",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H05-CITY-NEW",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H05-1.6.0",
+      "snapshot_version": "2026-05-15T08:00:00+08:00",
+      "effective_at": "2026-05-15"
+    },
+    {
+      "evidence_id": "EVID-C16-H05-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H05-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H05-1.6.0",
+      "snapshot_version": "2026-05-21T08:00:00+08:00",
+      "effective_at": "2026-05-21"
+    },
+    {
+      "evidence_id": "EVID-C16-H05-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H05-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H05:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H05-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H05-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H05-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H05",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H05-1.6.0",
+      "snapshot_version": "2026-05-21T08:00:00+08:00",
+      "effective_at": "2026-05-21"
+    },
+    {
+      "evidence_id": "EVID-C16-H06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H06-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H06-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H06\n实际承担金额：2100.00 元\n城市：常州市\n客房数量：2 间客房\n实际住宿：2026-05-11 入住，2026-05-13 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H06-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H06-CITY-OLD",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H06-CITY-OLD",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H06-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H06-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H06-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H06-1.6.0",
+      "snapshot_version": "2026-05-14T08:00:00+08:00",
+      "effective_at": "2026-05-14"
+    },
+    {
+      "evidence_id": "EVID-C16-H06-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H06-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H06:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H06-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H06-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H06-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H06",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H06-1.6.0",
+      "snapshot_version": "2026-05-14T08:00:00+08:00",
+      "effective_at": "2026-05-14"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第四十二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 6,
+      "section": "第九章 提交、预算与档案",
+      "excerpt": "第四十二条 部门预算不足时，由预算负责人确认资金安排，财务负责人或其书面授权人决定后续处理，不得拆分申请规避预算控制。",
+      "authoring_excerpt": "第四十二条 部门预算不足时，由预算负责人确认资金安排，财务负责人或其书面授权人决定后续处理，不得拆分申请规避预算控制。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H07-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H07-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H07\n实际承担金额：1100.00 元\n城市：杭州市\n客房数量：1 间客房\n实际住宿：2026-05-20 入住，2026-05-22 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H07-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H07-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H07-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H07-NOTE1\n预算情况说明\n关联申请：REQ-C16-H07\n关联票据：SYN-C16-H07\n部门经办人称预算充裕；尚未取得财务预算台账记录。\n附件编号：DOC-C16-H07-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H07-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H07-CITY",
+      "query_type": "city_tier",
+      "record_key": "杭州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H07-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H07-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H07-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H07:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H07-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H07-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H07-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H07",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H07-1.6.0",
+      "snapshot_version": "2026-05-23T08:00:00+08:00",
+      "effective_at": "2026-05-23"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第三十九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 5,
+      "section": "第七章 提交时限与预算处理",
+      "excerpt": "第三十九条 预算余额、申请人权限或重复票据情况暂时无法核实时，财务应暂停处理并查明记录。",
+      "authoring_excerpt": "第三十九条 预算余额、申请人权限或重复票据情况暂时无法核实时，财务应暂停处理并查明记录。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H08-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H08-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H08\n实际承担金额：900.00 元\n城市：苏州市\n客房数量：1 间客房\n实际住宿：2026-05-21 入住，2026-05-23 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H08-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H08-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H08-CITY",
+      "query_type": "city_tier",
+      "record_key": "苏州市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H08-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H08-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H08-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H08:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H08-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H08-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H08-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H08",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H08-1.6.0",
+      "snapshot_version": "2026-05-24T08:00:00+08:00",
+      "effective_at": "2026-05-24"
+    },
+    {
+      "evidence_id": "EVID-C16-H09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H09-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H09-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H09\n实际承担金额：500.00 元\n城市：合肥市\n客房数量：1 间客房\n实际住宿：2026-05-10 入住，2026-05-11 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H09-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H09-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H09-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H09-1.6.0",
+      "snapshot_version": "2026-05-12T08:00:00+08:00",
+      "effective_at": "2026-05-12"
+    },
+    {
+      "evidence_id": "EVID-C16-H09-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H09-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H09:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H09-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H09-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H09-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H09",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H09-1.6.0",
+      "snapshot_version": "2026-05-12T08:00:00+08:00",
+      "effective_at": "2026-05-12"
+    },
+    {
+      "evidence_id": "EVID-C16-H10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H10-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H10-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H10\n实际承担金额：600.00 元\n城市：杭州市\n客房数量：1 间客房\n实际住宿：2026-05-23 入住，2026-05-24 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H10-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H10-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H10-CITY",
+      "query_type": "city_tier",
+      "record_key": "杭州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H10-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H10-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H10-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H10-1.6.0",
+      "snapshot_version": "2026-05-25T08:00:00+08:00",
+      "effective_at": "2026-05-25"
+    },
+    {
+      "evidence_id": "EVID-C16-H10-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H10-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H10:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H10-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H10-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H10-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H10",
+      "value": true,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H10-1.6.0",
+      "snapshot_version": "2026-05-25T08:00:00+08:00",
+      "effective_at": "2026-05-25"
+    },
+    {
+      "evidence_id": "EVID-C16-H11-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H11-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H11-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H11\n实际承担金额：1030.00 元\n城市：长沙市\n客房数量：1 间客房\n实际住宿：2026-05-24 入住，2026-05-26 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H11-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H11-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H11-CITY",
+      "query_type": "city_tier",
+      "record_key": "长沙市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H11-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H11-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H11-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H11-1.6.0",
+      "snapshot_version": "2026-05-27T08:00:00+08:00",
+      "effective_at": "2026-05-27"
+    },
+    {
+      "evidence_id": "EVID-C16-H11-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H11-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H11:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H11-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H11-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H11-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H11",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H11-1.6.0",
+      "snapshot_version": "2026-05-27T08:00:00+08:00",
+      "effective_at": "2026-05-27"
+    },
+    {
+      "evidence_id": "EVID-C16-H12-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H12-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H12-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H12\n实际承担金额：1250.00 元\n城市：重庆市\n客房数量：1 间客房\n实际住宿：2026-05-25 入住，2026-05-27 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H12-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H12-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H12-CITY",
+      "query_type": "city_tier",
+      "record_key": "重庆市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H12-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H12-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H12-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H12-1.6.0",
+      "snapshot_version": "2026-05-28T08:00:00+08:00",
+      "effective_at": "2026-05-28"
+    },
+    {
+      "evidence_id": "EVID-C16-H12-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H12-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H12:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H12-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H12-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H12-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H12",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H12-1.6.0",
+      "snapshot_version": "2026-05-28T08:00:00+08:00",
+      "effective_at": "2026-05-28"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第二十四条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第五章 会议酒店与住宿例外",
+      "excerpt": "第二十四条 会议主办方指定酒店超过标准的，申请人须提交会议通知和指定酒店说明，部门负责人确认业务事实，由财务负责人或其书面授权人批准例外并记录理由。",
+      "authoring_excerpt": "第二十四条 会议主办方指定酒店超过标准的，申请人须提交会议通知和指定酒店说明，部门负责人确认业务事实，由财务负责人或其书面授权人批准例外并记录理由。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第二十六条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第五章 会议酒店与住宿例外",
+      "excerpt": "第二十六条 部门负责人确认业务事实不等于批准超标准金额；材料不完整时，由财务审核员退回补充，补齐后仍需财务负责人或其书面授权人作出例外决定。",
+      "authoring_excerpt": "第二十六条 部门负责人确认业务事实不等于批准超标准金额；材料不完整时，由财务审核员退回补充，补齐后仍需财务负责人或其书面授权人作出例外决定。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H13-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H13-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H13\n实际承担金额：760.00 元\n城市：杭州市\n客房数量：1 间客房\n实际住宿：2026-05-26 入住，2026-05-27 退房。\n消费项目：会议指定酒店房费。\n附件编号：DOC-C16-H13-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H13-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H13-NOTE1\n会议通知与指定酒店说明\n关联申请：REQ-C16-H13\n关联票据：SYN-C16-H13\n客户技术会议于 2026-05-26 举行，主办方统一指定杭州滨江酒店，会议结束次日退房。\n附件编号：DOC-C16-H13-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-NOTE2",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H13-NOTE2",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H13-NOTE2\n部门业务确认\n关联申请：REQ-C16-H13\n关联票据：SYN-C16-H13\n运营部门负责人确认会议出席必要性与酒店安排；本说明只确认业务事实，不是财务例外批准。\n附件编号：DOC-C16-H13-NOTE2\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H13-CITY",
+      "query_type": "city_tier",
+      "record_key": "杭州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H13-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H13-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H13-1.6.0",
+      "snapshot_version": "2026-05-28T08:00:00+08:00",
+      "effective_at": "2026-05-28"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H13-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H13:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H13-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H13-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H13-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H13",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H13-1.6.0",
+      "snapshot_version": "2026-05-28T08:00:00+08:00",
+      "effective_at": "2026-05-28"
+    },
+    {
+      "evidence_id": "EVID-C16-HOTEL-第三十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-LODGING-2026-V3",
+      "version": "3.0",
+      "page": 5,
+      "section": "第八章 例外与不予报销项目",
+      "excerpt": "第三十五条会议主办方统 指定酒店且价格超过标准的 申请人应提供会议通知和指定酒店说明 部门负责人确认业务事实，由财务负责人或其书面授权人批准例外并记录理由。",
+      "authoring_excerpt": "第三十五条 会议主办方统一指定酒店且价格超过标准的，申请人应提供会议通知和指定酒店说明，部门负责人确认业务事实，由财务负责人或其书面授权人批准例外并记录理由。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H14-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H14-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H14\n实际承担金额：500.00 元\n城市：长沙市\n客房数量：1 间客房\n实际住宿：2026-05-27 入住，2026-05-28 退房。\n消费项目：会议指定酒店房费。\n附件编号：DOC-C16-H14-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H14-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H14-NOTE1\n会议通知与指定酒店说明\n关联申请：REQ-C16-H14\n关联票据：SYN-C16-H14\n设备交付会议于 2026-05-27 举行，主办方统一指定长沙会务酒店；住宿一晚。\n附件编号：DOC-C16-H14-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-NOTE2",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H14-NOTE2",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H14-NOTE2\n财务例外处理记录\n关联申请：REQ-C16-H14\n关联票据：SYN-C16-H14\n财务负责人于 2026-05-26 书面同意 REQ-C16-H14 的指定酒店超标 50.00 元；部门已确认业务事实，仅限该申请及对\n应日期，不转用。\n附件编号：DOC-C16-H14-NOTE2\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H14-CITY",
+      "query_type": "city_tier",
+      "record_key": "长沙市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H14-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H14-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-05",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H14-1.6.0",
+      "snapshot_version": "2026-05-29T08:00:00+08:00",
+      "effective_at": "2026-05-29"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H14-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H14:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H14-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H14-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H14-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H14",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H14-1.6.0",
+      "snapshot_version": "2026-05-29T08:00:00+08:00",
+      "effective_at": "2026-05-29"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H15-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H15-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H15\n实际承担金额：600.00 元\n城市：杭州市\n客房数量：1 间客房\n实际住宿：2026-05-10 入住，2026-05-11 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H15-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H15-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H15-NOTE1\n延迟提交说明\n关联申请：REQ-C16-H15\n关联票据：SYN-C16-H15\n部门负责人确认经办人较晚收到票据；未取得有权限人员的时限例外处理记录。\n附件编号：DOC-C16-H15-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-CITY",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H15-CITY",
+      "query_type": "city_tier",
+      "record_key": "杭州市",
+      "value": "A",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H15-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H15-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-OPERATIONS:2026-06",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H15-1.6.0",
+      "snapshot_version": "2026-06-26T08:00:00+08:00",
+      "effective_at": "2026-06-26"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H15-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H15:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H15-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H15-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H15-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H15",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H15-1.6.0",
+      "snapshot_version": "2026-06-26T08:00:00+08:00",
+      "effective_at": "2026-06-26"
+    },
+    {
+      "evidence_id": "EVID-C16-H16-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-H16-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-H16-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-H16\n实际承担金额：450.00 元\n城市：常州市\n客房数量：1 间客房\n实际住宿：2026-05-14 入住，2026-05-15 退房。\n消费项目：公务驻场房费，无个人消费。\n附件编号：DOC-C16-H16-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-H16-CITY-OLD",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H16-CITY-OLD",
+      "query_type": "city_tier",
+      "record_key": "常州市",
+      "value": "B",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H16-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H16-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H16-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SYN-RD:2026-06",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H16-1.6.0",
+      "snapshot_version": "2026-06-14T08:00:00+08:00",
+      "effective_at": "2026-06-14"
+    },
+    {
+      "evidence_id": "EVID-C16-H16-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H16-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-H16:住宿",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H16-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-H16-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-H16-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-H16",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-H16-1.6.0",
+      "snapshot_version": "2026-06-14T08:00:00+08:00",
+      "effective_at": "2026-06-14"
+    },
+    {
+      "evidence_id": "EVID-C16-OLD-第一条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2025-V1",
+      "version": "1.0",
+      "page": 2,
+      "section": "第一章 施行期间与文件管理",
+      "excerpt": "第一条 本办法自 2025 年 1 月 1 日起施行，有效期至 2026 年 6 月 30 日。修订、提前终止或者续行，须履行原审批程序并另行发布书面通知。",
+      "authoring_excerpt": "第一条 本办法自 2025 年 1 月 1 日起施行，有效期至 2026 年 6 月 30 日。修订、提前终止或者续行，须履行原审批程序并另行发布书面通知。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OLD-第二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2025-V1",
+      "version": "1.0",
+      "page": 2,
+      "section": "第一章 施行期间与文件管理",
+      "excerpt": "第二条 费用是否适用本办法，以餐饮实际发生日期为准，不以发票开具日期或报销提交日期替代。",
+      "authoring_excerpt": "第二条 费用是否适用本办法，以餐饮实际发生日期为准，不以发票开具日期或报销提交日期替代。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OLD-第二十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2025-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第六章 业务餐饮标准与档案",
+      "excerpt": "第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 120.00 元。",
+      "authoring_excerpt": "第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 120.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-NEW-第一条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2026-V2",
+      "version": "2.0",
+      "page": 2,
+      "section": "第一章 施行与文件管理",
+      "excerpt": "第一条 本办法自 2026 年 6 月 1 日起施行。修订、废止以及与其他费用制度的衔接事项，须经原审批程序另行发布书面通知。",
+      "authoring_excerpt": "第一条 本办法自 2026 年 6 月 1 日起施行。修订、废止以及与其他费用制度的衔接事项，须经原审批程序另行发布书面通知。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-NEW-第二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2026-V2",
+      "version": "2.0",
+      "page": 2,
+      "section": "第一章 施行与文件管理",
+      "excerpt": "第二条 适用制度以餐饮实际发生日期判断。发票补开日期和报销提交日期不改变费用发生日期。",
+      "authoring_excerpt": "第二条 适用制度以餐饮实际发生日期判断。发票补开日期和报销提交日期不改变费用发生日期。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-NEW-第二十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DINING-2026-V2",
+      "version": "2.0",
+      "page": 4,
+      "section": "第六章 业务餐饮标准与附则",
+      "excerpt": "第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 150.00 元。",
+      "authoring_excerpt": "第二十五条 业务餐饮按实际参加人数核算，每人每日报销上限为 150.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-M01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M01-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M01-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M01\n实际承担金额：270.00 元\n票据日期：2026-06-12\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M01-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M02-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M02-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M02\n实际承担金额：200.00 元\n票据日期：2026-06-13\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M02-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M03-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M03-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M03\n实际承担金额：340.00 元\n票据日期：2026-06-15\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M03-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M04-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M04-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M04\n实际承担金额：135.00 元\n票据日期：2026-06-30\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：1 人\n附件编号：DOC-C16-M04-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M05-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M05-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M05\n实际承担金额：135.00 元\n票据日期：2026-07-01\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：1 人\n附件编号：DOC-C16-M05-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M06-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M06-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M06\n实际承担金额：130.00 元\n票据日期：2026-05-31\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：1 人\n附件编号：DOC-C16-M06-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第二十九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第六章 业务餐饮与票据",
+      "excerpt": "第二十九条 业务餐饮按实际参加人数核算，每人每日报销上限为 160.00 元。",
+      "authoring_excerpt": "第二十九条 业务餐饮按实际参加人数核算，每人每日报销上限为 160.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-M07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M07-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M07-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M07\n实际承担金额：300.00 元\n票据日期：2026-06-16\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M07-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M08-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M08-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M08\n实际承担金额：350.00 元\n票据日期：2026-06-18\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M08-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M09-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M09-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M09\n实际承担金额：315.00 元\n票据日期：2026-07-04\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M09-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第三十条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第六章 业务餐饮与票据",
+      "excerpt": "第三十条 申请应填写业务目的、日期、地点和实际参加人数。票据无法区分餐饮与其他商品时，应补充消费明细。",
+      "authoring_excerpt": "第三十条 申请应填写业务目的、日期、地点和实际参加人数。票据无法区分餐饮与其他商品时，应补充消费明细。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第三十四条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第六章 业务餐饮与票据",
+      "excerpt": "第三十四条 部门负责人说明、截图改字或申请人承诺不能替代商家出具的更正票据或退款记录。",
+      "authoring_excerpt": "第三十四条 部门负责人说明、截图改字或申请人承诺不能替代商家出具的更正票据或退款记录。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-M10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M10-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M10-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M10\n实际承担金额：280.00 元\n票据日期：2026-07-05\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：2 人\n附件编号：DOC-C16-M10-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第八条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 2,
+      "section": "第二章 事前申请与预算",
+      "excerpt": "第八条 单项活动预计总预算达到 5,000.00 元时，应完成活动预算申请。该金额是活动预算审批门槛，不是交通、住宿或餐饮的单笔报销标准",
+      "authoring_excerpt": "第八条 单项活动预计总预算达到 5,000.00 元时，应完成活动预算申请。该金额是活动预算审批门槛，不是交通、住宿或餐饮的单笔报销标准。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 2,
+      "section": "第二章 事前申请与预算",
+      "excerpt": "第九条 部门负责人确认预算归属后，财务仍应按各费用类别的票据和限额逐笔审核。",
+      "authoring_excerpt": "第九条 部门负责人确认预算归属后，财务仍应按各费用类别的票据和限额逐笔审核。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-M11-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M11-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M11-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M11\n实际承担金额：155.00 元\n票据日期：2026-06-20\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n实际参加人数：1 人\n附件编号：DOC-C16-M11-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M11-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M11-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M11-NOTE1\n活动预算批复\n关联申请：REQ-C16-M11\n关联票据：SYN-C16-M11\n客户联调活动总预算 6,200.00 元已完成事前申请与财务预算确认；其中本笔工作餐 155.00 元，杭州滨江客户园区餐\n厅，实际一人；不改变逐笔餐饮标准。\n附件编号：DOC-C16-M11-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M12-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M12-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M12-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-M12\n实际承担金额：240.00 元\n票据日期：2026-07-08\n消费项目：客户接口联调后的业务工作餐，地点：杭州滨江客户园区餐厅\n消费地点：杭州滨江客户园区餐厅\n餐饮明细：工作餐，不含礼品、娱乐或储值。\n附件编号：DOC-C16-M12-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-M12-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-M12-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-M12-NOTE1\n经办部门便笺\n关联申请：REQ-C16-M12\n关联票据：SYN-C16-M12\n经办人称两名客户实际就餐；未提供商家消费明细或可核对的参加人员凭证。\n附件编号：DOC-C16-M12-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第十二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 客户拜访地面交通",
+      "excerpt": "第十二条 客户拜访期间的出租车、网约车单次报销上限为 260.00 元。",
+      "authoring_excerpt": "第十二条 客户拜访期间的出租车、网约车单次报销上限为 260.00 元。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第十六条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 客户拜访地面交通",
+      "excerpt": "第十六条 票据、申请金额和路线一致，且预算、权限和重复票据核对无异常后，方可继续报销处理。",
+      "authoring_excerpt": "第十六条 票据、申请金额和路线一致，且预算、权限和重复票据核对无异常后，方可继续报销处理。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T01-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T01-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T01\n实际承担金额：255.00 元\n票据日期：2026-04-02\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T01-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T01-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T01-NOTE1\n客户拜访登记回执\n关联申请：REQ-C16-T01\n关联票据：SYN-C16-T01\n2026-04-02 到客户项目园区开展设备验收，申请经办人与客户记录一致，记录已确认。\n附件编号：DOC-C16-T01-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T01-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T01-1.6.0",
+      "snapshot_version": "2026-04-03T08:00:00+08:00",
+      "effective_at": "2026-04-03"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T01-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-T01:交通",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T01-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T01-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T01",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T01-1.6.0",
+      "snapshot_version": "2026-04-03T08:00:00+08:00",
+      "effective_at": "2026-04-03"
+    },
+    {
+      "evidence_id": "EVID-C16-T01-VISIT",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T01-VISIT",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-C16-T01",
+      "value": "VISIT-T01:CONFIRMED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T01-1.6.0",
+      "snapshot_version": "2026-04-02T08:00:00+08:00",
+      "effective_at": "2026-04-02"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 客户拜访地面交通",
+      "excerpt": "第十五条 平台优惠、退款和第三方补贴应从实际承担金额中扣除；公司卡支付按最终入账金额核对。",
+      "authoring_excerpt": "第十五条 平台优惠、退款和第三方补贴应从实际承担金额中扣除；公司卡支付按最终入账金额核对。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T02-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T02-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T02-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T02\n实际承担金额：265.00 元\n票据日期：2026-04-03\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n订单原价：300.00 元；平台优惠：35.00 元；没有后续退款。\n附件编号：DOC-C16-T02-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T02-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T02-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T02-1.6.0",
+      "snapshot_version": "2026-04-04T08:00:00+08:00",
+      "effective_at": "2026-04-04"
+    },
+    {
+      "evidence_id": "EVID-C16-T02-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T02-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-T02:交通",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T02-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-T02-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T02-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T02",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T02-1.6.0",
+      "snapshot_version": "2026-04-04T08:00:00+08:00",
+      "effective_at": "2026-04-04"
+    },
+    {
+      "evidence_id": "EVID-C16-T02-VISIT",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T02-VISIT",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-C16-T02",
+      "value": "VISIT-T02:CONFIRMED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T02-1.6.0",
+      "snapshot_version": "2026-04-03T08:00:00+08:00",
+      "effective_at": "2026-04-03"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第十三条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 公务地面交通",
+      "excerpt": "第十三条 公务地面交通单次实际承担金额不超过 300.00 元时，可进入票据、行程和预算核对。",
+      "authoring_excerpt": "第十三条 公务地面交通单次实际承担金额不超过 300.00 元时，可进入票据、行程和预算核对。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第十七条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 公务地面交通",
+      "excerpt": "第十七条 缺少交通票据，或者业务目的、起讫地点无法确认的，申请人应补交材料；材料不能补齐的，由财务审核员处理。",
+      "authoring_excerpt": "第十七条 缺少交通票据，或者业务目的、起讫地点无法确认的，申请人应补交材料；材料不能补齐的，由财务审核员处理。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第十五条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 公务地面交通",
+      "excerpt": "第十五条 优惠券、退款和平台补贴应从支付金额中扣除，第十三条限额以扣除后的实际承担金额比较；停车费和路桥费应凭单独票据按通用制度核对。",
+      "authoring_excerpt": "第十五条 优惠券、退款和平台补贴应从支付金额中扣除，第十三条限额以扣除后的实际承担金额比较；停车费和路桥费应凭单独票据按通用制度核对。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T03-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T03-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T03-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T03\n实际承担金额：270.00 元\n票据日期：2026-04-04\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n订单原价：315.00 元；平台优惠：45.00 元；没有后续退款。\n附件编号：DOC-C16-T03-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T04-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T04-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T04-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T04\n实际承担金额：298.00 元\n票据日期：2026-04-05\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n订单原价：318.00 元；已退款：20.00 元；本票据显示最终结算金额。\n附件编号：DOC-C16-T04-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第十七条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第三章 客户拜访地面交通",
+      "excerpt": "第十七条 票据缺失或预算、权限记录暂时无法核实时，财务应暂停处理并要求补充或查明记录。",
+      "authoring_excerpt": "第十七条 票据缺失或预算、权限记录暂时无法核实时，财务应暂停处理并要求补充或查明记录。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T05-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T05-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T05-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T05\n实际承担金额：210.00 元\n票据日期：2026-04-06\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T05-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T05-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T05-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T05-NOTE1\n部门预算备忘录\n关联申请：REQ-C16-T05\n关联票据：SYN-C16-T05\n销售经办人称预算充裕，尚无财务台账核对记录。\n附件编号：DOC-C16-T05-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T05-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T05-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-T05:交通",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T05-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-T05-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T05-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T05",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T05-1.6.0",
+      "snapshot_version": "2026-04-07T08:00:00+08:00",
+      "effective_at": "2026-04-07"
+    },
+    {
+      "evidence_id": "EVID-C16-T05-VISIT",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T05-VISIT",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-C16-T05",
+      "value": "VISIT-T05:CONFIRMED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T05-1.6.0",
+      "snapshot_version": "2026-04-06T08:00:00+08:00",
+      "effective_at": "2026-04-06"
+    },
+    {
+      "evidence_id": "EVID-C16-T06-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T06-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T06-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T06\n实际承担金额：220.00 元\n票据日期：2026-04-07\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T06-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T06-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T06-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T06-NOTE1\n同事权限说明\n关联申请：REQ-C16-T06\n关联票据：SYN-C16-T06\nEMP-C16-OTHER 具有交通申请权限；此说明不代表当前申请人的权限。\n附件编号：DOC-C16-T06-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T06-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T06-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T06-1.6.0",
+      "snapshot_version": "2026-04-08T08:00:00+08:00",
+      "effective_at": "2026-04-08"
+    },
+    {
+      "evidence_id": "EVID-C16-T06-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T06-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T06",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T06-1.6.0",
+      "snapshot_version": "2026-04-08T08:00:00+08:00",
+      "effective_at": "2026-04-08"
+    },
+    {
+      "evidence_id": "EVID-C16-T06-VISIT",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T06-VISIT",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-C16-T06",
+      "value": "VISIT-T06:CONFIRMED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T06-1.6.0",
+      "snapshot_version": "2026-04-07T08:00:00+08:00",
+      "effective_at": "2026-04-07"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第十八条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第四章 日常通勤与相邻场景",
+      "excerpt": "第十八条 员工住所与固定办公地点之间的往返属于日常私人通勤，不予报销；夜间、加班、天气或交通方式不改变该费用性质。",
+      "authoring_excerpt": "第十八条 员工住所与固定办公地点之间的往返属于日常私人通勤，不予报销；夜间、加班、天气或交通方式不改变该费用性质。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第二十二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第四章 日常通勤与相邻场景",
+      "excerpt": "第二十二条 本章不设置由销售负责人单独批准的通勤例外。",
+      "authoring_excerpt": "第二十二条 本章不设置由销售负责人单独批准的通勤例外。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T07-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T07-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T07-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T07\n实际承担金额：120.00 元\n票据日期：2026-04-08\n消费项目：客户现场设备验收交通\n路线：员工住所至公司固定办公地点\n附件编号：DOC-C16-T07-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T07-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T07-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T07-NOTE1\n销售业务说明\n关联申请：REQ-C16-T07\n关联票据：SYN-C16-T07\n申请人称加班后需要到公司整理客户拜访材料；销售负责人确认客户事项，不批准通勤例外。\n附件编号：DOC-C16-T07-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T07-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T07-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T07-1.6.0",
+      "snapshot_version": "2026-04-09T08:00:00+08:00",
+      "effective_at": "2026-04-09"
+    },
+    {
+      "evidence_id": "EVID-C16-T07-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T07-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-T07:交通",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T07-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-T07-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T07-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T07",
+      "value": false,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T07-1.6.0",
+      "snapshot_version": "2026-04-09T08:00:00+08:00",
+      "effective_at": "2026-04-09"
+    },
+    {
+      "evidence_id": "EVID-C16-TAXI-第二十二条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第五章 不予报销项目 > 5.1 日常通勤",
+      "excerpt": "第二十二条 日常通勤途中因个人接送、购物或其他私人事项发生的绕行费用，由员工个人承担。",
+      "authoring_excerpt": "第二十二条 日常通勤途中因个人接送、购物或其他私人事项发生的绕行费用，由员工个人承担。",
+      "catalog_snapshot_id": "POLICY-CATALOG-SYN-1.1.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T08-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T08-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T08-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T08\n实际承担金额：168.00 元\n票据日期：2026-04-09\n消费项目：客户现场设备验收交通\n路线：员工住所至杭州东高铁站\n附件编号：DOC-C16-T08-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T08-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T08-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T08-NOTE1\n公务出差行程确认\n关联申请：REQ-C16-T08\n关联票据：SYN-C16-T08\n已批准 2026-04-09 赴客户工厂出差，先由住所前往高铁站，再乘已预订高铁；非日常通勤。\n附件编号：DOC-C16-T08-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T09-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T09-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T09-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T09\n实际承担金额：180.00 元\n票据日期：2026-03-10\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T09-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第三十六条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 5,
+      "section": "第七章 提交时限与预算处理",
+      "excerpt": "第三十六条 超过时限且没有已批准的时限例外记录的，由财务审核员处理，不得直接按正常时限内申请报销。",
+      "authoring_excerpt": "第三十六条 超过时限且没有已批准的时限例外记录的，由财务审核员处理，不得直接按正常时限内申请报销。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T10-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T10-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T10-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T10\n实际承担金额：190.00 元\n票据日期：2026-03-12\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T10-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T10-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T10-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T10-NOTE1\n部门延迟说明\n关联申请：REQ-C16-T10\n关联票据：SYN-C16-T10\n部门负责人确认经办人较晚交单；未取得财务时限例外处理记录，不改变金额标准。\n附件编号：DOC-C16-T10-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-SALES-第二十九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-SALES-TRANSPORT-2026-V1",
+      "version": "1.0",
+      "page": 4,
+      "section": "第六章 更正、归档与附则",
+      "excerpt": "第二十九条 同一订单、票据号码或实际支付不得重复申请；退款和作废票据应与原申请关联。",
+      "authoring_excerpt": "第二十九条 同一订单、票据号码或实际支付不得重复申请；退款和作废票据应与原申请关联。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T11-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T11-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T11\n实际承担金额：230.00 元\n票据日期：2026-04-11\n消费项目：客户现场设备验收交通\n路线：公司服务中心至客户项目园区\n附件编号：DOC-C16-T11-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T11-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T11-NOTE1\n经办查重说明\n关联申请：REQ-C16-T11\n关联票据：SYN-C16-T11\n经办人认为本票据尚未报销；此便笺不是财务查重台账。\n附件编号：DOC-C16-T11-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-BUDGET",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T11-BUDGET",
+      "query_type": "budget_status",
+      "record_key": "DEPT-SALES:2026-04",
+      "value": "AVAILABLE",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T11-1.6.0",
+      "snapshot_version": "2026-04-12T08:00:00+08:00",
+      "effective_at": "2026-04-12"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-PERMISSION",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T11-PERMISSION",
+      "query_type": "approval_permission",
+      "record_key": "EMP-C16-T11:交通",
+      "value": "AUTHORIZED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T11-1.6.0",
+      "snapshot_version": "2026-01-01T08:00:00+08:00",
+      "effective_at": "2026-01-01"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-DUPLICATE",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T11-DUPLICATE",
+      "query_type": "duplicate_invoice",
+      "record_key": "SYN-C16-T11",
+      "value": true,
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T11-1.6.0",
+      "snapshot_version": "2026-04-12T08:00:00+08:00",
+      "effective_at": "2026-04-12"
+    },
+    {
+      "evidence_id": "EVID-C16-T11-VISIT",
+      "source_type": "STRUCTURED_RECORD",
+      "fixture_id": "C16-T11-VISIT",
+      "query_type": "customer_visit_record",
+      "record_key": "REQ-C16-T11",
+      "value": "VISIT-T11:CONFIRMED",
+      "structured_data_snapshot_id": "STRUCTURED-DATA-C16-T11-1.6.0",
+      "snapshot_version": "2026-04-11T08:00:00+08:00",
+      "effective_at": "2026-04-11"
+    },
+    {
+      "evidence_id": "EVID-C16-T12-INVOICE",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T12-INVOICE",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T12-INVOICE\n合成电子费用凭证\n票据号：SYN-C16-T12\n实际承担金额：160.00 元\n票据日期：2026-04-12\n消费项目：客户现场设备验收交通\n附件编号：DOC-C16-T12-INVOICE\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-T12-NOTE1",
+      "source_type": "ATTACHMENT",
+      "document_id": "DOC-C16-T12-NOTE1",
+      "version": "1",
+      "page": 1,
+      "excerpt": "DOC-C16-T12-NOTE1\n预计行程安排\n关联申请：REQ-C16-T12\n关联票据：SYN-C16-T12\n原定由服务中心前往客户园区；该安排形成于出行前，尚无平台实际行程回执。\n附件编号：DOC-C16-T12-NOTE1\n本凭证为项目合成数据，不代表真实交易。\n项目合成资料 - 不代表真实企业制度或票据\n1 / 1"
+    },
+    {
+      "evidence_id": "EVID-C16-OPS-第十九条",
+      "source_type": "POLICY_DOCUMENT",
+      "document_id": "POL-DEPT-OPS-MKT-2026-V1",
+      "version": "1.0",
+      "page": 3,
+      "section": "第四章 住宿标准与计算",
+      "excerpt": "第十九条 城市等级以财务部发布并在住宿发生日有效的分级清单为准，申请人不得自行选择等级。",
+      "authoring_excerpt": "第十九条 城市等级以财务部发布并在住宿发生日有效的分级清单为准，申请人不得自行选择等级。",
+      "catalog_snapshot_id": "POLICY-CATALOG-REF-1.2.0"
+    }
+  ]
+}

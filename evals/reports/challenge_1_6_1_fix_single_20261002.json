@@ -1,0 +1,318 @@
+{
+  "schema": "p14-workflow-evaluation/v2",
+  "generated_at": "2026-10-02T08:35:54.232082+00:00",
+  "split": "validation",
+  "model": "deepseek-flash",
+  "prompt_versions": {
+    "retrieval": "p15-retrieval-catalog-v3",
+    "reviewer": "p15-evidence-review-grounding-v5",
+    "supervisor": "p08-supervisor-v3",
+    "single_agent": "single-agent-dense-v2"
+  },
+  "retrieval_mode": "dense",
+  "variant": "single_agent_dense",
+  "catalog_mode": "ACTIVE_COMPANY",
+  "evaluated_policy_catalog_snapshot_id": "POLICY-CATALOG-COMPANY-1.0.0",
+  "sample_count": 1,
+  "dataset_versions": [
+    "1.6.1"
+  ],
+  "upstream_extraction": "P04 extractor on frozen parsed attachment chunks; gold fields hidden",
+  "stop_equivalents": {
+    "EVIDENCE_SUFFICIENT": [
+      "ALL_NECESSARY_EVIDENCE_COVERED"
+    ],
+    "CLEAR_RULE_FAILURE": [
+      "ALL_NECESSARY_EVIDENCE_COVERED"
+    ],
+    "MATERIALS_UNAVAILABLE": [
+      "REQUEST_DOCUMENTS"
+    ],
+    "MANDATORY_HUMAN_EXCEPTION": [
+      "EVIDENCE_ESCALATION",
+      "UNRESOLVED_POLICY_VERSION_CONFLICT"
+    ]
+  },
+  "class_support": {
+    "PASS_RECOMMENDED": 0,
+    "REJECT_RECOMMENDED": 0,
+    "HUMAN_REVIEW": 1
+  },
+  "class_f1": {
+    "PASS_RECOMMENDED": null,
+    "REJECT_RECOMMENDED": null,
+    "HUMAN_REVIEW": 1.0
+  },
+  "metrics": [
+    {
+      "metric_id": "comparison.business_success_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.task_success_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.task_success_without_stop_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.stop_reason_match_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.subquestion_coverage",
+      "status": "MEASURED",
+      "numerator": 0.3333333333333333,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.3333333333333333,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.mean_steps",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "steps",
+      "direction": "conditional",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "agent.tool_selection_case_accuracy",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.accuracy",
+      "status": "MEASURED",
+      "numerator": 1,
+      "denominator": 1,
+      "support": 1,
+      "value": 1.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.macro_f1",
+      "status": "INVALID_RUN",
+      "numerator": 0,
+      "denominator": 0,
+      "support": 1,
+      "value": null,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.false_auto_pass_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "lower",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.rule_result_exact_match_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "higher",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.human_intervention_rate",
+      "status": "MEASURED",
+      "numerator": 1,
+      "denominator": 1,
+      "support": 1,
+      "value": 1.0,
+      "unit": "ratio",
+      "direction": "conditional",
+      "split": "validation",
+      "slice": "overall"
+    },
+    {
+      "metric_id": "approval.system_error_rate",
+      "status": "MEASURED",
+      "numerator": 0,
+      "denominator": 1,
+      "support": 1,
+      "value": 0.0,
+      "unit": "ratio",
+      "direction": "lower",
+      "split": "validation",
+      "slice": "overall"
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "APP-C16-H13",
+      "case_id": "CASE-C16-H13",
+      "expense_type": "住宿",
+      "difficulty": "HIGH",
+      "source_policy_catalog_snapshot_id": "POLICY-CATALOG-COMPANY-1.0.0",
+      "evaluated_policy_catalog_snapshot_id": "POLICY-CATALOG-COMPANY-1.0.0",
+      "expected_recommendation": "HUMAN_REVIEW",
+      "recommendation": "HUMAN_REVIEW",
+      "raw_recommendation": "HUMAN_REVIEW",
+      "status": "HUMAN_PENDING",
+      "human_interrupted": true,
+      "stop_reason": "RETRIEVAL_PLAN_FORMAT_EXHAUSTED",
+      "stop_match": false,
+      "final_reason_codes": [
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "matched_evidence_ids": [
+        "EVID-C16-H13-INVOICE",
+        "EVID-C16-H13-NOTE1",
+        "EVID-C16-H13-NOTE2"
+      ],
+      "agent_evidence_ids": [
+        "EVID-C16-H13-INVOICE",
+        "EVID-C16-H13-NOTE1",
+        "EVID-C16-H13-NOTE2"
+      ],
+      "reviewer_cited_evidence_ids": [],
+      "evidence_match": false,
+      "rule_match": false,
+      "risk_flags": [],
+      "business_risk_match": false,
+      "covered_subquestions": 1,
+      "total_subquestions": 3,
+      "capability_match": false,
+      "tool_names": [],
+      "agent_steps": 0,
+      "retrieval_rounds": 0,
+      "query_rewrites": 0,
+      "tokens": 0,
+      "latency_ms": 54184,
+      "task_success": false,
+      "task_success_without_stop": false,
+      "business_success": false,
+      "error": null,
+      "raw_prediction": {
+        "extracted_fields": [
+          {
+            "field": "invoice_number",
+            "status": "PRESENT",
+            "value": "SYN-C16-H13",
+            "raw_value": "SYN-C16-H13",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          },
+          {
+            "field": "amount",
+            "status": "PRESENT",
+            "value": "760.00",
+            "raw_value": "760.00",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          },
+          {
+            "field": "city",
+            "status": "PRESENT",
+            "value": "杭州市",
+            "raw_value": "杭州市",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          },
+          {
+            "field": "check_in",
+            "status": "PRESENT",
+            "value": "2026-05-26",
+            "raw_value": "2026-05-26",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          },
+          {
+            "field": "check_out",
+            "status": "PRESENT",
+            "value": "2026-05-27",
+            "raw_value": "2026-05-27",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          },
+          {
+            "field": "room_count",
+            "status": "PRESENT",
+            "value": 1,
+            "raw_value": "1",
+            "document_id": "DOC-C16-H13-INVOICE",
+            "page": 1
+          }
+        ],
+        "agent_trajectory": [],
+        "supervisor_decisions": [],
+        "guardrail_decisions": [],
+        "tool_observations": [],
+        "evidence_review": null,
+        "rule_results": [],
+        "decision_reasons": [
+          {
+            "code": "INSUFFICIENT_EVIDENCE",
+            "message": "票据或制度证据不足，需人工核实；尚未判定违规。",
+            "evidence_ids": [],
+            "rule_ids": []
+          }
+        ]
+      }
+    }
+  ]
+}

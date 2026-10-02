@@ -1,0 +1,25 @@
+{
+  "model": "deepseek-flash",
+  "retrieval_mode": "dense",
+  "variants": [
+    "single_agent_dense",
+    "multi_agent"
+  ],
+  "dataset_dir": "evals\\datasets\\challenge_1_6",
+  "input_sha256": {
+    "approvals": "1e87ae20dbeddb0c056030f0f7a56fe70d81c5f7465f7ec830f6b97fa70a568d",
+    "trajectories": "0bc4f53d14573db7d8bd303126e1e246f7feb9890cf8bc6e00b10c570fc97dbe",
+    "policy_chunks": "1e602a187fdc815492896870b49283a0471a800c70fdd7615843e19f35f8a578",
+    "active_catalog": "c0fb4d710481a87f5ae47a98cdd5a50fc10308b52d0b9c38e371a7b005d9abcb",
+    "attachment_chunks": "a04d72cd50b066fec88c7d601ad928ae3b2c80db6fd5217ad86348b96580de41",
+    "attachment_evidence": "b0916b2cc972c574dbbdddea25896ada831f787f16f01d731efa4c3397366cab",
+    "structured_snapshots": "c197c77a64f9f950e67d93a9e1ec05b67928334624289613cc89b6fbac345603"
+  },
+  "primary_metrics": [
+    "approval.accuracy",
+    "comparison.business_success_rate",
+    "approval.false_auto_pass_rate"
+  ],
+  "business_success_definition": "Correct recommendation, required final evidence, rule outcomes, risk flags and allowed tools; excludes architecture-specific tool capability/call count and Agent stop labels.",
+  "single_agent_dense_definition": "One agent with one unified prompt plans <=2 authorised tool calls and assesses the retrieved evidence in two LLM phases; one retrieval round, Dense policy search, no separate Supervisor or feedback loop. Shared extraction, scope, provenance checks, structured lookup availability and deterministic rules match multi_agent."
+}

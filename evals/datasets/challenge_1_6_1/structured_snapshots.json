@@ -1,0 +1,1483 @@
+{
+  "dataset_version": "1.6.1",
+  "snapshots": [
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H01-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H01-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H01",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H01-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H01-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H01-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-16T08:00:00+08:00",
+          "effective_at": "2026-05-16",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H01-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H01:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H01-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H01",
+          "snapshot_version": "2026-05-16T08:00:00+08:00",
+          "effective_at": "2026-05-16",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H02-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H02-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H02",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H02-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H02-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H02-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-19T08:00:00+08:00",
+          "effective_at": "2026-05-19",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H02-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H02:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H02-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H02",
+          "snapshot_version": "2026-05-19T08:00:00+08:00",
+          "effective_at": "2026-05-19",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H03-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H03-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H03",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H03-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H03-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H03-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-16T08:00:00+08:00",
+          "effective_at": "2026-05-16",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H03-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H03:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H03-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H03",
+          "snapshot_version": "2026-05-16T08:00:00+08:00",
+          "effective_at": "2026-05-16",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H04-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H04-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H04",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H04-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H04-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H04-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-21T08:00:00+08:00",
+          "effective_at": "2026-05-21",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H04-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H04:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H04-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H04",
+          "snapshot_version": "2026-05-21T08:00:00+08:00",
+          "effective_at": "2026-05-21",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H05-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H05-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H05",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H05-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H05-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H05-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-21T08:00:00+08:00",
+          "effective_at": "2026-05-21",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H05-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H05:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H05-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H05",
+          "snapshot_version": "2026-05-21T08:00:00+08:00",
+          "effective_at": "2026-05-21",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H06-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H06-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H06",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H06-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H06-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H06-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-14T08:00:00+08:00",
+          "effective_at": "2026-05-14",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H06-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H06:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H06-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H06",
+          "snapshot_version": "2026-05-14T08:00:00+08:00",
+          "effective_at": "2026-05-14",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H07-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H07-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H07",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H07-CITY",
+          "query_type": "city_tier",
+          "record_key": "杭州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H07-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H07:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H07-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H07",
+          "snapshot_version": "2026-05-23T08:00:00+08:00",
+          "effective_at": "2026-05-23",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H08-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H08-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H08",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H08-CITY",
+          "query_type": "city_tier",
+          "record_key": "苏州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H08-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H08:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H08-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H08",
+          "snapshot_version": "2026-05-24T08:00:00+08:00",
+          "effective_at": "2026-05-24",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H09-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H09-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H09",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H09-CITY-FUTURE",
+          "query_type": "city_tier",
+          "record_key": "合肥市",
+          "snapshot_version": "2026-06-01T08:00:00+08:00",
+          "effective_at": "2026-06-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H09-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-12T08:00:00+08:00",
+          "effective_at": "2026-05-12",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H09-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H09:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H09-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H09",
+          "snapshot_version": "2026-05-12T08:00:00+08:00",
+          "effective_at": "2026-05-12",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H10-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H10-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H10",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H10-CITY",
+          "query_type": "city_tier",
+          "record_key": "杭州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H10-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-25T08:00:00+08:00",
+          "effective_at": "2026-05-25",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H10-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H10:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H10-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H10",
+          "snapshot_version": "2026-05-25T08:00:00+08:00",
+          "effective_at": "2026-05-25",
+          "value": true,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H11-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H11-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H11",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H11-CITY",
+          "query_type": "city_tier",
+          "record_key": "长沙市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H11-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-27T08:00:00+08:00",
+          "effective_at": "2026-05-27",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "1030.00"
+        },
+        {
+          "fixture_id": "C16-H11-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H11:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H11-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H11",
+          "snapshot_version": "2026-05-27T08:00:00+08:00",
+          "effective_at": "2026-05-27",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H12-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H12-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H12",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H12-CITY",
+          "query_type": "city_tier",
+          "record_key": "重庆市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H12-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-28T08:00:00+08:00",
+          "effective_at": "2026-05-28",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H12-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H12:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H12-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H12",
+          "snapshot_version": "2026-05-28T08:00:00+08:00",
+          "effective_at": "2026-05-28",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H13-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H13-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H13",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H13-CITY",
+          "query_type": "city_tier",
+          "record_key": "杭州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H13-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-05",
+          "snapshot_version": "2026-05-28T08:00:00+08:00",
+          "effective_at": "2026-05-28",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H13-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H13:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H13-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H13",
+          "snapshot_version": "2026-05-28T08:00:00+08:00",
+          "effective_at": "2026-05-28",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H14-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H14-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H14",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H14-CITY",
+          "query_type": "city_tier",
+          "record_key": "长沙市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H14-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-05",
+          "snapshot_version": "2026-05-29T08:00:00+08:00",
+          "effective_at": "2026-05-29",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H14-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H14:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H14-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H14",
+          "snapshot_version": "2026-05-29T08:00:00+08:00",
+          "effective_at": "2026-05-29",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H15-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H15-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H15",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H15-CITY",
+          "query_type": "city_tier",
+          "record_key": "杭州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H15-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-OPERATIONS:2026-06",
+          "snapshot_version": "2026-06-26T08:00:00+08:00",
+          "effective_at": "2026-06-26",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H15-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H15:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H15-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H15",
+          "snapshot_version": "2026-06-26T08:00:00+08:00",
+          "effective_at": "2026-06-26",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-H16-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-H16-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-H16",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H16-CITY-OLD",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "B",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H16-CITY-NEW",
+          "query_type": "city_tier",
+          "record_key": "常州市",
+          "snapshot_version": "2026-05-15T08:00:00+08:00",
+          "effective_at": "2026-05-15",
+          "value": "A",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-H16-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SYN-RD:2026-06",
+          "snapshot_version": "2026-06-14T08:00:00+08:00",
+          "effective_at": "2026-06-14",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-H16-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-H16:住宿",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-H16-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-H16",
+          "snapshot_version": "2026-06-14T08:00:00+08:00",
+          "effective_at": "2026-06-14",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M01-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M01-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M01",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M02-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M02-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M02",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M03-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M03-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M03",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M04-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M04-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M04",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M05-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M05-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M05",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M06-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M06-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M06",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M07-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M07-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M07",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-MARKETING",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M08-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M08-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M08",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M09-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M09-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M09",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-MARKETING",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M10-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M10-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M10",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M11-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M11-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M11",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-M12-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-M12-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-M12",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-MARKETING",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T01-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T01-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T01",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T01-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SALES:2026-04",
+          "snapshot_version": "2026-04-03T08:00:00+08:00",
+          "effective_at": "2026-04-03",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-T01-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-T01:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T01-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T01",
+          "snapshot_version": "2026-04-03T08:00:00+08:00",
+          "effective_at": "2026-04-03",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T01-VISIT",
+          "query_type": "customer_visit_record",
+          "record_key": "REQ-C16-T01",
+          "snapshot_version": "2026-04-02T08:00:00+08:00",
+          "effective_at": "2026-04-02",
+          "value": "VISIT-T01:CONFIRMED",
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T02-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T02-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T02",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T02-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SALES:2026-04",
+          "snapshot_version": "2026-04-04T08:00:00+08:00",
+          "effective_at": "2026-04-04",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-T02-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-T02:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T02-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T02",
+          "snapshot_version": "2026-04-04T08:00:00+08:00",
+          "effective_at": "2026-04-04",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T02-VISIT",
+          "query_type": "customer_visit_record",
+          "record_key": "REQ-C16-T02",
+          "snapshot_version": "2026-04-03T08:00:00+08:00",
+          "effective_at": "2026-04-03",
+          "value": "VISIT-T02:CONFIRMED",
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T03-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T03-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T03",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T04-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T04-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T04",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T05-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T05-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T05",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T05-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-T05:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T05-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T05",
+          "snapshot_version": "2026-04-07T08:00:00+08:00",
+          "effective_at": "2026-04-07",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T05-VISIT",
+          "query_type": "customer_visit_record",
+          "record_key": "REQ-C16-T05",
+          "snapshot_version": "2026-04-06T08:00:00+08:00",
+          "effective_at": "2026-04-06",
+          "value": "VISIT-T05:CONFIRMED",
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T06-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T06-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T06",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T06-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SALES:2026-04",
+          "snapshot_version": "2026-04-08T08:00:00+08:00",
+          "effective_at": "2026-04-08",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-T06-OTHER-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-OTHER:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T06-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T06",
+          "snapshot_version": "2026-04-08T08:00:00+08:00",
+          "effective_at": "2026-04-08",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T06-VISIT",
+          "query_type": "customer_visit_record",
+          "record_key": "REQ-C16-T06",
+          "snapshot_version": "2026-04-07T08:00:00+08:00",
+          "effective_at": "2026-04-07",
+          "value": "VISIT-T06:CONFIRMED",
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T07-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T07-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T07",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T07-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SALES:2026-04",
+          "snapshot_version": "2026-04-09T08:00:00+08:00",
+          "effective_at": "2026-04-09",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-T07-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-T07:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T07-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T07",
+          "snapshot_version": "2026-04-09T08:00:00+08:00",
+          "effective_at": "2026-04-09",
+          "value": false,
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T08-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T08-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T08",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SYN-RD",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T09-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T09-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T09",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T10-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T10-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T10",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T11-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T11-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T11",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-SALES",
+          "consumer": "AGENT"
+        },
+        {
+          "fixture_id": "C16-T11-BUDGET",
+          "query_type": "budget_status",
+          "record_key": "DEPT-SALES:2026-04",
+          "snapshot_version": "2026-04-12T08:00:00+08:00",
+          "effective_at": "2026-04-12",
+          "value": "AVAILABLE",
+          "consumer": "RULE_VALIDATOR",
+          "available_amount": "12000.00"
+        },
+        {
+          "fixture_id": "C16-T11-PERMISSION",
+          "query_type": "approval_permission",
+          "record_key": "EMP-C16-T11:交通",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "AUTHORIZED",
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T11-DUPLICATE",
+          "query_type": "duplicate_invoice",
+          "record_key": "SYN-C16-T11",
+          "snapshot_version": "2026-04-12T08:00:00+08:00",
+          "effective_at": "2026-04-12",
+          "value": true,
+          "consumer": "RULE_VALIDATOR"
+        },
+        {
+          "fixture_id": "C16-T11-VISIT",
+          "query_type": "customer_visit_record",
+          "record_key": "REQ-C16-T11",
+          "snapshot_version": "2026-04-11T08:00:00+08:00",
+          "effective_at": "2026-04-11",
+          "value": "VISIT-T11:CONFIRMED",
+          "consumer": "RULE_VALIDATOR"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "STRUCTURED-DATA-C16-T12-1.6.0",
+      "source_type": "PROJECT_AUTHORED_SYNTHETIC",
+      "license_id": "PROJECT-INTERNAL-SYNTHETIC",
+      "records": [
+        {
+          "fixture_id": "C16-T12-EMPLOYEE",
+          "query_type": "employee_department",
+          "record_key": "EMP-C16-T12",
+          "snapshot_version": "2026-01-01T08:00:00+08:00",
+          "effective_at": "2026-01-01",
+          "value": "DEPT-OPERATIONS",
+          "consumer": "AGENT"
+        }
+      ]
+    }
+  ]
+}

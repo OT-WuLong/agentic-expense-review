@@ -1,0 +1,567 @@
+{
+  "schema": "p14-agentic-ablation/v1",
+  "generated_at": "2026-10-02T07:36:28.665868+00:00",
+  "status": "MEASURED",
+  "split": "validation",
+  "git_commit": "7556c2b7bb92a8cd9dc040458c6a405231bf33e5",
+  "git_dirty": true,
+  "dataset_sha256": "1e87ae20dbeddb0c056030f0f7a56fe70d81c5f7465f7ec830f6b97fa70a568d",
+  "trajectory_sha256": "0bc4f53d14573db7d8bd303126e1e246f7feb9890cf8bc6e00b10c570fc97dbe",
+  "run_plan": {
+    "model": "deepseek-flash",
+    "retrieval_mode": "dense",
+    "variants": [
+      "single_agent_dense",
+      "multi_agent"
+    ],
+    "dataset_dir": "evals\\datasets\\challenge_1_6",
+    "input_sha256": {
+      "approvals": "1e87ae20dbeddb0c056030f0f7a56fe70d81c5f7465f7ec830f6b97fa70a568d",
+      "trajectories": "0bc4f53d14573db7d8bd303126e1e246f7feb9890cf8bc6e00b10c570fc97dbe",
+      "policy_chunks": "1e602a187fdc815492896870b49283a0471a800c70fdd7615843e19f35f8a578",
+      "active_catalog": "c0fb4d710481a87f5ae47a98cdd5a50fc10308b52d0b9c38e371a7b005d9abcb",
+      "attachment_chunks": "a04d72cd50b066fec88c7d601ad928ae3b2c80db6fd5217ad86348b96580de41",
+      "attachment_evidence": "b0916b2cc972c574dbbdddea25896ada831f787f16f01d731efa4c3397366cab",
+      "structured_snapshots": "c197c77a64f9f950e67d93a9e1ec05b67928334624289613cc89b6fbac345603"
+    },
+    "primary_metrics": [
+      "approval.accuracy",
+      "comparison.business_success_rate",
+      "approval.false_auto_pass_rate"
+    ],
+    "business_success_definition": "Correct recommendation, required final evidence, rule outcomes, risk flags and allowed tools; excludes architecture-specific tool capability/call count and Agent stop labels.",
+    "single_agent_dense_definition": "One agent with one unified prompt plans <=2 authorised tool calls and assesses the retrieved evidence in two LLM phases; one retrieval round, Dense policy search, no separate Supervisor or feedback loop. Shared extraction, scope, provenance checks, structured lookup availability and deterministic rules match multi_agent."
+  },
+  "model": "deepseek-flash",
+  "prompt_versions": {
+    "retrieval": "p15-retrieval-catalog-v3",
+    "reviewer": "p15-evidence-review-catalog-v4",
+    "supervisor": "p08-supervisor-v3"
+  },
+  "retrieval_mode": "dense",
+  "environment": {
+    "platform": "Windows-10-10.0.22631-SP0",
+    "cpu_count": 16
+  },
+  "same_sample_ids": true,
+  "one_run_per_variant": true,
+  "cost_status": "NOT_MEASURED_PROVIDER_PRICING_UNVERIFIED",
+  "limitations": [
+    "Author-created synthetic validation, one live run per variant; not external blind test.",
+    "Recorded system errors stay in quality denominators; exit code 1 with a complete report is a measured failed workload.",
+    "single_agent_dense vs multi_agent compares the whole prompt/control/retrieval-loop bundle, not agent count alone.",
+    "Contractual strict success includes tool capabilities and stop labels; business_success is the architecture-neutral primary task metric.",
+    "Fixed variants omit LLM review; only the no_supervisor pair isolates Supervisor removal.",
+    "Mean steps count planning/review actions, including fixed planning.",
+    "Agent token totals exclude failed model calls and embeddings; they are lower bounds, not cost metrics.",
+    "Tool capability scoring uses distinct successful tool calls, not full semantic-purpose matching.",
+    "Exact duplicate-query and monetary-cost metrics remain unmeasured.",
+    "Attempt P95 includes system errors and is not contractual successful-task e2e P95."
+  ],
+  "executions": [
+    {
+      "variant": "single_agent_dense",
+      "exit_code": 1
+    },
+    {
+      "variant": "multi_agent",
+      "exit_code": 0
+    }
+  ],
+  "variants": [
+    {
+      "variant": "single_agent_dense",
+      "sample_count": 40,
+      "task_success": "10/40",
+      "business_success": "12/40",
+      "business_success_rate": 0.3,
+      "approval_accuracy": 0.75,
+      "subquestion_coverage": 0.7083333333333333,
+      "tool_selection_accuracy": 0.975,
+      "mean_steps": 1.95,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.6,
+      "system_error_rate": 0.025,
+      "attempt_latency_p95_ms": 106301,
+      "nonerror_latency_p50_ms": 41593,
+      "nonerror_latency_p95_ms": 109090,
+      "mean_agent_llm_tokens": 12019.625,
+      "agent_llm_tokens": 480785,
+      "tool_calls": 69,
+      "tool_errors": 0,
+      "guardrail_vetoes": 0
+    },
+    {
+      "variant": "multi_agent",
+      "sample_count": 40,
+      "task_success": "11/40",
+      "business_success": "15/40",
+      "business_success_rate": 0.375,
+      "approval_accuracy": 0.95,
+      "subquestion_coverage": 0.7583333333333333,
+      "tool_selection_accuracy": 1.0,
+      "mean_steps": 3.8,
+      "false_auto_pass_rate": 0.0,
+      "human_intervention_rate": 0.45,
+      "system_error_rate": 0.0,
+      "attempt_latency_p95_ms": 117907,
+      "nonerror_latency_p50_ms": 51689,
+      "nonerror_latency_p95_ms": 117907,
+      "mean_agent_llm_tokens": 18069.775,
+      "agent_llm_tokens": 722791,
+      "tool_calls": 104,
+      "tool_errors": 0,
+      "guardrail_vetoes": 2
+    }
+  ],
+  "raw_report_directory": "F:\\乌龙\\code\\vs_code\\简历项目\\evals\\reports\\single_vs_multi_dense_challenge_1_6_deepseek_20261002_raw",
+  "paired_comparison": {
+    "sample_count": 40,
+    "business_wins": 6,
+    "business_losses": 3,
+    "recommendation_delta_percentage_points": 19.999999999999996,
+    "business_success_delta_percentage_points": 7.500000000000001,
+    "samples": [
+      {
+        "sample_id": "APP-C16-H01",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H02",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H03",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H04",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H05",
+        "expense_type": "住宿",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H06",
+        "expense_type": "住宿",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H07",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H08",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H09",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H10",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H11",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H12",
+        "expense_type": "住宿",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H13",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": null,
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H14",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-H15",
+        "expense_type": "住宿",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-H16",
+        "expense_type": "住宿",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-M01",
+        "expense_type": "餐饮",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M02",
+        "expense_type": "餐饮",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-M03",
+        "expense_type": "餐饮",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M04",
+        "expense_type": "餐饮",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-M05",
+        "expense_type": "餐饮",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-M06",
+        "expense_type": "餐饮",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M07",
+        "expense_type": "餐饮",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M08",
+        "expense_type": "餐饮",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M09",
+        "expense_type": "餐饮",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M10",
+        "expense_type": "餐饮",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-M11",
+        "expense_type": "餐饮",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-M12",
+        "expense_type": "餐饮",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T01",
+        "expense_type": "交通",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T02",
+        "expense_type": "交通",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T03",
+        "expense_type": "交通",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-T04",
+        "expense_type": "交通",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-T05",
+        "expense_type": "交通",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T06",
+        "expense_type": "交通",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T07",
+        "expense_type": "交通",
+        "expected": "REJECT_RECOMMENDED",
+        "baseline_recommendation": "REJECT_RECOMMENDED",
+        "multi_agent_recommendation": "REJECT_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T08",
+        "expense_type": "交通",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "PASS_RECOMMENDED",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": true,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": false,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T09",
+        "expense_type": "交通",
+        "expected": "PASS_RECOMMENDED",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "PASS_RECOMMENDED",
+        "baseline_business_success": false,
+        "multi_agent_business_success": true,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": false
+      },
+      {
+        "sample_id": "APP-C16-T10",
+        "expense_type": "交通",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-T11",
+        "expense_type": "交通",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      },
+      {
+        "sample_id": "APP-C16-T12",
+        "expense_type": "交通",
+        "expected": "HUMAN_REVIEW",
+        "baseline_recommendation": "HUMAN_REVIEW",
+        "multi_agent_recommendation": "HUMAN_REVIEW",
+        "baseline_business_success": false,
+        "multi_agent_business_success": false,
+        "baseline_missing_evidence": true,
+        "multi_agent_missing_evidence": true
+      }
+    ]
+  }
+}

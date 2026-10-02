@@ -76,6 +76,9 @@ def _fixture_fields(approval: ApprovalInput, chunks: list[DocumentChunk]) -> lis
 
     fields: list[ExtractedField] = []
     for document in approval.documents:
+        if document.document_type == "OTHER":
+            # Notices/approval letters are textual evidence, not invoice-shaped extraction inputs.
+            continue
         blocks = [
             ParsedBlock(
                 page_idx=chunk.page_idx,
@@ -192,6 +195,11 @@ def _matched_ids(items: list[EvidenceItem], reference: dict[str, dict]) -> set[s
         for evidence_id, gold in reference.items()
         if any(_matches_gold(gold, item) for item in items)
     }
+
+
+def _evidence_complete(required: list[str], groups: list[dict], matched: set[str]) -> bool:
+    """Exact anchors stay mandatory; each declared equivalent group needs one member."""
+    return set(required) <= matched and all(set(group["any_of"]) & matched for group in groups)
 
 
 def _capabilities_met(trajectory: dict, state: dict) -> bool:
@@ -413,7 +421,8 @@ def main() -> int:
                             "configurable": {
                                 "thread_id": f"p14:{args.variant}:{args.split}:{sample['sample_id']}"
                             },
-                            "recursion_limit": 20,
+                            # Guardrail/tool/router nodes also consume graph steps, not LLM steps.
+                            "recursion_limit": 8 * (state["max_retrieval_rounds"] + 1),
                         },
                     )
                     interrupted = bool(output.pop("__interrupt__", []))
@@ -479,10 +488,18 @@ def main() -> int:
                 }
                 else raw_recommendation
             )
-            evidence_match = set(sample["expected_evidence_ids"]) <= matched
+            evidence_match = _evidence_complete(
+                sample["expected_evidence_ids"],
+                sample.get("acceptable_evidence_groups", []),
+                matched,
+            )
             coverage = (
                 sum(
-                    set(question["required_evidence_ids"]) <= agent_evidence
+                    _evidence_complete(
+                        question["required_evidence_ids"],
+                        question.get("acceptable_evidence_groups", []),
+                        agent_evidence,
+                    )
                     for question in trajectory["required_sub_questions"]
                 )
                 if final
@@ -532,6 +549,7 @@ def main() -> int:
                 "sample_id": sample["sample_id"],
                 "case_id": sample["case_id"],
                 "expense_type": approval.application.expense_type.value,
+                "difficulty": sample.get("difficulty", "LEGACY_UNGRADED"),
                 "source_policy_catalog_snapshot_id": sample["policy_catalog_snapshot_id"],
                 "evaluated_policy_catalog_snapshot_id": policy_snapshot,
                 "expected_recommendation": sample["expected_recommendation"],
@@ -740,6 +758,7 @@ def main() -> int:
             active_catalog()["policy_catalog_snapshot_id"] if args.active_catalog else None
         ),
         "sample_count": len(rows),
+        "dataset_versions": sorted({sample["dataset_version"] for sample in approvals}),
         "upstream_extraction": "P04 extractor on frozen parsed attachment chunks; gold fields hidden",
         "stop_equivalents": {key: sorted(value) for key, value in _STOP_EQUIVALENTS.items()},
         "class_support": class_support,

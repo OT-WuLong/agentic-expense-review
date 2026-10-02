@@ -398,7 +398,7 @@ def validate_bundle(
             }
             dates = {"effective_at": application.get("occurred_on"),
                      "submitted_on": application.get("submitted_on")}
-            for eid in row.get("required_evidence_ids", []):
+            for eid in evidence_references(row, "required_evidence_ids"):
                 check_evidence(ident, eid, evidence_by_id, document_by_id, record_by_id, row, errors,
                                department_id=applicant.get("department_id"),
                                employee_id=applicant.get("employee_id"),
@@ -407,7 +407,7 @@ def validate_bundle(
                                invoice_numbers=invoice_numbers,
                                **dates)
             for question in row.get("required_sub_questions", []):
-                for eid in question.get("required_evidence_ids", []):
+                for eid in evidence_references(question, "required_evidence_ids"):
                     check_evidence(ident, eid, evidence_by_id, document_by_id, record_by_id, row, errors,
                                    department_id=applicant.get("department_id"),
                                    employee_id=applicant.get("employee_id"),
@@ -668,6 +668,13 @@ def check_evidence(
                 errors.append(f"{ident}: evidence {eid} not effective at query date")
 
 
+def evidence_references(row: dict, exact_field: str) -> list[str]:
+    return list(dict.fromkeys([
+        *row.get(exact_field, []),
+        *[eid for group in row.get("acceptable_evidence_groups", []) for eid in group["any_of"]],
+    ]))
+
+
 def validate_approval(
     ident: str, row: dict, documents: dict, records: dict, catalog: dict,
     page_cache: dict[tuple[str, int], str], errors: list[str]
@@ -688,6 +695,8 @@ def validate_approval(
     if not isinstance(top_eids, list) or not top_eids:
         errors.append(f"{ident}: empty approval evidence gold")
         top_eids = []
+    else:
+        top_eids = evidence_references(row, "expected_evidence_ids")
     if not isinstance(rules, list) or not rules:
         errors.append(f"{ident}: empty approval rule gold")
         rules = []

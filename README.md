@@ -76,6 +76,10 @@ Compose 默认只将应用、数据库和 Milvus 端口绑定到 `127.0.0.1`。`
 
 这 60 条输入是**预解析的合成票据切片**，不是 60 次网页 PDF 上传，也不是独立外部盲测。另用原始合成 PDF 经上传接口、MinerU 和后台 Agent 跑通通过、驳回、转人工三条路径；网页手工上传流程也已验证一条通过案例。不要把这些结果外推为真实企业票据准确率或生产可用率。评测定义见 [评测契约](docs/evaluation-contract.md)，业务范围见 [范围约定](docs/scope.md)，语料来源见 [来源清单](data/fixtures/source_manifest.json)。
 
+另新增 [40 条中高难合成案例](evals/datasets/challenge_1_6/README.md)，覆盖时间口径、部门优先关系、多附件事实与例外权限，组成 [100 条 validation 草案](evals/datasets/draft_1_6/README.md)。新增案例附 58 份 PDF 和逐案金标，已完成 [40 条独立对照](evals/reports/single_vs_multi_dense_challenge_1_6_deepseek_20261002.md)：单轮 Agent / 多 Agent（均为 Dense）的建议匹配率为 75.0% / 95.0%，业务完整成功率为 30.0% / 37.5%，严格任务成功率为 25.0% / 27.5%。两组的错误自动通过均为 0/25；多 Agent 有 13 条使用了补检。该结果是完整流程相对单轮方案的收益，不是 Agent 数量的独立效应；餐饮同结论版本误升级、引用完整性和金标等价来源口径仍待完善。本轮未统一重跑全部 100 条，不与上表合并，也不替换原冻结 test。
+
+后续已完成 [定向修复与真实复验](evals/reports/challenge_1_6_1_fix_20261002.md)：餐饮同结论版本误升级、必要额度/期限引用和计划截取问题已修正；[1.6.1 标签修订](evals/datasets/challenge_1_6_1/README.md)另存，不修改上面的历史成绩。六条主系统复验建议均匹配，严格评分仍为 3/6；修复后尚未全量重跑 40/100 条，不能据此更新整体成功率。
+
 本地代码检查：
 
 ```powershell

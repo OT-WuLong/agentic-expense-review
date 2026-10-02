@@ -193,6 +193,82 @@ def _policy_items(
     ]
 
 
+def policy_rule_evidence(
+    state: ApprovalState, rule: PolicyRuleRecord, *, amount: Decimal | None = None
+) -> list[EvidenceItem]:
+    """Match the actual published parameter, not a generic word such as '提交'."""
+    candidates = _policy_items(state, document_id=rule.source_document_id)
+    if rule.rule_type == "timeliness":
+        pattern = rf"(?<!\d){int(rule.parameters['days'])}\s*个\s*日历日"
+        return [
+            item
+            for item in candidates
+            if re.search(pattern, item.excerpt or "") and "提交" in (item.excerpt or "")
+        ]
+    if rule.rule_type != "amount_limit":
+        return []
+    values = [amount] if amount is not None else list(rule.parameters.values())
+    patterns = [
+        rf"(?<![\d.]){re.escape(format(Decimal(str(value)).normalize(), 'f'))}(?:\.0+)?\s*元"
+        for value in values
+    ]
+    return [
+        item
+        for item in candidates
+        if any(re.search(pattern, item.excerpt or "") for pattern in patterns)
+        and any(
+            word in (item.excerpt or "")
+            for word in ("上限", "最高", "不超过", "每人每日", "人均", "住宿标准")
+        )
+    ]
+
+
+def policy_rule_checks(
+    state: ApprovalState, store: PostgresStore, context: ToolExecutionContext
+) -> list[dict[str, object]]:
+    """Expose the required parameters and their citations, never treat the catalogue as proof."""
+    required = set(required_rule_ids(state, context))
+    checks = []
+    seen = set()
+    for rule in store.policy_rules(
+        expense_type=state["application"].expense_type,
+        effective_at=state["application"].occurred_on,
+        document_ids=set(context.allowed_document_ids),
+    ):
+        if (
+            rule.rule_id not in required
+            or rule.rule_id in seen
+            or rule.rule_type not in {"amount_limit", "timeliness"}
+        ):
+            continue
+        # Use the same applicable catalogue entry as evaluate_rules (department first).
+        seen.add(rule.rule_id)
+        tier = next(
+            (
+                item.value
+                for item in state.get("evidence", [])
+                if item.source_type == EvidenceSource.STRUCTURED_RECORD
+                and item.query_type == "city_tier"
+            ),
+            None,
+        )
+        amount = Decimal(str(rule.parameters[tier])) if tier in rule.parameters else None
+        citations = policy_rule_evidence(state, rule, amount=amount)
+        check = {
+            "rule_id": rule.rule_id,
+            "source_document_id": rule.source_document_id,
+            "parameters": rule.parameters,
+            "evidence_ids": [item.evidence_id for item in citations],
+        }
+        count = _field(state, "attendee_count")
+        if citations and "per_person" in rule.parameters and isinstance(count, int) and count > 0:
+            check["amount_within_limit"] = (
+                state["application"].amount <= Decimal(str(rule.parameters["per_person"])) * count
+            )
+        checks.append(check)
+    return checks
+
+
 def _structured_evidence(
     state: ApprovalState,
     store: PostgresStore,
@@ -682,7 +758,7 @@ def _lodging_rules(
         else 0
     )
     room_count = application.room_count or 0
-    itinerary_ids = _attachment_ids(state, "ITINERARY")
+    itinerary_ids = _attachment_ids(state, "HOTEL_INVOICE", "ITINERARY")
     night_result = RuleResult(
         rule_id="RULE-LODGING-NIGHT-COUNT",
         rule_version=_version(catalog, "RULE-LODGING-NIGHT-COUNT"),
@@ -709,21 +785,10 @@ def _lodging_rules(
     )
     new_evidence.extend(added)
     limit_rule = catalog["RULE-LODGING-AMOUNT-LIMIT"][0]
-    per_night = (
-        Decimal(str(limit_rule.parameters.get(str(city_item.value)))) if city_item else None
-    )
+    per_night = Decimal(str(limit_rule.parameters.get(str(city_item.value)))) if city_item else None
     computed_limit = per_night * nights * room_count if per_night else None
     policy_ids = [
-        item.evidence_id
-        for item in _policy_items(
-            state,
-            document_id=limit_rule.source_document_id,
-            keywords=(
-                str(limit_rule.parameters.get("A", "")),
-                str(limit_rule.parameters.get("B", "")),
-                "住宿标准",
-            ),
-        )[:1]
+        item.evidence_id for item in policy_rule_evidence(state, limit_rule, amount=per_night)[:1]
     ]
     amount_result = RuleResult(
         rule_id=limit_rule.rule_id,
@@ -749,9 +814,7 @@ def _lodging_rules(
             "input.application.check_in",
             "input.application.check_out",
         ],
-        evidence_ids=policy_ids
-        + ([city_item.evidence_id] if city_item else [])
-        + itinerary_ids,
+        evidence_ids=policy_ids + ([city_item.evidence_id] if city_item else []) + itinerary_ids,
         computed_limit=computed_limit,
         actual_amount=application.amount,
     )
@@ -772,9 +835,7 @@ def _lodging_rules(
 
     submit_rule = catalog["RULE-SUBMISSION-TIMELINESS"][0]
     elapsed = (
-        (application.submitted_on - application.check_out).days
-        if application.check_out
-        else None
+        (application.submitted_on - application.check_out).days if application.check_out else None
     )
     day_limit = int(submit_rule.parameters["days"])
     timeliness = RuleResult(
@@ -796,14 +857,7 @@ def _lodging_rules(
             else "SUBMISSION_LATE"
         ),
         input_refs=["input.application.check_out", "input.application.submitted_on"],
-        evidence_ids=[
-            item.evidence_id
-            for item in _policy_items(
-                state,
-                document_id=submit_rule.source_document_id,
-                keywords=(f"{day_limit} 个日历日", "提交"),
-            )[:1]
-        ],
+        evidence_ids=[item.evidence_id for item in policy_rule_evidence(state, submit_rule)[:1]],
         computed_value=elapsed,
         computed_limit=Decimal(day_limit),
         unit="days",
@@ -811,7 +865,13 @@ def _lodging_rules(
 
     structured_results, added = _financial_fact_rules(state, store, context, catalog)
     new_evidence.extend(added)
-    return [night_result, amount_result, document_result, timeliness, *structured_results], new_evidence
+    return [
+        night_result,
+        amount_result,
+        document_result,
+        timeliness,
+        *structured_results,
+    ], new_evidence
 
 
 def _dining_rules(
@@ -848,24 +908,26 @@ def _dining_rules(
     if "RULE-OPS-MKT-MEAL-LIMIT" in catalog:
         rule = catalog["RULE-OPS-MKT-MEAL-LIMIT"][0]
         attendee_count = application.attendee_count or 0
-        limit = Decimal(str(rule.parameters["per_person"])) * attendee_count if attendee_count else None
-        policy = _policy_items(
-            state,
-            document_id=rule.source_document_id,
-            keywords=(str(rule.parameters["per_person"]),),
+        limit = (
+            Decimal(str(rule.parameters["per_person"])) * attendee_count if attendee_count else None
         )
+        policy = policy_rule_evidence(state, rule)
         limit_result = RuleResult(
             rule_id=rule.rule_id,
             rule_version=rule.rule_version,
             producer="RULE_VALIDATOR",
             outcome=(
-                RuleOutcome.INDETERMINATE if limit is None
-                else RuleOutcome.PASS if application.amount <= limit
+                RuleOutcome.INDETERMINATE
+                if limit is None
+                else RuleOutcome.PASS
+                if application.amount <= limit
                 else RuleOutcome.FAIL
             ),
             reason_code=(
-                "ATTENDEE_COUNT_MISSING" if limit is None
-                else None if application.amount <= limit
+                "ATTENDEE_COUNT_MISSING"
+                if limit is None
+                else None
+                if application.amount <= limit
                 else "MEAL_LIMIT_EXCEEDED"
             ),
             input_refs=["input.application.amount", "input.application.attendee_count"],
@@ -889,11 +951,7 @@ def _dining_rules(
     for rule in limit_rules:
         per_person = Decimal(str(rule.parameters["per_person"]))
         limit = per_person * attendee_count if attendee_count else None
-        evidence = _policy_items(
-            state,
-            document_id=rule.source_document_id,
-            keywords=(f"{per_person:.2f}", "每人每日"),
-        )
+        evidence = policy_rule_evidence(state, rule)
         limit_results.append(
             RuleResult(
                 rule_id=rule.rule_id,
@@ -942,9 +1000,7 @@ def _dining_rules(
             "input.application.attendee_count",
         ],
         evidence_ids=[
-            evidence_id
-            for result in limit_results
-            for evidence_id in result.evidence_ids
+            evidence_id for result in limit_results for evidence_id in result.evidence_ids
         ]
         + context_ids,
     )
@@ -999,11 +1055,7 @@ def evaluate_rules(
     required_ids = required_rule_ids(state, context)
     missing_rule_ids = [rule_id for rule_id in required_ids if not catalog.get(rule_id)]
     if missing_rule_ids:
-        results = (
-            [_scope_rule(catalog)]
-            if catalog.get("RULE-EXPENSE-TYPE-IN-SCOPE")
-            else []
-        ) + [
+        results = ([_scope_rule(catalog)] if catalog.get("RULE-EXPENSE-TYPE-IN-SCOPE") else []) + [
             RuleResult(
                 rule_id=rule_id,
                 rule_version="UNAVAILABLE",
@@ -1037,13 +1089,58 @@ def evaluate_rules(
         if (
             any(item.reason_code == "LODGING_LIMIT_EXCEEDED" for item in lodging)
             and "会议" in state["application"].description
-            and any("会议" in (item.excerpt or "") for item in _attachment_items(state, "HOTEL_INVOICE"))
+            and any(
+                "会议" in (item.excerpt or "") for item in _attachment_items(state, "HOTEL_INVOICE")
+            )
             and _policy_items(state, keywords=("会议主办方指定酒店", "批准例外"))
         ):
             flags.append("LODGING_EXCEPTION_REQUIRES_REVIEW")
     elif expense_type == ExpenseType.DINING:
         dining, flags = _dining_rules(state, catalog)
         results.extend(dining)
+    # A database parameter may calculate a result, but cannot replace its policy citation.
+    old_policy_ids = {item.evidence_id for item in _policy_items(state)}
+    for index, result in enumerate(results):
+        source_rules = catalog.get(result.rule_id, [])
+        if not source_rules or source_rules[0].rule_type not in {"amount_limit", "timeliness"}:
+            continue
+        source_rule = source_rules[0]
+        amount = None
+        if result.rule_id == "RULE-LODGING-AMOUNT-LIMIT":
+            city = next(
+                (
+                    item.value
+                    for item in [*state.get("evidence", []), *new_evidence]
+                    if item.query_type == "city_tier"
+                ),
+                None,
+            )
+            amount = (
+                Decimal(str(source_rule.parameters[city]))
+                if city in source_rule.parameters
+                else None
+            )
+        proof = policy_rule_evidence(state, source_rule, amount=amount)
+        results[index] = result.model_copy(
+            update={
+                "evidence_ids": list(
+                    dict.fromkeys(
+                        [
+                            *[eid for eid in result.evidence_ids if eid not in old_policy_ids],
+                            *[item.evidence_id for item in proof[:1]],
+                        ]
+                    )
+                ),
+                **(
+                    {
+                        "outcome": RuleOutcome.INDETERMINATE,
+                        "reason_code": "POLICY_RULE_EVIDENCE_MISSING",
+                    }
+                    if not proof
+                    else {}
+                ),
+            }
+        )
     return RuleEvaluation(
         results=results,
         new_evidence=new_evidence,

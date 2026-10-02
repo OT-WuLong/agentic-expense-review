@@ -1,0 +1,28 @@
+{
+  "dataset_version": "1.6.1",
+  "status": "DRAFT_PARTIAL_LIVE_EVALUATED",
+  "samples": 40,
+  "difficulty": {
+    "HIGH": 20,
+    "MEDIUM": 20
+  },
+  "expense_types": {
+    "住宿": 16,
+    "餐饮": 12,
+    "交通": 12
+  },
+  "recommendations": {
+    "PASS_RECOMMENDED": 15,
+    "REJECT_RECOMMENDED": 9,
+    "HUMAN_REVIEW": 16
+  },
+  "invoices": 40,
+  "pdf_documents": 58,
+  "structured_records": 131,
+  "synthetic": true,
+  "external_blind_test": false,
+  "frozen_test_modified": false,
+  "targeted_multi_agent_samples": 6,
+  "full_dataset_rerun": false,
+  "fix_report": "evals/reports/challenge_1_6_1_fix_20261002.md"
+}

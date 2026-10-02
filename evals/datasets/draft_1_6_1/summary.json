@@ -1,0 +1,13 @@
+{
+  "dataset_version": "1.6.1",
+  "status": "DRAFT_NOT_LIVE_EVALUATED",
+  "samples": 100,
+  "carried_over_samples": 60,
+  "new_challenge_samples": 40,
+  "source_datasets": [
+    "draft_1_5_2",
+    "challenge_1_6_1"
+  ],
+  "frozen_test_modified": false,
+  "external_blind_test": false
+}

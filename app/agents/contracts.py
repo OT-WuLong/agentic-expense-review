@@ -3,7 +3,7 @@
 from enum import StrEnum
 from typing import Literal
 
-from pydantic import AliasChoices, Field, model_validator
+from pydantic import AliasChoices, Field, ValidationInfo, model_validator
 
 from app.models import EvidenceItem, StrictModel
 
@@ -181,6 +181,20 @@ class RetrievalPlan(StrictModel):
     sub_questions: list[SubQuestion] = Field(default_factory=list)
     tool_calls: list[ToolCall] = Field(default_factory=list)
     is_query_rewrite: bool = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def restore_server_questions(cls, data: object, info: ValidationInfo) -> object:
+        # The checklist belongs to the server. An omitted echo is not a new search plan.
+        required = (info.context or {}).get("required_questions", [])
+        if (
+            isinstance(data, dict)
+            and data.get("action") != RetrievalAction.STOP
+            and not data.get("sub_questions")
+            and required
+        ):
+            return {**data, "sub_questions": required}
+        return data
 
     # 校验检索计划：STOP 不携带工具，非 STOP 必须有子问题和工具，且引用一致
     @model_validator(mode="after")

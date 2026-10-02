@@ -1,0 +1,191 @@
+{
+  "dataset_version": "1.6.1",
+  "parent_version": "1.6.0",
+  "basis": "已发布通用/部门条款与检索完成后规则转人工的既有流程语义；不读取预测结果",
+  "recommendations_and_rule_outcomes_changed": false,
+  "independently_reviewed": false,
+  "changes": [
+    {
+      "sample_id": "APP-C16-H03",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H03-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H03-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H04",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H04-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H04-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H06",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H06-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        },
+        {
+          "group_id": "APP-C16-H06-第二十四条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十四条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H08",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H08-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H10",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H10-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H11",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H11-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H13",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H13-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H14",
+      "equivalent_groups": [],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-H15",
+      "equivalent_groups": [
+        {
+          "group_id": "APP-C16-H15-第二十一条",
+          "any_of": [
+            "EVID-C16-HOTEL-第二十一条",
+            "EVID-C16-OPS-第十九条"
+          ]
+        }
+      ],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-T10",
+      "equivalent_groups": [],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    },
+    {
+      "sample_id": "APP-C16-T11",
+      "equivalent_groups": [],
+      "acceptable_stop_reasons": [
+        "REQUEST_DOCUMENTS",
+        "EVIDENCE_ESCALATION",
+        "UNRESOLVED_POLICY_VERSION_CONFLICT",
+        "ALL_NECESSARY_EVIDENCE_COVERED"
+      ]
+    }
+  ]
+}
